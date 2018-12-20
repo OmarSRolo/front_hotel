@@ -1,0 +1,251 @@
+
+<div data-ng-show="step==1">
+    <div class="row">
+        <div class="col-sm-6">
+
+            <div class="form-group">
+                <label translate="listing_reserve.period" style="margin-bottom:0"></label>
+                <select class="form-control" ng-model="itemPeriod" ng-options="p.text for p in periods"
+                        ng-change="loadEndDate(itemPeriod)" required ax-valid>
+                </select>
+            </div>
+            <div class="form-group">
+                <label translate="listing_reserve.count_persons" style="margin-bottom:0"></label>
+                <select class="form-control" ng-model="itemHuesped"
+                        ng-options="p.text for p in huespeds"
+                        ng-change="loadHuesped(itemHuesped)" required ax-valid>
+                </select>
+            </div>
+
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <span translate="listing_reserve.start_date"></span>
+                <div class="has-feedback">
+                    <div class="dropdown form-group">
+
+                        <a
+                                class="dropdown-toggle" id="dropdownStartCreateDate"
+                                role="button" data-toggle="dropdown" data-target="#"
+                                href="#">
+                    <span class="input-group date">
+                        <input
+                                type="text" id="createDateRangeStart"
+                                name="createDateRangeStart" readonly="readonly"
+                                class="form-control" required="required"
+                                data-ng-value="createDateFactory.createDate.dateRangeStart | date: createDateFactory.formatCreateDate()">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </span>
+                    </span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu"
+                            aria-labelledby="dLabel">
+                            <datetimepicker
+                                    data-ng-model="createDateFactory.createDate.dateRangeStart"
+                                    data-datetimepicker-config="createDateFactory.configuration['dropdownStartCreateDate']"
+                                    data-on-set-time="createDateStartDateOnSetTime()"
+                                    data-before-render="createDateFactory.createDateStartDateBeforeRender(createDateFactory.createDate.dateRangeStart, $dates)"></datetimepicker>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <span translate="listing_reserve.end_date"></span>
+                <div class="has-feedback">
+                    <div class="dropdown form-group">
+                        <a
+                                class="dropdown-toggle" id="dropdownEndCreateDate"
+                                role="button" data-toggle="dropdown" data-target="#"
+                                href="#"> <span class="input-group date"> <input
+                                type="text" id="createDateRangeEnd"
+                                name="createDateRangeEnd" required="required"
+                                class="form-control" readonly="readonly" disabled="disabled"
+                                data-ng-value="createDateFactory.createDate.dateRangeEnd | date: createDateFactory.formatCreateDate()">
+													<span class="input-group-addon"><i
+                                                            class="glyphicon glyphicon-calendar"></i></span>
+											</span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group">
+                <div class="radio">
+                    <label class="i-checks">
+                        <input type="checkbox" name="price_type" ng-model="data.childs" ng-checked="data.childs">
+                        <i></i>
+                        {{'listing_reserve.childs'|translate}}
+                    </label>
+                    <i class=" icon-info hidden"
+                       uib-tooltip="{{'listing_reserve.child_description'|translate}}"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <h4>
+                <strong translate="listing_reserve.amount_total"></strong>
+            <span data-ng-model="data.price"
+                  ng-bind="((reserve.listing.price * itemPeriod.code)  |number) + '€'"></span>
+            </h4>
+        </div>
+
+    </div>
+
+    <div class="row" ng-show="data.childs || data.count_persons >= 3">
+        <div class="col-xs-12">
+            <h3 translate="listing_reserve.extra_general_header"></h3>
+            <p translate="listing_reserve.extra_general_details"></p>
+        </div>
+    </div>
+
+    <hr>
+</div>
+<div data-ng-show="step==2">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <div class="has-feedback">
+                    <input type="text" class="form-control"
+                           placeholder="{{'listing_reserve.client_first_name'|translate}}"
+                           ng-model="data.client_first_name" ax-valid>
+                    <span class="icon-pencil form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <div class="has-feedback">
+                    <input type="text" class="form-control"
+                           placeholder="{{'listing_reserve.client_last_name'|translate}}"
+                           ng-model="data.client_last_name" ax-valid>
+                    <span class="icon-pencil form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <div class="has-feedback">
+                    <input type="email" class="form-control"
+                           placeholder="{{'listing_reserve.client_email'|translate}}"
+                           ng-model="data.client_email" ax-valid>
+                    <span class="icon-envelope form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <div class="has-feedback">
+                    <input type="text" class="form-control"
+                           placeholder="{{'listing_reserve.client_city'|translate}}"
+                           ng-model="data.client_city" ax-valid>
+                    <span class="icon-globe form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <div class="has-feedback">
+                    <input type="text" class="form-control"
+                           placeholder="{{'listing_reserve.client_phone'|translate}}"
+                           ng-model="data.client_phone" ax-valid>
+                    <span class="icon-mobile-phone form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <strong translate="listing_reserve.client_reason"></strong>
+        </div>
+        <div class="radio col-xs-12">
+            <label class="i-checks">
+                <input type="radio" name="rason" value="leisure" ng-model="data.client_reason">
+                <i></i>
+                {{'listing_reserve.client_reason_leisure'|translate}}
+            </label>
+            <label class="i-checks">
+                <input type="radio" name="rason" value="work" ng-model="data.client_reason">
+                <i></i>
+                {{'listing_reserve.client_reason_work'|translate}}
+            </label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h5 translate="listing_reserve.about_it"></h5>
+        <textarea class="form-control" placeholder="{{'listing_reserve.client_special_request'|translate}}"
+                  ng-model="data.client_special_request"></textarea>
+        </div>
+    </div>
+
+    <hr>
+
+</div>
+
+<div data-ng-show="step==3">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h4 class="">
+                <i class="icon-info"></i>
+            <span translate="listing_reserve.complete_payment_not_card_subheader"
+                  uib-popover="{{'listing_reserve.complete_payment_not_card_details'|translate}}"
+                  popover-title="{{'listing_reserve.complete_payment_not_card'|translate}}"
+                  popover-placement="bottom"></span>
+            </h4>
+            <div class="row">
+                <div class="col-sm-4  has-feedback">
+                    <label class="control-label" translate="listing_reserve.account_number"></label>
+                </div>
+                <div class="col-sm-8  has-feedback">
+                    <input type="text" placeholder="{{'listing_reserve.account_number'|translate}}"
+                           class="form-control" ng-model="data.account_number" ax-valid="">
+                    <span class="icon-frame form-control-feedback" style=" right: 20px;"></span>
+                </div>
+            </div>
+            <div class="row m-t-xxs m-b-sm">
+                <div class="col-sm-offset-4">
+                    <span class=" label label-success" translate="listing_reserve.account_number_necesary"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4  has-feedback">
+                    <label class="control-label" translate="listing_reserve.account_expire"></label>
+                </div>
+                <div class="col-sm-4  has-feedback">
+                    <select class="form-control" ng-model="itemMonth"
+                            ng-options="p.text for p in months"
+                            data-ng-change="loadMonth(itemMonth)" ax-valid>
+                        <option value="" selected="">{{'listing_reserve.account_month_expire'|translate}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-4  has-feedback">
+                    <select class="form-control" ng-model="itemYear" ng-options="p for p in years"
+                          data-ng-change="loadYear(itemYear)"  ax-valid>
+                        <option value="" selected="">{{'listing_reserve.account_year_expire'|translate}}</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div class="" ng-if="data.count_persons > 3">
+                <p translate="listing_reserve.extra_persons_info"></p>
+                <p translate="listing_reserve.extra_child_age_info"></p>
+            </div>
+        </div>
+    </div>
+
+</div>

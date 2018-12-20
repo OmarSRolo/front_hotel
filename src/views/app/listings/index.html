@@ -1,0 +1,88 @@
+<div class="bg-light lter b-b wrapper-md">
+    <div class="row padder">
+        <h1 class="m-n font-thin h3 text-black">
+            <i class="icon-home"></i>
+            <span translate="listing.header"></span>
+        </h1>
+        <small class="text-muted" translate="listing.subheader"></small>
+        <a ui-sref="app.dashboard.listings_insert" class="btn btn-default pull-right">
+            <i class="icon-plus"></i>
+            <span translate="listing.btn_insert"></span>
+        </a>
+    </div>
+
+</div>
+<div class="wrapper-md m-t">
+    <div loading-container="tableParams.settings().$loading">
+        <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+
+            <tr ng-repeat="lst in $data">
+                <td ng-bind="lst.listing_type.name" title="'listing.listing_type_id_small'|translate" filter="{listing_type_id:'filter/listing_type_id.html'}"></td>
+                <td ng-bind="lst.owner.email" title="'listing.owner'|translate" filter="{owner_email:'filter/owner.html'}"></td>
+                <td ng-bind="lst.capacity" title="'listing.capacity_small'|translate" filter="{capacity:'filter/capacity.html'}"></td>
+                <td ng-bind="lst.country.name" title="'listing.country_code'|translate" filter="{country_code:'filter/country_code.html'}"></td>
+                <td ng-bind="lst.city" title="'listing.city'|translate" filter="{city:'filter/city.html'}"></td>
+                <td title="'listing.created_at'|translate" filter="{created_at:'filter/created_at.html'}">
+                    <nobr>{{lst.created_at | amDateFormat:dateOptions.shortFormat}}</nobr>
+                </td>
+                <td class="text-center">
+                    <a ng-click="relevant(lst)" tooltip-placement="left" uib-tooltip="{{'listing.btn_relevant'|translate}}" tooltip-placement="left">
+                        <i class="fa fa-star-o" ng-if="lst.relevant == 0"></i>
+                        <i class="fa fa-star" ng-if="lst.relevant == 1"></i>
+                    </a>
+                    <a ng-click="edit(lst)" tooltip-placement="left" uib-tooltip="{{'listing.btn_edit'|translate}}">
+                        <i class="icon-note"></i>
+                    </a>
+                    <a href="http://atuhotel.com/listings/details/{{lst.id}}" target="blank" tooltip-placement="left" uib-tooltip="{{'listing.btn_details'|translate}}">
+                        <i class=" icon-magnifier-add"></i>
+                    </a>
+                    <a ng-click="delete(lst)" tooltip-placement="left" uib-tooltip="{{'listing.btn_delete'|translate}}" tooltip-placement="left">
+                        <i class="icon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Filters -->
+<script type="text/ng-template" id="filter/listing_type_id.html">
+    <select name="{{name}}" ng-model="params.filter()[name]" ng-disabled="$filterRow.disabled" class="input-filter form-control" ng-options="listingType.id as listingType.name for listingType in listing_types">
+        <option value="">{{'listing.listing_type_id'|translate}}</option>
+    </select>
+</script>
+
+<script type="text/ng-template" id="filter/owner.html">
+    <input type="text" name="{{name}}" placeholder="{{'listing.owner'|translate}}" ng-model="params.filter()[name]" ng-disabled="$filterRow.disabled" class="input-filter form-control"/>
+</script>
+
+<script type="text/ng-template" id="filter/created_at.html">
+    <div class="has-feedback">
+        <datepicker date-format="{{dateOptions.datepickerShort}}" datepicker-class="date-picket-left">
+            <input name="{{name}}" ng-model="params.filter()[name]" type="text" class="input-filter form-control"/>
+        </datepicker>
+        <span class="icon-calendar form-control-feedback"></span>
+    </div>
+</script>
+<script type="text/ng-template" id="filter/country_code.html">
+    <select name="{{name}}" ng-model="params.filter()[name]" ng-disabled="$filterRow.disabled" class="input-filter form-control" ng-options="country.code as country.name for country in countries" ng-change="onChangeCountry(params.filter()[name])">
+        <option value="">{{'listing.country_code'|translate}}</option>
+    </select>
+</script>
+<script type="text/ng-template" id="filter/capacity.html">
+    <input type="text" name="{{name}}" ui-number-mask="0" ng-disabled="$filterRow.disabled" ng-model="params.filter()[name]" class="input-filter form-control" placeholder="{{listing.capacity|translate}}"/>
+</script>
+<script type="text/ng-template" id="filter/city.html">
+    <input
+        type="text"
+        name="{{name}}"
+        placeholder="{{'listing.city'|translate}}"
+        ng-disabled="$filterRow.disabled"
+        ng-model="params.filter()[name]"
+        class="input-filter form-control"
+        placeholder="{{listing.capacity|translate}}"
+        uib-typeahead="city.name for city in cities | filter:$viewValue"
+        typeahead-editable="true"
+        typeahead-show-hint="true"
+        typeahead-min-length="0"/>
+</script>

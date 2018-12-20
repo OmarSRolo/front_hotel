@@ -1,0 +1,39 @@
+<!-- main header -->
+<div class="bg-light lter b-b wrapper-md">
+    <div class="row text-center">
+        <div class="">
+            <h1 class="m-n font-thin h3 text-black">
+                <i class="icon-check"></i>
+                <span translate="access.profile.confirmation.header"></span>
+            </h1>
+            <small class="text-muted" translate="listing.search.subheader"></small>
+        </div>
+    </div>
+</div>
+<!-- / main header -->
+
+
+<div class="hbox hbox-auto-xs hbox-auto-sm wrapper-md m-t" style="width:400px;margin:10% auto">
+    <div class="text-center" ng-if="data.verificated == false">
+        <i class="fa fa-gear fa-spin" style="font-size:50px"></i>
+        <p translate="access.profile.confirmation.verifcating" style="font-size: 22px;">
+
+        </p>
+    </div>
+    <div class="text-center" ng-if="data.verificated" uib-alert ng-class="{'alert-success':data.ok,'alert-danger':!data.ok}">
+        <i class="icon-check" style="font-size:50px" ng-if="data.ok"></i>
+        <i class="icon-ban" style="font-size:50px" ng-if="!data.ok"></i>
+        <p ng-bind-html="data.message" style="font-size: 22px;    text-align: justify;">
+
+        </p>
+        <div class="row" ng-if="data.ok">
+          <a ui-sref="app.profile.info({id:Auth.get().id})" class="btn btn-app pull-right m-r" >
+             <i class="icon-user"></i>
+             <span translate="menu.header.user_profile.profile"></span>
+          </a>
+        </div>
+
+    </div>
+
+
+</div>

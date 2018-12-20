@@ -1,0 +1,44 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" ng-click="close()">
+        <i class="icon-close"></i>
+    </button>
+    <h4 class="modal-title">
+        <i class="icon-pencil"></i>
+        <span translate="service.update.header"></span>
+    </h4>
+</div>
+
+<div class="modal-body">
+
+    <form ng-submit="save()" ax-form-valid="" novalidate>
+        <div class="form-group">
+            <label for="" translate="service.name_es"></label>
+            <div class=" has-feedback">
+                <input type="text" placeholder="{{'service.name_es'|translate}}" class="form-control" ng-model="data.name_es" ng-required="true" ax-valid="">
+                <span class="icon-drop form-control-feedback"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" translate="service.name_en"></label>
+            <div class=" has-feedback">
+                <input type="text" placeholder="{{'service.name_en'|translate}}" class="form-control" ng-model="data.name_en" ng-required="true" ax-valid="">
+                <span class="icon-drop form-control-feedback"></span>
+            </div>
+        </div>
+        <!--<div class="form-group">-->
+            <!--<label for="" translate="service.name_fr"></label>-->
+            <!--<div class=" has-feedback">-->
+                <!--<input type="text" placeholder="{{'service.name_fr'|translate}}" class="form-control" ng-model="data.name_fr" ng-required="true" ax-valid="">-->
+                <!--<span class="icon-drop form-control-feedback"></span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="row">
+            <div class="col-xs-12 form-group">
+                <button type="submit" class="btn btn-lg btn-default dker b-dark pull-right">
+                    <i class="icon-check"></i>
+                    <span translate="common.btn_accept"></span>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,37 @@
+<div class="bg-light lter b-b wrapper-md">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <h1 class="m-n font-thin h3 text-black">
+                <i class="icon-pin"></i>
+                <span translate="service.header"></span>
+                <a ng-click="insert()" class="btn btn-default pull-right">
+                    <i class="icon-plus"></i>
+                    <span translate="service.btn_insert"></span>
+                </a>
+            </h1>
+            <small class="text-muted" translate="service.subheader"></small>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper-md m-t-xl">
+    <div loading-container="tableParams.settings().$loading">
+        <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+
+            <tr ng-repeat="service in $data">
+                <td ng-bind="service.id" title="'service.id'|translate"></td>
+                <td ng-bind="service.name_es" title="'service.name_es'|translate" filter="{name_es:'text'}"></td>
+                <td ng-bind="service.name_en" title="'service.name_en'|translate" filter="{name_en:'text'}"></td>
+                <!--<td ng-bind="service.name_fr" class="hidden" title="'service.name_fr'|translate" filter="{name_fr:'text'}"></td>-->
+                <td class="text-center">
+                    <a ng-click="edit(service)" tooltip-placement="top" uib-tooltip="{{'service.btn_edit'|translate}}">
+                        <i class="icon-note"></i>
+                    </a>
+                    <a ng-click="delete(service)" tooltip-placement="left" uib-tooltip="{{'service.btn_delete'|translate}}">
+                        <i class="icon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" ng-click="close()">
+        <i class="icon-close"></i>
+    </button>
+    <h4 class="modal-title">
+        <i class="icon-pencil"></i>
+        <span translate="coin.update.header"></span>
+    </h4>
+</div>
+
+<div class="modal-body">
+  <form ng-submit="save()" ax-form-valid="" novalidate>
+      <div class="form-group">
+          <label for="" translate="coin.code"></label>
+          <div class=" has-feedback">
+              <input type="text" placeholder="{{'coin.code'|translate}}" class="form-control" ng-model="data.code" ng-required="true" ax-valid="" maxlength="3">
+              <span class="icon-drop form-control-feedback"></span>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="" translate="coin.name"></label>
+          <div class=" has-feedback">
+              <input type="text" placeholder="{{'coin.name'|translate}}" class="form-control" ng-model="data.name" ng-required="true" ax-valid="">
+              <span class="icon-drop form-control-feedback"></span>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-xs-12 form-group">
+              <button type="submit" class="btn btn-lg btn-default dker b-dark pull-right">
+                  <i class="icon-check"></i>
+                  <span translate="common.btn_accept"></span>
+              </button>
+          </div>
+      </div>
+  </form>
+</div>

@@ -1,0 +1,74 @@
+<div class="row wrapper">
+    <div class="col-sm-12 ">
+        <form class="form-horizontal form-validation" novalidate ax-form-valid="" ng-submit="save()">
+            <div class="row">
+
+                <div class="col-md-10 col-sm-12  col-md-offset-1">
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" translate="access.label_country"></label>
+                        <div class="col-sm-8 has-feedback">
+                            <select class="form-control" ng-disabled="!data.is_editable" ng-model="data.country_code" ng-options="country.code as country.name for country in countries" ng-change="onChangeCountry()">
+                               <option value="">{{'access.label_country'|translate}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="data.is_editable">
+                        <label class="col-sm-4 control-label" translate="access.label_city"></label>
+
+                        <div class="col-sm-8 has-feedback">
+                            <input type="text" ng-model="data.city" uib-typeahead="city.name for city in cities | filter:$viewValue" class="form-control" typeahead-editable="data.is_editable" typeahead-is-open="open_country" typeahead-show-hint="true" typeahead-min-length="0">
+                            <span class="fa fa-location-arrow form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="data.is_editable">
+                        <label class="col-sm-4 control-label" translate="access.label_time_zone"></label>
+                        <div class="col-sm-8 has-feedback">
+                            <input type="text" ng-model="data.time_zone" placeholder="{{'access.label_time_zone'|translate}}" uib-typeahead="timezone for timezone in timezones | filter:$viewValue | limitTo:10" class="form-control" typeahead-editable="false" typeahead-show-hint="true" typeahead-min-length="0" ng-readonly="!data.is_editable">
+                            <!-- <input type="text" ng-model="selected" uib-typeahead="timezone for timezone in timezones  | filter:$viewValue | limitTo:8" class="form-control"> -->
+                            <span class=" icon-hourglass form-control-feedback"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" translate="access.label_zip_code"></label>
+
+                        <div class="col-sm-8 has-feedback">
+                            <input type="text" ng-model="data.zip_code" placeholder="{{'access.label_zip_code'|translate}}" class="form-control" ax-valid="" ng-readonly="!data.is_editable">
+                            <span class=" icon-envelope-letter form-control-feedback"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" translate="access.label_latitude"></label>
+
+                        <div class="col-sm-8 has-feedback">
+                            <input type="text" ng-model="data.latitude" placeholder="{{'access.label_latitude'|translate}}" class="form-control" ax-valid="" ng-readonly="!data.is_editable">
+                            <span class="icon-globe form-control-feedback"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" translate="access.label_longitude"></label>
+
+                        <div class="col-sm-8 has-feedback">
+                            <input type="text" ng-model="data.longitude" placeholder="{{'access.label_longitude'|translate}}" class="form-control" ax-valid="" ng-readonly="!data.is_editable">
+                            <span class="icon-globe form-control-feedback"></span>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="form-group" ng-show="data.is_editable">
+                        <div class="col-xs-12">
+                            <button type="submit" class="btn btn-default pull-right">
+                                <i class="icon-check"></i>
+                                <span translate="common.btn_save"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>

@@ -1,0 +1,188 @@
+<div class="m-t">
+    <div class="pull-left">
+        <h3>
+            <i class="icon-ban"></i>
+            <span translate="price_period.header"></span>
+            <span data-ng-if="view==2" translate="price_period.label_insert"></span>
+            <span data-ng-if="view==3" translate="price_period.label_edit"></span>
+            <span data-ng-if="view==4" translate="price_period.label_detail"></span>
+        </h3>
+    </div>
+
+    <div class="pull-right" data-ng-if="view>1">
+        <button class="btn btn-default" data-ng-click="cancel()">
+            <i class="fa fa-close"></i>
+        </button>
+    </div>
+
+</div>
+<span class="clearfix"></span>
+<hr>
+
+<span id="langdate" hidden="hidden">{{selectLang}}</span>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="fa fa-close"></span></button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <strong ng-bind="selected.id"></strong>. <strong
+                        ng-bind="selected.name"></strong>
+                </h4>
+            </div>
+            <div class="modal-body text-center">
+
+                <h4>
+                    <span class="fa  fa-clock-o"></span>
+                    <span ng-bind="selected.date_initial | amDateFormat:dateOptions.shortFormat"></span>
+                </h4>
+
+                <h4>
+                    <span class="fa  fa-clock-o"></span>
+                    <span ng-bind="selected.date_end | amDateFormat:dateOptions.shortFormat"></span>
+                </h4>
+
+            </div>
+            <div class="modal-footer text-center">
+                <button data-ng-click="detail()" class="btn btn-default" role="button" data-dismiss="modal"
+                        translate="price_period.btn_detail"></button>
+                <button data-ng-click="edit()" class="btn btn-default" role="button" data-dismiss="modal"
+                        translate="price_period.btn_edit"></button>
+                <button data-ng-click="delete()" class="btn btn-default" data-dismiss="modal"
+                        role="button" translate="price_period.btn_delete"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div data-ng-if="view==1">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="pull-left">
+                <button id="id12" class="btn btn-sm m-b-xs  btn-default" style="padding:4px 8px;font-size:16px"
+                        data-ng-click="insert()">
+                    <i class="fa fa-plus"></i> <span translate="price_period.btn_insert"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div ui-calendar="uiConfig.calendar" class="col-xs-12 calendar" ng-model="eventSources" calendar="calendar"></div>
+    </div>
+</div>
+
+<!--CRUD and Detail-->
+<div data-ng-if="view>=2">
+    <form name="formPeriod" class="form-horizontal form-validation" novalidate ax-form-valid="">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <label translate="price_period.label_name"></label>
+                <div class="has-feedback">
+                    <input type="text" ng-model="selected.name" class="form-control" autofocus required ax-valid="" ng-disabled="view==4">
+                    <span class="icon-pencil form-control-feedback"></span>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <label translate="price_period.search_label_start_date"></label>
+                <div class="has-feedback">
+                    <datepicker date-format="{{dateOptions.datepickerShort}}">
+                        <input ng-model="selected.date_initial" type="text" class="input-filter form-control" readonly/>
+                    </datepicker>
+
+                    <span class="icon-calendar form-control-feedback"></span>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <label translate="price_period.search_label_end_date"></label>
+                <div class="has-feedback">
+                    <datepicker date-format="{{dateOptions.datepickerShort}}">
+                        <input ng-model="selected.date_end" type="text" class="input-filter form-control" readonly/>
+                    </datepicker>
+
+                    <span class="icon-calendar form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <div data-st-table="selected.rooms">
+
+            <div class="row" data-ng-show="selected.rooms.length>9">
+                <div class="col-sm-12 col-md-4">
+                    <form class="navbar-form" role="search">
+                        <div class="has-feedback">
+                            <input data-st-search class="form-control" placeholder="{{'home.search' | translate}}"
+                                   type="search">
+                            <span class="icon-magnifier form-control-feedback"></span>
+                        </div>
+                        <br>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-4" data-ng-repeat="room in selected.rooms">
+                    <div class="thumbnail">
+                        <div class="caption text-center">
+
+                            <h4>
+                                <strong ng-bind="room.type"></strong>
+                                <span ng-bind="room.country"></span>,
+                                <span ng-bind="room.city"></span>
+                            </h4>
+
+                            <h4>
+                                <span translate="price_period.label_price_day"></span>
+                                <strong ng-bind="room.price_default"></strong>
+                                <strong translate="common.euro"></strong>
+                            </h4>
+
+                        </div>
+
+                        <div class="caption text-center">
+                            <div class="has-feedback">
+                                <input type="text" ui-money-mask min="0.01" ng-model="room.price" ng-disabled="view==4"
+                                       placeholder="{{'price_period.label_price_day'|translate}}" class="form-control"
+                                       ax-valid required>
+                                <span class="icon-tag form-control-feedback"></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md12">
+                    <div class="pull-left" data-st-pagination="" data-st-items-by-page="9"
+                         data-st-displayed-pages="5"></div>
+                    <div class="pull-right">
+                        <nav>
+                            <ul class="pagination">
+                                <li data-ng-if="view!=4">
+                                    <button class="btn btn-default btn-lg" data-ng-click="save()" data-ng-disabled="!formPeriod.$valid">
+                                        <i class="fa fa-save"></i> <span translate="price_period.btn_save"></span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="btn btn-default btn-lg" data-ng-click="cancel()">
+                                        <i class="fa fa-close"></i> <span translate="price_period.btn_close"></span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</div>
