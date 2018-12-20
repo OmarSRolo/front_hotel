@@ -1,0 +1,128 @@
+<!-- main header -->
+<div class="bg-light lter b-b wrapper-md">
+    <div class="row wrapper-md text-center">
+        <div class="">
+            <h1 class="m-n font-thin h3 text-black">
+                <i class="icon-envelope"></i>
+                <span translate="contact_us.header"></span>
+            </h1>
+            <small class="text-muted" translate="contact_us.subheader"></small>
+        </div>
+    </div>
+</div>
+<!-- / main header -->
+
+<div class="wrapper-md">
+
+    <div class="row">
+        <div class="col-sm-12 ">
+            <form class="form-horizontal form-validation" novalidate ax-form-valid="" ng-submit="send()">
+                <div class="row">
+
+                    <div class="col-md-8 col-sm-12  col-md-offset-2">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" translate="access.label_first_name"></label>
+
+                            <div class="col-sm-8 has-feedback">
+                                <input type="text" ng-model="data.first_name" placeholder="{{'access.label_first_name'|translate}}" class="form-control" required ax-valid="">
+                                <span class="icon-pin form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" translate="access.label_last_name"></label>
+
+                            <div class="col-sm-8 has-feedback">
+                                <input type="text" ng-model="data.last_name" placeholder="{{'access.label_last_name'|translate}}" class="form-control" required ax-valid="">
+                                <span class="icon-pin form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" translate="access.label_email"></label>
+
+                            <div class="col-sm-8 has-feedback">
+                                <input type="email" ng-model="data.email" placeholder="{{'access.label_email'|translate}}" class="form-control" required ax-valid="">
+                                <span class="icon-envelope form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" translate="contact_us.reserve_id"></label>
+
+                            <div class="col-sm-8 has-feedback">
+                                <input type="text" ng-model="data.reserve_id" placeholder="{{'contact_us.reserve_id'|translate}}" class="form-control" required ax-valid="">
+                                <span class="icon-calendar form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group hidden">
+                            <label class="col-sm-4 control-label" translate="contact_us.role"></label>
+
+                            <div class="col-sm-8 has-feedback">
+                                <label class="i-checks">
+                                    <input type="radio" ng-model="data.role" name="role" value="client" checked="">
+                                    <i></i>
+                                    {{'access.label_role_client'|translate}}
+                                </label>
+                                <label class="i-checks">
+                                    <input type="radio" ng-model="data.role" name="role" value="owner" checked="">
+                                    <i></i>
+                                    {{'access.label_role_owner'|translate}}
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" translate="contact_us.subject"></label>
+
+                            <div class="col-sm-8 has-feedback">
+                                <input type="text" ng-model="data.subject" placeholder="{{'contact_us.subject'|translate}}" class="form-control" required ax-valid="">
+                                <span class="icon-pencil form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" translate="contact_us.content"></label>
+
+                            <div class="col-sm-8 has-feedback">
+                                <textarea ng-model="data.content" placeholder="{{'contact_us.content'|translate}}" rows="8" class="form-control" required ax-valid=""></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label" translate="contact_us.category"></label>
+
+                            <div class="has-feedback col-sm-8">
+                                <select class="form-control" ng-model="data.listing_type_id" required ax-valid >
+                                    <option value="">{{'contact_us.category'|translate}}</option>
+                                    <option value="reserve_cancel">{{'contact_us.categories.reserve_cancel'|translate}}</option>
+                                    <option value="reserve_change">{{'contact_us.categories.reserve_change'|translate}}</option>
+                                    <option value="reserve_confirmation">{{'contact_us.categories.reserve_confirmation'|translate}}</option>
+                                    <option value="reserve_grantee">{{'contact_us.categories.reserve_grantee'|translate}}</option>
+                                    <option value="request_called">{{'contact_us.categories.request_called'|translate}}</option>
+                                    <option value="reserve_troubles">{{'contact_us.categories.reserve_troubles'|translate}}</option>
+                                    <option value="others">{{'contact_us.categories.others'|translate}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label"></label>
+
+                            <div class="has-feedback col-sm-8">
+                                <label class="i-checks">
+                                    <input type="checkbox" ng-model="data.has_reserve" >
+                                    <i></i>
+                                    {{'contact_us.has_reserve'|translate}}
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <button type="submit" class="btn btn-default pull-right">
+                                    <i class="icon-check"></i>
+                                    <span translate="contact_us.btn_send"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

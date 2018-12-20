@@ -1,0 +1,199 @@
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+.app-content, .app-footer {
+    /*margin-left: 0 !important;*/
+}
+
+.not-visible {
+    visibility: hidden;
+}
+
+.app-content-body {
+    /*padding-bottom: 170px;*/
+}
+
+.home-search {
+    /*overflow-x: hidden;*/
+    width: 300px;
+    position: absolute;
+    top: 95px;
+    left: 55px;
+    border: 1px solid rgb(85, 163, 167);
+    box-shadow: 0 1px 12px rgba(115, 56, 56, 0.3) !important;
+    padding: 12px;
+    /*overflow-y: hidden;*/
+    background: #fff;
+    background-image: linear-gradient(to left, rgb(245, 236, 224), transparent);
+    z-index: 9;
+    border-radius: 8px;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+}
+
+.footer {
+    /*padding: 20px 0;*/
+}
+
+.uib-datepicker-popup.dropdown-menu {
+    padding: 5px;
+    box-shadow: 0 1px 52px rgba(29, 28, 28, 0.3) !important;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+.uib-day button, .uib-month button, .uib-year button {
+    border: none;
+}
+
+.uib-datepicker-popup .btn-default {
+    border: none;
+}
+
+.top-20 {
+    margin-top: 20px!important;
+}
+
+.top-50 {
+    margin-top: 50px!important;
+}
+
+.top-80 {
+    margin-top: 80px!important;
+}
+
+.top-100 {
+    margin-top: 100px!important;
+}
+
+.icon-2x {
+    font-size: 25px;
+}
+
+.icon-3x {
+    font-size: 35px;
+}
+
+.block {
+    display: block !important;
+}
+
+.shadow {
+    box-shadow: 0 1px 52px rgba(29, 28, 28, 0.3) !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.tab-container .tab-content {
+    background-color: #fff;
+    border: 1px solid #0A98CD;
+    box-shadow: 0 1px 32px rgba(29, 28, 28, 0.3) !important;
+}
+
+.nav-tabs>li.active>a {
+    border: #0A98CD !important;
+    background-color: #0A98CD !important;
+}
+
+.btn-remove {
+    position: absolute;
+    right: 0;
+    border-radius: 8px;
+    font-size: 15px;
+    box-shadow: 0 1px 52px rgba(29, 28, 28, 0.3) !important;
+    border: 2px double #5d3b3b;
+    opacity: 0.7;
+}
+
+.angular-google-map-container {
+    height: 400px;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.custom-container {
+    max-width: 1070px;
+    margin: 0 auto;
+}
+
+.app-content-body {
+    /*background: url('../../img/bg.jpg') #fff scroll center center no-repeat;*/
+}
+
+.color-primary {
+    color: #2398b9;
+}
+
+.color-app {
+    color: #0083C6;
+}
+
+.simulate-in-tab .angular-google-map {
+    margin-top: -46px;
+    border: 1px solid;
+    z-index: 9999;
+    background-color: #fff;
+    border: 1px solid #2398b9;
+    box-shadow: 0 1px 32px rgba(29, 28, 28, 0.3) !important;
+    border-top: 0;
+}
+
+.form-control .n-p-r {
+    padding-right: 1px;
+}
+
+.img-lst {
+    min-height: 215px
+}
+
+.bg-app {
+    color: #f4f3f9;
+    background-color: #0A98CD;
+}
+
+.btn-app {
+    color: #ffffff !important;
+    background-color: #0A98CD !important;
+    border-color: #0A98CD !important;
+}
+
+.arrow.bottom.arrow-app:after {
+    border-top-color: #0A98CD;
+}
+
+.price-types div:first {
+    margin-top: 0 !important;
+}
+
+.panel-search {
+    display: block !important;
+    position: absolute;
+    top: 215px;
+    z-index: 99;
+    border: 1px solid;
+    width: 300px;
+    background: #e2e2d6;
+    padding-top: 8px;
+    left: 30px;
+    border-radius: 5px;
+    box-shadow: 0 1px 52px rgba(29, 28, 28, 0.3) !important;
+}
+.tab-container-tiny .tab-content{
+  padding: 1px !important;
+}
+.header-page{
+  height: 84px;
+}
+th.filter{
+  padding: 2px !important;
+}
+.date-picket-left{
+  right: 0 !important;
+}

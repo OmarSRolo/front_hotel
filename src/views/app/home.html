@@ -1,0 +1,172 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false;
+    app.settings.asideDock = false;
+  ">
+    <!-- main -->
+
+    <div class="hidden-xs">
+        <div uib-carousel interval="3000" active="0" no-pause="true">
+            <div uib-slide ng-repeat="slide in ['1','2','3','4']" index="$index">
+                <img ng-src="{{'site/img/home/slider/'+slide+'.jpg'}}" style="margin:auto;height: 500px" class="img-full">
+                <div class="carousel-caption">
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-search padder-md">
+        <h4>
+            <i class="icon-magnifier-add"></i>
+            <span class="" translate="home.search.header"></span>
+        </h4>
+
+        <!-- <div class="has-feedback">
+            <input type="text" ng-model="search.place" class="form-control" placeholder="{{'home.search.place'|translate}}">
+            <span class="icon-rocket form-control-feedback"></span>
+        </div> -->
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="has-feedbac">
+                    <select class="form-control n-p-r" ng-model="search.country_code" ng-options="country.code as country.name for country in countries" ng-change="onChangeCountry(search.country_code,'search.city')">
+                        <option value="">{{'access.label_country'|translate}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="has-feedback">
+                    <input type="text" placeholder="{{'listing.city'|translate}}" ng-model="search.city" uib-typeahead="city.name for city in cities | filter:$viewValue" class="form-control" typeahead-editable="true" typeahead-show-hint="true" typeahead-min-length="0">
+                    <span class="fa fa-location-arrow form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row m-t-xs">
+            <div class="col-xs-6">
+                <span translate="home.search.from_date"></span>
+                <div class="has-feedback">
+                    <datepicker date-format="{{dateOptions.datepickerShort}}">
+                        <input ng-model="search.start_date" placeholder="{{'home.search.date'|translate}}" type="text" class="input-filter form-control"/>
+                    </datepicker>
+                    <span class="icon-calendar form-control-feedback"></span>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <span translate="home.search.to_date"></span>
+                <div class="has-feedback">
+                    <datepicker date-format="{{dateOptions.datepickerShort}}">
+                        <input ng-model="search.end_date" placeholder="{{'home.search.date'|translate}}" type="text" class="input-filter form-control"/>
+                    </datepicker>
+                    <span class="icon-calendar form-control-feedback"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row m-t-xs hidden">
+            <div class="col-xs-12">
+                <span translate="home.search.capacity"></span>
+                <div class="text-center">
+                    <div class="btn-group text-center m-b-sm">
+                        <label class="btn btn-default" ng-model="search.capacity" uib-btn-radio="'1'">1</label>
+                        <label class="btn btn-default" ng-model="search.capacity" uib-btn-radio="'2'">2</label>
+                        <label class="btn btn-default" ng-model="search.capacity" uib-btn-radio="'3'">3</label>
+                        <label class="btn btn-default" ng-model="search.capacity" uib-btn-radio="'4'">4</label>
+                        <label class="btn btn-default" ng-model="search.capacity" uib-btn-radio="'5'">
+                            5+<i class="icon-users"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <hr style="margin:5px">
+        <button type="button" class="btn btn-default pull-right" ng-click="search()">
+            <i class=" icon-magnifier"></i>
+            <span translate="home.search"></span>
+        </button>
+
+    </div>
+
+    <h2 class="text-center">
+        <span  class="color-app">
+            <i class="glyphicon  glyphicon-globe"></i>
+            <span translate="home.city_prefered"></span>
+        </span>
+    </h2>
+
+    <div class="row padder-lg m-t-xs">
+        <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="place in places" ui-sref="app.listings_search({city:place.name,country_code:place.country})" style="cursor: pointer;">
+            <div class="panel b-a">
+                <div class="item m-l-n-xxs m-r-n-xxs">
+                    <div class="bottom wrapper bg-gd-dk text-white text-center">
+                        <div class="h1 m-b-sm text-ligth-lter" translate="home.place.{{place.name}}"></div>
+                    </div>
+                    <img ng-src="{{place.image}}" class="img-full" style="height:258px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row padder-lg m-t-xs not-visible" when-visible="animateElementIn" when-not-visible="animateElementOut">
+        <div class="bg-light lter m-md b b-ligth wrapper-md text-center color-app">
+            <h1 class="m-n font-thin h3" translate="home.rates_listings"></h1>
+            <small class="text-muted color-app">
+                <i class="icon-star" ng-repeat="s in [1,2,3,4,5]"></i>
+            </small>
+        </div>
+    </div>
+
+    <div class="row padder-lg m-t-xs custom-container">
+        <div class="color-app col-lg-3 col-sm-4 col-xs-12 not-visible" ng-repeat="listing in mainListings" when-visible="animateElementIn" when-not-visible="animateElementOut">
+            <a ui-sref="app.listings_details({id:listing.id})">
+                <div class="panel">
+                    <div class="b b-a wrapper-xs bg-white " style="    height: 215px;overflow:hidden">
+                        <img ng-src="{{listing.image_primary.path}}" class="img-full img-responsive img-lst">
+                        <div class="price-bx">
+                            <i class="icon-tag"></i>
+                            <span ng-bind="listing.price"></span>
+                            <span translate="common.euro"></span>
+                            <!-- <span translate="listing.per_day"></span> -->
+                        </div>
+                    </div>
+                    <div class="wrapper-sm">
+                        <div class="text-center">
+                            <i class="fa fa-home"></i>
+                            <span ng-bind="listing.owner.hotel_name"></span>
+                        </div>
+
+                        <div class="text-center">
+                            <i class="fa fa-map-marker"></i>
+                            <span ng-bind="listing.country.name +','+listing.city"></span>
+                        </div>
+                        
+                        <div class="text-muted text-center">
+
+                            <!-- <span>
+                                <i class="fa fa-user text-muted"></i>
+                                <a href="" class="m-r-sm" ng-bind="listing.owner.first_name"></a>
+                            </span>
+                            <br> -->
+                            <!-- <span>
+                                <i class="fa fa-clock-o text-muted"></i>
+                                <span ng-bind="listing.created_at| amDateFormat:'DD-MM-YYYY'"></span>
+                            </span> -->
+                            <!-- <span>
+                                <a href="" class="m-l-sm">
+                                    <i class="fa fa-comment-o text-muted"></i>
+                                    <span ng-bind="listing.comments_total"></span>
+                                </a>
+                            </span> -->
+                            <!-- <div class="text-center">
+                                <ax-rate ng-model="listing.rate"></ax-rate>
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>

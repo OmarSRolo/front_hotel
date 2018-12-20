@@ -1,0 +1,51 @@
+<div class="bg-light lter b-b wrapper-md">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <h1 class="m-n font-thin h3 text-black">
+                <i class="icon-pin"></i>
+                <span translate="listing_category.header"></span>
+                <a ng-click="insert()" class="btn btn-default pull-right">
+                    <i class="icon-plus"></i>
+                    <span translate="listing_category.btn_insert"></span>
+                </a>
+            </h1>
+            <small class="text-muted" translate="listing_category.subheader"></small>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper-md m-t-xl">
+    <div loading-container="tableParams.settings().$loading">
+        <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+
+            <tr ng-repeat="category in $data">
+                <td ng-bind="category.id" header="'header/id.html'"></td>
+                <td ng-bind="category.name_es" header="'header/name_es.html'"></td>
+                <td ng-bind="category.name_en" header="'header/name_en.html'"></td>
+                <!--<td ng-bind="category.name_fr" header="'header/name_fr.html'"></td>-->
+                <td class="text-center">
+                    <a ng-click="edit(category)" tooltip-placement="top" uib-tooltip="{{'listing_category.btn_edit'|translate}}">
+                        <i class="icon-note"></i>
+                    </a>
+                    <a ng-click="delete(category)" tooltip-placement="left" uib-tooltip="{{'listing_category.btn_delete'|translate}}">
+                        <i class="icon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Headers -->
+    <script type="text/ng-template" id="header/id.html">
+        <span translate="listing_category.id"></span>
+    </script>
+    <script type="text/ng-template" id="header/name_es.html">
+        <span translate="listing_category.name_es"></span>
+    </script>
+    <script type="text/ng-template" id="header/name_en.html">
+        <span translate="listing_category.name_en"></span>
+    </script>
+    <script type="text/ng-template" id="header/name_fr.html">
+        <span translate="listing_category.name_fr"></span>
+    </script>
+</div>

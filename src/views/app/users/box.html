@@ -1,0 +1,49 @@
+<div class="panel b-a">
+    <div class="panel-heading bg-info dk no-border wrapper-lg">
+        <button class="btn btn-sm btn-icon btn-rounded btn-info pull-right m-r" tooltip="{{'user_friend.btn_request_friend'|translate}}" tooltip-placement="left" ng-click="requestFriend(user.id)" ng-if="!user.is_friend">
+            <i class="icon-user-following"></i>
+        </button>
+        <button class="btn btn-sm btn-icon btn-rounded btn-info pull-right m-r" tooltip="{{'user_friend.btn_cancel_friend'|translate}}" tooltip-placement="left" ng-click="cancelFriend(user)" ng-if="user.is_friend">
+            <i class="icon-user-unfollow"></i>
+        </button>
+        <a ng-click="$state.go('app.profile.info',{id:user.username}) && close()" href class="btn btn-sm btn-icon btn-rounded btn-info m-l" tooltip="{{'user_friend.label_visit_profile'|translate}}" tooltip-placement="right">
+            <i class="fa fa-user"></i>
+        </a>
+    </div>
+    <div class="text-center m-b clearfix">
+        <div class="thumb-lg avatar m-t-n-xxl">
+            <img ng-src="{{user.image}}" alt="..." class="b b-3x b-white">
+        </div>
+    </div>
+    <div class="h5 font-bold m-t-sm text-center m-b">
+        <i class="icon-user"></i>
+        <span ng-bind="user.username"></span>
+    </div>
+    <div class="h6 font-thin m-t-sm text-center m-b" ng-bind="user.first_name+' '+user.last_name"></div>
+    <div class="hbox text-center b-t b-light ng-hide">
+        <a class="col padder-v text-muted" ui-sref="app.profile.posts({id:user.username})">
+            <div class="h4" ng-bind="user.total_posts"></div>
+            <span>
+                <i class="fa fa-pencil-square-o fa-fw text-muted"></i>
+                {{'profile.placeholder_total_posts'|translate}}
+            </span>
+
+        </a>
+        <a class="col padder-v text-muted" ui-sref="app.profile.pets({id:user.username})" ng-if="user.is_friend">
+            <div class="h4" ng-bind="user.total_pets"></div>
+            <span>
+                <i class="fa fa-eye fa-fw text-muted"></i>
+                {{'profile.placeholder_total_pets'|translate}}
+            </span>
+
+        </a>
+        <a class="col padder-v text-muted" href ng-if="!user.is_friend">
+            <div class="h4" ng-bind="user.total_pets"></div>
+            <span>
+                <i class="fa fa-eye fa-fw text-muted"></i>
+                {{'profile.placeholder_total_pets'|translate}}
+            </span>
+
+        </a>
+    </div>
+</div>

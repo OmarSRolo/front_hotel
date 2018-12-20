@@ -1,0 +1,50 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" ng-click="close()">
+        <i class="icon-close"></i>
+    </button>
+    <h3 class="modal-title">
+        <i class="fa fa-euro"></i>
+        <span translate="coins.header"></span>
+    </h3>
+</div>
+
+<div class="modal-body">
+
+
+    <form ng-submit="calculate()" ax-form-valid="" novalidate>
+        <div class="form-group">
+            <label translate="coins.base"></label>
+            <select class="form-control" ng-model="data.base" required ax-valid ng-options="c.code as c.name for c in coins">
+                <option value="" translate="coins.base"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="coins.convert"></label>
+            <select class="form-control" ng-model="data.convert" required ax-valid ng-options="c.code as c.name for c in coins">
+                <option value="" translate="coins.convert"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="coins.amount"></label>
+            <input type="text" ui-money-mask min="0.01" placeholder="{{'coins.amount'|translate}}" class="form-control" ng-model="data.amount" required ax-valid>
+        </div>
+        <div class="form-group">
+            <div ng-if="result" class="text-center">
+                <div class="alert alert-success" close="closeAlert()">
+                    <span ng-bind-html="result"></span>
+                </div>
+            </div>
+            <div ng-if="result==false" class="text-center">
+                <div class="alert alert-danger" close="closeAlert()">
+                    <span translate="coins.unknow_currency"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-lg btn-default dker b-dark btn-block">
+                <i class="icon-check"></i>
+                <span translate="coins.btn_calc"></span>
+            </button>
+        </div>
+    </form>
+</div>

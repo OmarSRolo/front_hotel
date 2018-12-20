@@ -1,0 +1,48 @@
+<div class="container w-xxl w-auto-xs m-t-md bg-light dker" style="margin-top:55px">
+    <div style="position:relative;">
+        <img src="site/img/auth/gato.png" style="height: 86px;position: absolute;right: 0;top: -60px">
+
+        <div class="m-b-lg dker">
+            <div class="wrapper text-center">
+                <strong translate="access.forgotpwd.header"></strong>
+            </div>
+            <form novalidate ax-form-valid="" ng-submit="recover()">
+                <div class="list-group list-group-sm">
+                    <div class="list-group-item has-feedback" ng-class="{'disabled':step==3}">
+                        <input type="email" placeholder="{{'access.label_email'|translate}}" ng-model="data.username" class="form-control no-border" required ax-valid="" ng-disabled="step == 3">
+                        <span class="icon-envelope form-control-feedback"></span>
+                    </div>
+                </div>
+                <!--<div class="list-group list-group-sm" ng-hide="step == 1">
+			<h4 class="text-center" translate="access.forgotpwd.header_answer_question"></h4>
+
+			<div class="list-group-item has-feedback disabled" ng-hide="step==1" ng-class="{'disabled':step==3}">
+			    <input type="text" readonly placeholder="{{'access.label_question'|translate}}" class="form-control no-border" ng-model="data.question" ng-disabled="step == 3">
+			    <span class="icon-question form-control-feedback"></span>
+			</div>
+			<div class="list-group-item has-feedback" ng-class="{'disabled':step==3}">
+			    <input type="text" placeholder="{{'access.label_answer'|translate}}" class="form-control no-border" ng-model="data.answer" ng-disabled="step == 3">
+			    <span class="icon-pencil form-control-feedback"></span>
+			</div>
+		    </div>
+		    <button type="button" class="btn btn-lg btn-primary btn-block" ng-click="getQuestion()" ng-show="step == 1">
+			<i class="icon-arrow-right"></i>
+			{{'common.btn_continue'|translate}}
+		    </button>-->
+                <button type="submit" class="btn btn-lg btn-primary btn-block">
+                    <i class="icon-check"></i>
+                    {{'common.btn_send'|translate}}
+                </button>
+            </form>
+            <div ng-show="step==3" class="m-t">
+                <div class="alert alert-success">
+                    <p>
+                        <span translate="access.forgotpwd.msg_success"></span>
+                        <a ui-sref="access.login" class="btn btn-sm btn-success">Sign in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" ng-include="'site/src/views/blocks/page_footer.html'"></div>
+    </div>
+</div>

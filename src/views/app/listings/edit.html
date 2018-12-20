@@ -1,0 +1,344 @@
+<div class="padder">
+    <div class="m-t">
+        <h3>
+            <i class="icon-check"></i>
+            <span translate="listing.update.header"></span>
+            <a ui-sref="app.dashboard.listing" class="btn btn-default pull-right">
+                <i class="icon-grid"></i>
+                <span translate="menu.aside.listing"></span>
+            </a>
+        </h3>
+    </div>
+    <span class="clearfix"></span>
+    <hr>
+    <uib-tabset class="tab-container" active="wizard.currentStep">
+        <uib-tab index="1" select="wizard.percent = 33">
+            <uib-tab-heading>
+                <i class="icon-screen-desktop"></i>
+                <span translate="listing.tab_main_info"></span>
+            </uib-tab-heading>
+            <uib-progressbar value="wizard.percent" class="progress-xs" type="success"></uib-progressbar>
+
+            <form name="step1" class="form-validation" ax-form-valid novalidate>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="" translate="listing.listing_category_id"></label>
+
+                        <div class="has-feedback">
+                            <select class="form-control" ng-model="data.listing_category_id" required ax-valid ng-options="category.id as category.name for category in listing_categories">
+                                <option value="">{{'listing.listing_category_id'|translate}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="" translate="listing.listing_type_id"></label>
+
+                        <div class="has-feedback">
+                            <select class="form-control" ng-model="data.listing_type_id" required ax-valid ng-options="listing.id as listing.name for listing in listing_types| filter:{listing_category_id:data.listing_category_id}:true"
+                                    ng-disabled="!data.listing_category_id">
+                                <option value="">{{'listing.listing_type_id'|translate}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 hidden">
+                        <label class="" translate="listing.capacity"></label>
+                        <div class="has-feedback">
+                            <input type="text" ui-number-mask="0" min="1" ng-model="data.capacity" placeholder="{{'listing.capacity'|translate}}" class="form-control">
+                            <span class=" icon-users form-control-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row m-t-xs">
+                    <div class="col-sm-4">
+                        <label class="" translate="listing.price_day"></label>
+                        <div class="has-feedback">
+                            <input type="text" ui-money-mask min="0.01" ng-model="data.price" placeholder="{{'listing.price_day'|translate}}" class="form-control"
+                                   ax-valid required ng-readonly="true">
+                            <span class="icon-tag form-control-feedback"></span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-sm-3">
+                            <label translate="listing.coin_base"></label>
+                            <div class="has-feedback">
+                                <select class="form-control" ng-model="data.coin_base" ng-options="coin.code as coin.name for coin in coins" ax-valid required>
+                                    <option value="">{{'listing.coin_base'|translate}}</option>
+                                </select>
+                            </div>
+                        </div> -->
+
+                </div>
+
+                <div class="row m-t-xs">
+                    <div class="col-sm-6">
+                        <label translate="listing.country_code"></label>
+                        <div class="has-feedback">
+                            <select class="form-control" ng-model="data.country_code" ng-options="country.code as country.name for country in countries"
+                                    ng-change="onChangeCountry()">
+                                <option value="">{{'access.label_country'|translate}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label translate="listing.city"></label>
+
+                        <div class="has-feedback">
+                            <input type="text" ng-model="data.city" uib-typeahead="city.name for city in cities | filter:$viewValue" class="form-control"
+                                   typeahead-editable="true" typeahead-is-open="open_country" typeahead-show-hint="true" typeahead-min-length="0"
+                                   required ax-valid>
+                            <span class="fa fa-location-arrow form-control-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="row m-t-xs">-->
+                    <!--<div class="col-sm-6">-->
+                        <!--<label translate="listing.video_youtube"></label>-->
+                        <!--<div class="has-feedback">-->
+                            <!--<input type="url" ng-model="data.video_youtube" placeholder="{{'listing.video_youtube'|translate}}" class="form-control"-->
+                                   <!--ax-valid="">-->
+                            <!--<span class="fa fa-youtube form-control-feedback"></span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-sm-6">-->
+                        <!--<label translate="listing.video_vimeo"></label>-->
+
+                        <!--<div class="has-feedback">-->
+                            <!--<input type="url" ng-model="data.video_vimeo" placeholder="{{'listing.video_vimeo'|translate}}" class="form-control" ax-valid="">-->
+                            <!--<span class="fa  fa-vimeo-square form-control-feedback"></span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12 text-info">
+                        <i class="icon-info"></i> {{'listing.localization_help'|translate}}
+                    </div>
+                    <div class="col-xs-12">
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label></label>
+                                <div class="has-feedback">
+                                    <button class="btn btn-default" type="button" ng-click="loadMap()">
+                                        <i class="fa fa-map-marker"></i>
+                                        <span translate="listing.btn_load_map"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label translate="listing.latitude"></label>
+
+                                <div class="has-feedback">
+                                    <input type="text" ng-model="data.latitude" placeholder="{{'listing.latitude'|translate}}" class="form-control" ax-valid="">
+                                    <span class="icon-globe form-control-feedback"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <label translate="listing.longitude"></label>
+
+                                <div class="has-feedback">
+                                    <input type="text" ng-model="data.longitude" placeholder="{{'listing.longitude'|translate}}" class="form-control" ax-valid="">
+                                    <span class="icon-globe form-control-feedback"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <hr>
+                <div class="row m-xs m-t-xs">
+                    <uib-tabset class="tab-container tab-container-tiny" style="padding:1px">
+                        <uib-tab index="1">
+                            <uib-tab-heading>
+                                <i class="icon-flag"></i>
+                                <span translate="listing.description_es"></span>
+                            </uib-tab-heading>
+                            <div class="has-feedback">
+                                    <textarea class="form-control" ng-model="data.description_es" ng-trim="false" placeholder="{{'listing.description_es'|translate}}"
+                                  ax-valid required></textarea>
+                            </div>
+                        </uib-tab>
+                        <uib-tab index="2">
+                            <uib-tab-heading>
+                                <i class="icon-flag"></i>
+                                <span translate="listing.description_en"></span>
+                            </uib-tab-heading>
+
+                            <div class="has-feedback">
+                                    <textarea class="form-control" ng-model="data.description_en" ng-trim="false" placeholder="{{'listing.description_en'|translate}}"
+                                  ax-valid required></textarea>
+                            </div>
+
+                        </uib-tab>
+                    </uib-tabset>
+                </div>
+
+                <div class="row m-t-xs">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-default pull-right" ng-click="!step1.$invalid && wizard.next()">
+                            <i class="icon-arrow-right"></i>
+                            <span translate="listing.btn_next"></span>
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+        </uib-tab>
+        <uib-tab index="2" disable="wizard.currentStep <= 1" select="wizard.percent = 66">
+            <uib-tab-heading>
+                <i class=" icon-pin"></i>
+                <span translate="listing.tab_services"></span>
+            </uib-tab-heading>
+            <uib-progressbar value="wizard.percent" class="progress-xs" type="success"></uib-progressbar>
+            <form name="step2" class="form-validation" ax-form-valid novalidate>
+
+                <hr>
+                <div class="row m-t">
+                    <div class="col-sm-3 m-t-xs" ng-repeat="service in services">
+                        <label class="i-checks m-t-sm">
+                            <input type="checkbox" ng-model="data.services[service.id]">
+                            <i></i>
+                            {{service.name}}
+                        </label>
+                    </div>
+                </div>
+                <div class="row m-t-xs">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-default pull-right" ng-click="wizard.next()">
+                            <i class="icon-arrow-right"></i>
+                            <span translate="listing.btn_next"></span>
+                        </button>
+                        <button type="button" class="m-r-xs btn btn-default pull-right" ng-click="wizard.prev()">
+                            <i class="icon-arrow-left"></i>
+                            <span translate="listing.btn_prev"></span>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </uib-tab>
+        <uib-tab index="3" disable="wizard.currentStep <= 2" select="wizard.percent = 99">
+            <uib-tab-heading>
+                <i class=" icon-picture"></i>
+                <span translate="listing.tab_images"></span>
+            </uib-tab-heading>
+            <uib-progressbar value="wizard.percent" class="progress-xs" type="success"></uib-progressbar>
+            <form name="step2" class="form-validation" ax-form-valid novalidate>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="btn btn-default pull-right" ngf-select="selectNewImage($files, $event,$invalidFiles)" ngf-pattern="'image/*'"
+                             ngf-max-height="1000" ngf-max-size="1MB" name="newImage" ngf-model-invalid="errorFile">
+                            <i class="icon-plus"></i>
+                            <i class="icon-picture"></i>
+                            <span translate="listing.select_image"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row m-t">
+                    <div class="col-sm-4 text-center m-t-xs" ng-repeat="img in data.images">
+                        <button type="button" class="btn btn-sm btn-danger btn-remove" ng-click="removeImage($index)">
+                            <i class="icon-trash"></i>
+                        </button>
+                        <img ngf-src="img.file" ng-if="img.file" ngf-resize="{width: 200, height: 80, quality: 0.9}" class="img-full" style="height:80px;">
+                        <img ng-src="{{img.path}}" ng-if="!img.file" class="img-full" style="height:80px;">
+                        <label class="i-checks m-t-sm">
+                            <input type="checkbox" ng-model="img.is_primary" ng-click="changePrimary(img)">
+                            <i></i>
+                            {{'listing.image_primary'|translate}}
+                        </label>
+                        <div class="has-feedback">
+                            <input type="text" ng-model="img.caption" placeholder="{{'listing.image_caption'|translate}}" class="form-control">
+                            <span class=" icon-pin form-control-feedback"></span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row m-t-xs">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-default pull-right" ng-click="wizard.next()">
+                            <i class="icon-arrow-right"></i>
+                            <span translate="listing.btn_publish"></span>
+                        </button>
+                        <button type="button" class="m-r-xs btn btn-default pull-right" ng-click="wizard.prev()">
+                            <i class="icon-arrow-left"></i>
+                            <span translate="listing.btn_prev"></span>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </uib-tab>
+        <uib-tab index="4" disable="wizard.currentStep <= 3" ng-if="false">
+            <uib-tab-heading>
+                <i class=" icon-tag"></i>
+                <span translate="listing.tab_prices"></span>
+            </uib-tab-heading>
+            <uib-progressbar value="wizard.percent" class="progress-xs" type="success"></uib-progressbar>
+
+            <div class="row m">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="btn btn-default pull-right" ng-click="addPrice()">
+                            <i class="icon-plus"></i>
+                            <span translate="listing.add_price"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table table-striped m-b-none">
+                            <thead>
+                            <tr>
+                                <th translate="listing.price.price" class="col-xs-2"></th>
+                                <th translate="listing.price.subscription" class="col-xs-4"></th>
+                                <th translate="listing.price.coin" class="col-xs-2"></th>
+                                <th translate="listing.price.max_clients" class="col-xs-2"></th>
+                                <th class="col-xs-2"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="price in data.prices">
+                                <td ng-bind="price.price|currency"></td>
+                                <td>
+                                    <span ng-if="!price.is_subscription" translate="listing.price.without_subscription"></span>
+                                    <span ng-if="price.is_subscription">
+                                        <span translate="listing.price.subscription_{{price.subscription_method}}"></span>
+                                    </span>
+                                </td>
+                                <td ng-bind="price.coin"></td>
+                                <td ng-bind="price.max_clients"></td>
+                                <td>
+                                    <a type="button" class="btn btn-sm btn-link" ng-click="editPrice(price)">
+                                        <i class="icon-note"></i>
+                                    </a>
+                                    <a type="button" class="btn btn-sm btn-link" ng-click="removePrice($index)">
+                                        <i class="icon-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                <div class="row m-t-xs">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-default pull-right" ng-click="wizard.next()">
+                            <i class="icon-check"></i>
+                            <span translate="listing.btn_publish"></span>
+                        </button>
+                        <button type="button" class="m-r-xs btn btn-default pull-right" ng-click="wizard.prev()">
+                            <i class="icon-arrow-left"></i>
+                            <span translate="listing.btn_prev"></span>
+                        </button>
+                    </div>
+                </div>
+
+        </uib-tab>
+
+    </uib-tabset>
+</div>

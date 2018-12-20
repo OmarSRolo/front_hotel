@@ -1,0 +1,114 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false;
+    app.settings.asideDock = false;
+  ">
+    <!-- main -->
+    <div class="col">
+        <!-- main header -->
+        <div class="bg-light lter b-b wrapper-md" ng-if="false">
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+
+                    <h1 class="m-n font-thin h3 text-black" translate="post.header"></h1>
+                    <small class="text-muted" translate="post.subheader"></small>
+                </div>
+            </div>
+        </div>
+        <!-- / main header -->
+        <div class="row">
+            <div data-ng-include=" 'site/src/views/app/posts/index.html' ">
+            </div>
+        </div>
+
+    </div>
+    <!-- / main -->
+    <!-- right col -->
+    <div class="col w-md bg-white-only b-l bg-auto no-border-xs">
+        <div class="nav-tabs-alt">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active text-center" style="width: 48%">
+                    <a data-target="#tab-1" role="tab" data-toggle="tab">
+                        <i class="glyphicon glyphicon-user text-md text-muted wrapper-sm"></i>
+                    </a>
+                </li>
+                <li class="text-center" style="width: 48%">
+                    <a data-target="#tab-2" role="tab" data-toggle="tab">
+                        <i class="glyphicon glyphicon-comment text-md text-muted wrapper-sm"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="tab-1">
+                <div class="wrapper-md">
+                    <div class="m-b-sm text-md">
+                        <i class="fa fa-hand-o-right"></i>
+                        <span translate="user_friend.requests.header"></span>
+                        <span class="badge" ng-bind="friendRequests.lenght"></span>
+                    </div>
+                    <ul class="list-group no-bg no-borders pull-in">
+                        <li class="list-group-item" ng-repeat="frRequest in friendRequests" ng-if="frRequest.user != null" ng-click="openRequest(frRequest)">
+                            <a herf class="pull-left thumb-sm avatar m-r">
+                                <img ng-src="{{frRequest.user.image}}" alt="..." class="img-circle">
+                                <i class="on b-white bottom"></i>
+                            </a>
+
+                            <div class="clear">
+                                <div>
+                                    <a href ng-bind="frRequest.user.username"></a>
+                                </div>
+                                <small class="text-muted" ng-bind="frRequest.user.first_name + ' '+frRequest.user.last_name"></small>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane tab-2" id="tab-2">
+                <div class="wrapper-md">
+                    <div class="m-b-sm text-md" translate="chat.box.header"></div>
+
+                    <ul class="list-group no-borders pull-in auto">
+
+                        <li class="list-group-item" ng-repeat="th in messages.threadsTop">
+                            <span class="pull-left thumb-sm m-r">
+                                <img ng-src="{{th.user.image}}" alt="..." class="img-circle">
+                            </span>
+
+                            <a ui-sref="app.threads.messages({id:th.thread_id})" class="text-muted">
+                                <i class="fa fa-comment-o pull-right m-t-sm text-sm"></i>
+                            </a>
+
+                            <div class="clear">
+                                <div>
+                                    <a href="" ng-bind="th.user.username"></a>
+                                    <span class="badge bg-danger pull-right ng-binding ng-scope" ng-bind="th.pendents" ng-if="th.pendents>0"></span>
+                                </div>
+                                <small class="text-muted" ng-bind="th.created_at|fromNow"></small>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="padder-md" ng-controller="NotificationAsideCtr">
+            <!-- streamline -->
+            <div class="m-b text-md">
+                <i class="fa fa-bell-o"></i>
+                <span translate="notification.aside.header"></span>
+            </div>
+            <div class="streamline b-l m-b">
+
+                <div class="sl-item b-success b-l" ng-repeat="noti in notifications.activity">
+                    <div class="m-l">
+                        <div class="text-muted" ng-bind="noti.created_at|fromNow"></div>
+                        <p ng-bind-html="noti.message"></p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- / streamline -->
+        </div>
+    </div>
+    <!-- / right col -->
+</div>

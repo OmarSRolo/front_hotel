@@ -1,0 +1,36 @@
+<div class="header-page bg-light lter b-b wrapper-md">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <h1 class="m-n font-thin h3 text-black">
+                <i class="icon-support"></i>
+                <span translate="coin.header"></span>
+                <a ng-click="insert()" class="btn btn-default pull-right">
+                    <i class="icon-plus"></i>
+                    <span translate="common.btn_insert"></span>
+                </a>
+            </h1>
+            <small class="text-muted" translate="coin.subheader"></small>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper-md">
+
+      <div loading-container="tableParams.settings().$loading">
+          <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
+
+              <tr ng-repeat="coin in $data">
+                  <td ng-bind="coin.code" title="'coin.code'|translate" filter="{code:'text'}"></td>
+                  <td ng-bind="coin.name" title="'coin.name'|translate" filter="{name:'text'}"></td>
+                  <td class="text-center">
+                      <a ng-click="update(coin)" tooltip-placement="left" uib-tooltip="{{'coin.btn_edit'|translate}}" tooltip-placement="left">
+                          <i class="icon-note"></i>
+                      </a>
+                      <a ng-click="delete(coin)" tooltip-placement="left" uib-tooltip="{{'coin.btn_delete'|translate}}" tooltip-placement="left">
+                          <i class="icon-trash"></i>
+                      </a>
+                  </td>
+              </tr>
+          </table>
+      </div>
+</div>

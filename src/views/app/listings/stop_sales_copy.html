@@ -1,0 +1,88 @@
+<div class="m-t">
+    <h3>
+        <i class="icon-ban"></i>
+        <span translate="listing_stop_sales.header"></span>
+    </h3>
+</div>
+<span class="clearfix"></span>
+<hr>
+
+<span id="langdate" hidden="hidden">{{selectLang}}</span>
+
+<div class="row">
+
+    <div class="col-sm-12 col-md-5">
+        <div class="dropdown form-group">
+
+            <label translate="listing_stop_sales.search_label_start_date"></label> <a
+                class="dropdown-toggle" id="dropdownStartCreateDate"
+                role="button" data-toggle="dropdown" data-target="#"
+                href="#">
+        <span class="input-group date">
+            <input
+                    type="text" id="createDateRangeStart"
+                    name="createDateRangeStart" readonly="readonly"
+                    class="form-control" required="required"
+                    data-ng-value="createDateFactory.createDate.dateRangeStart | date: createDateFactory.formatCreateDate()">
+        <span class="input-group-addon">
+            <i class="glyphicon glyphicon-calendar"></i>
+        </span>
+        </span>
+        </a>
+
+            <ul class="dropdown-menu" role="menu"
+                aria-labelledby="dLabel">
+                <datetimepicker
+                        data-ng-model="createDateFactory.createDate.dateRangeStart"
+                        data-datetimepicker-config="createDateFactory.configuration['dropdownStartCreateDate']"
+                        data-on-set-time="createDateStartDateOnSetTime()"
+                        data-before-render="createDateFactory.createDateStartDateBeforeRender(createDateFactory.createDate.dateRangeStart, $dates)"></datetimepicker>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-5">
+        <div class="dropdown form-group">
+            <label translate="listing_stop_sales.search_label_end_date"></label> <a
+                class="dropdown-toggle" id="dropdownEndCreateDate"
+                role="button" data-toggle="dropdown" data-target="#"
+                href="#"> <span class="input-group date"> <input
+                type="text" id="createDateRangeEnd"
+                name="createDateRangeEnd" required="required"
+                class="form-control" readonly="readonly"
+                data-ng-value="createDateFactory.createDate.dateRangeEnd | date: createDateFactory.formatCreateDate()">
+													<span class="input-group-addon"><i
+                                                            class="glyphicon glyphicon-calendar"></i></span>
+											</span>
+        </a>
+            <ul class="dropdown-menu" role="menu"
+                aria-labelledby="dLabel">
+                <datetimepicker
+                        data-ng-model="createDateFactory.createDate.dateRangeEnd"
+                        data-datetimepicker-config="createDateFactory.configuration['dropdownEndCreateDate']"
+                        data-on-set-time="createDateEndDateOnSetTime()"
+                        data-before-render="createDateFactory.createDateEndDateBeforeRender($view, $dates, createDateFactory.createDate)"></datetimepicker>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-1">
+        <label translate="listing_stop_sales.stop"></label>
+        <button class="btn btn-default" style="width: 100%;" type="button"
+                data-ng-click="addOrRemoveCreateDateFilter()">
+            <span class="icon-ban"></span>
+        </button>
+    </div>
+
+    <div class="col-sm-12 col-md-1">
+        <label translate="listing_stop_sales.continue"></label>
+        <button class="btn btn-default" style="width: 100%;" type="button"
+                data-ng-click="removeDateFilter()">
+            <span class="glyphicon glyphicon-play"></span>
+        </button>
+    </div>
+</div>
+<hr>
+<div ui-calendar="uiConfig.calendar" class="col-xs-12 calendar" ng-model="eventSources" calendar="calendar"></div>
+<hr>

@@ -1,0 +1,76 @@
+<div class="bg-light lter b-b">
+    <div class="row text-center">
+        <div class="">
+            <div class="clearfix text-center m-t">
+                <div class="inline">
+                    <div class="thumb-xl">
+                        <img ng-src="{{Auth.get().image_profile}}" class=" img-circle b b-2x b-dark"
+                             style="width:80px;heigth:80px" alt="...">
+                    </div>
+                    <div class="h4 m-t m-b-xs" ng-bind="Auth.get().first_name + ' '+Auth.get().last_name"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hbox hbox-auto-xs hbox-auto-sm wrapper-md m-t">
+    <div class="col">
+        <div class="row wrapper m-xs bg-white shadow">
+            <div class="col-sm-2 bg-white col-xs-12" style="padding: 15px 5px;">
+                <div class="list-group no-radius p-t">
+                    <a class="list-group-item text-center" ui-sref="app.profile.info" ui-sref-active="active">
+                        <i class="icon-user icon-3x block"></i>
+                        <span translate="access.profile.info.header"></span>
+                    </a>
+                    <a class="list-group-item text-center" ui-sref="app.profile.location" ui-sref-active="active"
+                       ng-show="data.is_editable">
+                        <i class="fa fa-map-marker icon-3x block"></i>
+                        <span translate="access.profile.location.header"></span>
+                    </a>
+
+                    <a class="list-group-item text-center" ui-sref="app.profile.verification" ui-sref-active="active"
+                       ng-if=" data.role == 'owner'">
+                        <i class="icon-question icon-3x block"></i>
+                        <span translate="access.profile.verification.header"></span>
+                    </a>
+
+                    <!--<a class="list-group-item text-center" ui-sref="app.profile.listings_list" ng-if="data.role == 'owner' && data.verification_id_status == 'approved'" ng-class="{'active':$state.includes('app.profile.listings_insert') || $state.includes('app.profile.listings_list') || $state.includes('app.profile.listings_update')}">
+                        <i class="icon-home icon-3x block"></i>
+                        <span translate="access.profile.listings.header"></span>
+                    </a>-->
+
+                    <a class="list-group-item text-center" ui-sref="app.profile.stop_sales"
+                       ng-if="data.role == 'owner' && data.verification_id_status == 'approved'"
+                       ng-class="{'active':$state.includes('app.profile.stop_sales')}">
+                        <i class="icon-ban icon-3x block"></i>
+                        <span translate="access.profile.stop_sales.header"></span>
+                    </a>
+
+                    <a class="list-group-item text-center" ui-sref="app.profile.listings_reserves"
+                       ui-sref-active="active" ng-show="data.is_editable">
+                        <i class="icon-bag icon-3x block"></i>
+                        <span translate="access.profile.reservations.header"></span>
+                    </a>
+
+                    <a class="list-group-item text-center" ui-sref="app.profile.period"
+                       ui-sref-active="active">
+                        <i class="icon-list icon-3x block"></i>
+                        <span translate="price_period.menu_title"></span>
+                    </a>
+
+                    <!--<a class="list-group-item text-center" ui-sref="app.profile.listings_reserves" ui-sref-active="active" ng-show="true">
+                        <i class="icon-bag icon-3x block"></i>
+                        <span translate="access.profile.reservations.header"></span>
+                    </a>-->
+
+                </div>
+            </div>
+            <div class="col-sm-10 col-xs-12">
+                <div class="padder">
+                    <div ui-view></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
