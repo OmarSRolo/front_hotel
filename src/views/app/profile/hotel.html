@@ -1,0 +1,141 @@
+
+<div class="row wrapper">
+    <div class="col-sm-12 ">
+        <form class="form-horizontal form-validation" novalidate ax-form-valid="" ng-submit="save()">
+            <div class="row">
+                 <div class="col-md-10 col-sm-12  col-md-offset-1">
+                    <div uib-alert ng-class="'alert-warning'" ng-if="data.not_verificated">
+                        <i class="icon-info"></i>
+                        <span translate="access.profile.info.msg_owner_unverificated"></span>
+                        <div class="text-center m-t-xs">
+                            <button ng-click="resendConfirmation()" class="btn btn-app" type="button">
+                                <i class=" icon-envelope-open"></i>
+                                <span translate="access.profile.info.btn_resend_email"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div ng-show="data.role == 'owner'">
+                        <div uib-alert ng-class="'alert-info'" ng-if="data.verification_id_status == '' || data.verification_id_status=='pending'">
+                            <i class="fa  fa-paperclip"></i>
+                            <span translate="access.profile.verification.verification_id_status_pending"></span>
+                        </div>
+                        <div uib-alert ng-class="'alert-warning'" ng-if="data.verification_id_status=='waiting'">
+                            <i class="icon-hourglass"></i>
+                            <span translate="access.profile.verification.verification_id_status_waiting"></span>
+                        </div>
+                        <div uib-alert ng-class="'alert-danger'" ng-if="data.verification_id_status=='refuted'">
+                            <i class=" icon-ban"></i>
+                            <span translate="access.profile.verification.verification_id_status_refuted"></span>
+                        </div>
+                        <div uib-alert ng-class="'alert-success'" ng-if="false && data.verification_id_status=='approved'">
+                            <i class=" icon-check"></i>
+                            <span translate="access.profile.verification.verification_id_status_approved"></span>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="data.role=='owner'">
+                        <label class="col-sm-4 control-label" translate="access.label_hotel_name"></label>
+                        <div class="col-sm-8  has-feedback">
+                            <input type="text" placeholder="{{'access.label_hotel_name'|translate}}" class="form-control" ng-model="data.hotel_name"
+                                   ng-required="data.role=='owner'" ax-valid="">
+                            <span class="icon-home form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <!--<div class="form-group" ng-show="data.role=='owner'">
+                        <label class="col-sm-4 control-label" translate="access.label_bank_account_id"></label>
+                        <div class="col-sm-8  has-feedback">
+                            <select ng-model="data.bank_account_id" class="form-control" ng-options="b.id as b.name for b in banks" ng-required="data.role == 'owner'" ax-valid>
+                                <option value="">{{'access.label_bank_account_id'|translate}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="data.role=='owner'">
+                        <label class="col-sm-4 control-label" translate="access.label_bank_account_number"></label>
+                        <div class="col-sm-8  has-feedback">
+                            <input type="text" placeholder="{{'access.label_bank_account_number'|translate}}"  class="form-control" ng-model="data.bank_account_number"
+                                   ng-required="data.role=='owner'" ax-valid="">
+                            <span class="icon-frame form-control-feedback"></span>
+                        </div>
+                    </div>-->
+
+                    <div class="form-group" ng-show="data.role=='owner'">
+                        <label class="col-sm-4 control-label" translate="access.label_hotel_rating"></label>
+                        <div class="has-feedback col-sm-4">
+                            <span uib-rating ng-model="data.hotel_rating" max="5"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group" ng-show="data.role=='owner'">
+                        <label class="col-sm-4 control-label" translate="access.label_hotel_id"></label>
+                        <div class=" has-feedback col-sm-8">
+                            <input type="text" placeholder="{{'access.label_hotel_id'|translate}}" class="form-control" ng-model="data.hotel_id"
+                                   ng-required="data.role=='owner'" ax-valid="">
+                            <span class="icon-home form-control-feedback"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="data.role == 'owner'">
+                        <label class="col-sm-4 control-label" translate="access.profile.hotel.resumen"></label>
+
+                        <div class="col-sm-8 has-feedback">
+                            <textarea class="form-control" ng-model="data.hotel_resume_es" ng-readonly="!data.is_editable" ng-trim="false" placeholder="{{'access.profile.hotel.resumen'|translate}}"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="data.role == 'owner'">
+                        <label class="col-sm-4 control-label" translate="access.profile.hotel.cancelaciones"></label>
+                        <div class="col-sm-8">
+                            <label class="control-label text-left" translate="access.label_owner_cancel_term_id"></label>
+
+                            <div class="has-feedback">
+                                <select ng-model="data.cancel_term_id" class="form-control" ng-options="c.id as c.name for c in cancel_terms" ng-required="data.role == 'owner'" ax-valid>
+                                    <option value="">{{'common.select_option'|translate}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="data.role == 'owner'">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-8">
+                            <label class="control-label text-left" translate="access.label_owner_cancel_prev_cost_id" translate-values="{ days: cancel_term_selected }"></label>
+                            <div class="has-feedback">
+                                <select ng-model="data.cancel_prev_cost_id" class="form-control" ng-options="c.id as c.name for c in cancel_prev_costs" ng-required="data.role == 'owner'" ax-valid>
+                                    <option value="">{{'common.select_option'|translate}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-show="data.role == 'owner'">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-8">
+                            <label class="control-label" translate="access.label_owner_cancel_total_cost_id"></label>
+                            <div class="has-feedback">
+                                <select ng-model="data.cancel_total_cost_id" class="form-control" ng-options="c.id as c.name for c in cancel_total_costs" ng-required="data.role == 'owner'" ax-valid>
+                                    <option value="">{{'common.select_option'|translate}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div ng-if="data.is_editable">
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                
+                                <button type="submit" class="btn btn-default pull-right">
+                                    <i class="icon-check"></i>
+                                    <span translate="common.btn_save"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -22,10 +22,30 @@
                         <i class="icon-user icon-3x block"></i>
                         <span translate="access.profile.info.header"></span>
                     </a>
+                    <a class="list-group-item text-center" ui-sref="app.profile.hotel" ui-sref-active="active"
+                       ng-if=" data.role == 'owner'">
+                        <i class="fa fa-building-o icon-3x block"></i>
+                        <span translate="access.profile.hotel.header"></span>
+                    </a>
                     <a class="list-group-item text-center" ui-sref="app.profile.location" ui-sref-active="active"
                        ng-show="data.is_editable">
                         <i class="fa fa-map-marker icon-3x block"></i>
                         <span translate="access.profile.location.header"></span>
+                    </a>
+                    <a class="list-group-item text-center" ui-sref="app.profile.listing_segment" ui-sref-active="active"
+                       ng-if=" data.role == 'owner'">
+                        <i class="fa fa-tag icon-3x block"></i>
+                        <span translate="access.profile.listing_segment.header"></span>
+                    </a>
+                    <a class="list-group-item text-center" ui-sref="app.profile.listing_type" ui-sref-active="active"
+                       ng-if=" data.role == 'owner'">
+                        <i class="icon-home icon-3x block"></i>
+                        <span translate="access.profile.listing_type.link"></span>
+                    </a>
+                    <a class="list-group-item text-center" ui-sref="app.profile.listings_list" ui-sref-active="active"
+                       ng-if=" data.role == 'owner'">
+                        <i class="fa fa-key icon-3x block"></i>
+                        <span translate="access.profile.escapadas.header"></span>
                     </a>
 
                     <a class="list-group-item text-center" ui-sref="app.profile.verification" ui-sref-active="active"

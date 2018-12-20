@@ -160,7 +160,7 @@ angular.module('app')
     files: [
         'site/libs/angular/angular-skycons/angular-skycons.js'
     ]
-}])
+}]);
 
 // oclazyload config
 

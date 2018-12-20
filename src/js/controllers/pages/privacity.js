@@ -2,7 +2,7 @@
 
 app.controller('PrivacityCtr', ['$scope', 'Content', function($scope, Content) {
 
-    Content.get('privacity').success(function(r) {
+    Content.get('terminos').success(function(r) {
         $scope.content = r.data;
     })
 

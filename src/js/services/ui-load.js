@@ -33,7 +33,7 @@ angular.module('ui.load', [])
       });
       deferred.resolve();
       return promise;
-		}
+		};
 
 		/**
 		 * Dynamically loads the given script

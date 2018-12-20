@@ -51,7 +51,7 @@ app.directive('ldSmileCaret', function($translate, $uibModal) {
                     controller: function($scope, $uibModalInstance) {
                         $scope.push = function(smile) {
                             $uibModalInstance.close(smile);
-                        }
+                        };
                         $scope.close = function() {
                             $uibModalInstance.dismiss();
                         }
@@ -104,7 +104,7 @@ app.directive('axDateSelect', function($translate, $timeout) {
                      element.find("select").addClass('ng-hide');
                      element.find("input").removeClass('ng-hide');
                      }, 1000);*/
-                }
+                };
 
 
                 var optDays = "<option value=''>" + $translate.instant("common.date.calendar.label_day") + "</option>";
@@ -115,7 +115,7 @@ app.directive('axDateSelect', function($translate, $timeout) {
                     optDays += '<option value="' + parse + '" ' + s + '>' + parse + '</option>';
                 }
                 element.find("select:eq(0)").html(optDays);
-                var optMonths = "<option value=''>" + $translate.instant("common.date.calendar.label_month") + "</option>"
+                var optMonths = "<option value=''>" + $translate.instant("common.date.calendar.label_month") + "</option>";
                 for (var d = 1; d <= 12; d++) {
                     var parse = d > 9 ? d.toString() : "0" + d.toString();
                     var s = '';
@@ -123,7 +123,7 @@ app.directive('axDateSelect', function($translate, $timeout) {
                     optMonths += '<option value="' + parse + '" ' + s + '>' + $translate.instant("common.date.calendar.months." + d.toString()) + '</option>';
                 }
                 element.find("select:eq(1)").html(optMonths);
-                var optYears = "<option value=''>" + $translate.instant("common.date.calendar.label_year") + "</option>"
+                var optYears = "<option value=''>" + $translate.instant("common.date.calendar.label_year") + "</option>";
                 for (var d = 1950; d <= 2010; d++) {
                     var s = '';
                     if (d.toString() == value.year) s = 'selected';
@@ -135,39 +135,39 @@ app.directive('axDateSelect', function($translate, $timeout) {
                 element.find("select:eq(0)").on("change", function() {
                     value.day = element.find("select:eq(0)").val();
                     doVal()
-                })
+                });
 
                 element.find("select:eq(1)").on("change", function() {
                     value.month = element.find("select:eq(1)").val();
                     doVal()
-                })
+                });
 
                 element.find("select:eq(2)").on("change", function() {
                     value.year = element.find("select:eq(2)").val();
                     doVal()
-                })
+                });
 
                 element.find("input").bind("blur", function() {
                     element.find("select").removeClass('ng-hide');
                     element.find("input").addClass('ng-hide');
                     hideTime()
-                })
+                });
                 element.find("input").bind("focus", function() {
                     element.find("select").removeClass('ng-hide');
                     element.find("input").addClass('ng-hide');
-                })
+                });
                 element.find("input").bind("click", function() {
                     element.find("select").removeClass('ng-hide');
                     element.find("input").addClass('ng-hide');
                     hideTime()
                 })
-            }
+            };
 
             var value = {
                 day: (angular.isDefined(scope.model) && scope.model.length > 0) ? scope.model.substr(8, 2) : '',
                 month: (angular.isDefined(scope.model) && scope.model.length > 0) ? scope.model.substr(5, 2) : '',
                 year: (angular.isDefined(scope.model) && scope.model.length > 0) ? scope.model.substr(0, 4) : ''
-            }
+            };
 
             initData();
 
@@ -184,7 +184,7 @@ app.directive('axDateSelect', function($translate, $timeout) {
                     element.find("select").removeClass('ng-hide');
                     element.find("input").addClass('ng-hide');
                 }
-            })
+            });
 
             scope.$watch(function() {
                 return scope.readonly;
@@ -194,7 +194,7 @@ app.directive('axDateSelect', function($translate, $timeout) {
                 } else {
                     element.find("select").removeAttr('disabled', '');
                 }
-            })
+            });
 
             var doVal = function() {
                 scope.$apply(function() {
@@ -269,7 +269,7 @@ app.factory('dateHelper', function() {
         }
 
     }
-})
+});
 
 app.factory('popQuestion', function($uibModal, $translate) {
 
@@ -286,7 +286,7 @@ app.factory('popQuestion', function($uibModal, $translate) {
                     };
                     $scope.accept = function() {
                         $uibModalInstance.close();
-                    };
+                    }
                 },
                 size: 'sm',
                 backdrop: 'static',
@@ -295,27 +295,14 @@ app.factory('popQuestion', function($uibModal, $translate) {
                         return {
                             h: header,
                             b: question
-                        };
+                        }
                     }
                 }
             });
             return modalInstance.result;
         }
-    };
+    }
 });
-
-app.factory('message', function(toaster, $translate) {
-
-    return {
-        info:function (text,ignoreTrans) {
-           toaster.pop('success',$translate.instant("message.action_succeded"),ignoreTrans ? text : $translate.instant(text));
-        },
-        error:function (text,ignoreTrans) {
-          toaster.pop('error',$translate.instant("message.action_error"),ignoreTrans ? text : $translate.instant(text));
-        }
-    };
-});
-
 
 app.directive('axNumber', function() {
 
@@ -588,7 +575,7 @@ app.directive('axMultiple', function() {
                         if (item[scope.id] != s[scope.id]) {
                             cp.push(item);
                         }
-                    })
+                    });
                     scope.model = cp;
                 }
 
@@ -611,7 +598,7 @@ app.directive('axHtmlEditor', function() {
         replace: true,
         link: function(scope, element, attrs) {
             //document.append('<script type="text/javascript">alert("ello")</script>');
-            angular.element('body').append('<script src="' + content_url('content/admin/tiny_mce/tiny_mce.js') + '"></script>')
+            angular.element('body').append('<script src="' + content_url('content/admin/tiny_mce/tiny_mce.js') + '"></script>');
 
             tinyMCE.init({
                 // General options
@@ -765,7 +752,7 @@ app.directive('axInputFileStyle', function($parse) {
                 'classInput': attrs.dataClassInput,
                 'classIcon': attrs.dataClassIcon,
                 'placeholder': attrs.placeholder
-            })
+            });
 
             scope.$watch(attrs.fileModel, function(n) {
                 if (!n) {
@@ -781,7 +768,7 @@ app.directive('axInputFileStyle', function($parse) {
             })
         }
     }
-})
+});
 
 app.directive('axRateO', ['$parse', function($parse) {
     return {
@@ -806,7 +793,7 @@ app.directive('axRateO', ['$parse', function($parse) {
                 for (var i = 0; i < 5 - partInt - t; i++) {
                     element.append('<i class="fa fa-2x fa-star-o"></i>');
                 }
-            }
+            };
 
             scope.model = scope.model != null ? scope.model : 0;
             fill(scope.model);
@@ -843,7 +830,7 @@ app.directive('axRate', ['$parse', function($parse) {
                     element.append('<i class="fa fa-star-o"></i>');
                 }
 
-            }
+            };
 
             scope.model = scope.model != null ? scope.model : 0;
             fill(scope.model);
@@ -865,7 +852,7 @@ app.directive('axAutoScroll', function($uiViewScroll) {
             $uiViewScroll(element.parent());
         }
     }
-})
+});
 
 app.directive('axItemScroll', function($uiViewScroll) {
     return {
@@ -874,7 +861,7 @@ app.directive('axItemScroll', function($uiViewScroll) {
             $uiViewScroll(element);
         }
     }
-})
+});
 
 app.directive('axAdjustImg', function() {
     return {
@@ -884,7 +871,7 @@ app.directive('axAdjustImg', function() {
             element.attr("style", "width:" + parent.width() + "px;height:" + parent.width() + "px");
         }
     }
-})
+});
 app.directive('pageSelect', function() {
     return {
         restrict: 'E',
@@ -895,7 +882,7 @@ app.directive('pageSelect', function() {
             });
         }
     }
-})
+});
 app.directive('axFormValid', ['$parse', function($parse) {
     return {
         restrict: 'A',
@@ -926,7 +913,7 @@ app.directive('axValid', ['$parse', '$compile', '$translate', function($parse, $
         compile: function() {
             return function postLink(scope, element, attrs, ctrls) {
                 var ngModelCtrl = ctrls[0];
-                var msgElements = angular.element('<label class="error">Este campo es obligatorio.</label>')
+                var msgElements = angular.element('<label class="error">Este campo es obligatorio.</label>');
                     //$compile(msgElements)(scope);
                 $compile(msgElements)(scope).addClass('ng-hide');
                 /*if (attrs.axValid == 'parent') {
@@ -945,7 +932,7 @@ app.directive('axValid', ['$parse', '$compile', '$translate', function($parse, $
 
                 var renderMessage = function(isSubmit) {
                     !angular.isDefined(isSubmit) && (isSubmit = false);
-                    msgElements.addClass('ng-hide')
+                    msgElements.addClass('ng-hide');
 
                     if (ngModelCtrl.$error.required == true) {
                         msgElements.html('<i class="fa fa-warning"></i>' + $translate.instant('message.validation.empty'));
@@ -1004,4 +991,4 @@ app.directive('axValid', ['$parse', '$compile', '$translate', function($parse, $
             }
         }
     }
-}])
+}]);

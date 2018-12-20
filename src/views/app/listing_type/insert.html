@@ -3,8 +3,7 @@
         <i class="icon-close"></i>
     </button>
     <h4 class="modal-title">
-        <i class="icon-plus"></i>
-        <span translate="listing_type.insert.header"></span>
+        <span translate="access.profile.listing_type.btn_insert"></span>
     </h4>
 </div>
 
@@ -12,43 +11,29 @@
 
     <form ng-submit="save()" ax-form-valid="" novalidate>
         <div class="form-group">
-            <label class="" translate="listing_type.category_id"></label>
+            <label for="" translate="access.profile.listing_type.name_es"></label>
+            <div class=" has-feedback">
+                <input type="text" placeholder="{{'access.profile.listing_segment.name_es'|translate}}" class="form-control" ng-model="data.name_es" ng-required="true" ax-valid="">
+                <span class="icon-drop form-control-feedback"></span>
+            </div>
+        </div>
 
+        <div class="form-group">
+            <label class="" translate="access.profile.listing_type.price"></label>
             <div class="has-feedback">
-                <select class="form-control" ng-model="data.listing_category_id" required ax-valid ng-options="category.id as category.name for category in listing_categories">
-                    <option value="">{{'listing_type.category_id'|translate}}</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="" translate="listing_type.name_es"></label>
-            <div class=" has-feedback">
-                <input type="text" placeholder="{{'listing_type.name_es'|translate}}" class="form-control" ng-model="data.name_es" ng-required="true" ax-valid="">
-                <span class="icon-drop form-control-feedback"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="" translate="listing_type.name_en"></label>
-            <div class=" has-feedback">
-                <input type="text" placeholder="{{'listing_type.name_en'|translate}}" class="form-control" ng-model="data.name_en" ng-required="true" ax-valid="">
-                <span class="icon-drop form-control-feedback"></span>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="" translate="listing_type.price"></label>
-            <div class=" has-feedback">
-                <input type="text" ui-money-mask min="0.01" placeholder="{{'listing_type.price'|translate}}" class="form-control" ng-model="data.price" ng-required="true" ax-valid="">
-                <span class="icon-money form-control-feedback"></span>
+                <input type="text" ui-money-mask min="0.01" ng-model="data.price" placeholder="{{'access.profile.listing_type.price'|translate}}" class="form-control"
+                       ax-valid required >
+                <span class="icon-tag form-control-feedback"></span>
             </div>
         </div>
         <!--<div class="form-group">-->
-            <!--<label for="" translate="listing_type.name_fr"></label>-->
-            <!--<div class=" has-feedback">-->
-                <!--<input type="text" placeholder="{{'listing_type.name_fr'|translate}}" class="form-control" ng-model="data.name_fr" ng-required="true" ax-valid="">-->
-                <!--<span class="icon-drop form-control-feedback"></span>-->
-            <!--</div>-->
+        <!--<label for="" translate="access.profile.listing_segment.name_en"></label>-->
+        <!--<div class=" has-feedback">-->
+        <!--<input type="text" placeholder="{{'access.profile.listing_segment.name_en'|translate}}" class="form-control" ng-model="data.name_en" ng-required="true" ax-valid="">-->
+        <!--<span class="icon-drop form-control-feedback"></span>-->
         <!--</div>-->
-        <div class="row">
+        <!--</div>-->
+        <div class="row mt-2">
             <div class="col-xs-12 form-group">
                 <button type="submit" class="btn btn-lg btn-default dker b-dark pull-right">
                     <i class="icon-check"></i>

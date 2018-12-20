@@ -15,13 +15,12 @@ app.controller('ListingsListCtr', ['$scope', 'toaster', '$state', 'Auth', '$tran
             var defer = $q.defer();
 
 
-            Listing.query(params.page(), params.count(), {
+            Listing.getListingsByUser(params.page(), params.count(), {
                 created_at: $scope.dateOptions.parse(params.filter().created_at),
                 capacity: params.filter().capacity,
                 country_code: params.filter().country_code,
                 city: params.filter().city,
-                listing_type_id: params.filter().listing_type_id,
-                owner_id: Auth.get().id
+                listing_type_id: params.filter().listing_type_id
             }).success(function(r) {
                 params.total(r.data.total);
                 defer.resolve(r.data.results);

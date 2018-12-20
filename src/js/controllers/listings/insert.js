@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$translate', 'ListingType', 'Country', 'Listing', 'store', '$uibModal', 'Coin', 'Service', 'ListingCategory', '$timeout', function ($scope, toaster, $state, Auth, $translate, ListingType, Country, Listing, store, $uibModal, Coin, Service, ListingCategory, $timeout) {
+app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$translate', 'ListingType', 'Country', 'Listing', 'store', '$uibModal', 'Coin', 'Service', '$timeout', 'ListingSegment', function ($scope, toaster, $state, Auth, $translate, ListingType, Country, Listing, store, $uibModal, Coin, Service, $timeout, ListingSegment) {
 
 
     $scope.data = {
@@ -10,11 +10,48 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
         latitude: Auth.get().latitude,
         longitude: Auth.get().longitude,
         images: [],
+        expiration_date: null,
+        validDates:'',
         services: [],
-        prices: [],
-        price_day: '',
-        price_week: '',
-        price_month: ''
+        end_day: '',
+        begin_day:'',
+        base_price: null,
+        discount: null,
+        nights: null,
+        segmentos: [],
+        type_id: null
+
+    };
+    $scope.week_days=[
+        'domingo',
+        'lunes',
+        'martes',
+        'miércoles',
+        'jueves',
+        'viernes',
+        'sábado'
+    ]
+    $scope.dateOptions = {
+        today: moment().format(),
+        formatYear: 'yy',
+        startingDay: 1,
+        shortFormat: 'DD-MM-YYYY',
+        largeFormat: 'DD-MM-YYYY HH:mm:ss',
+        datepicker: 'dd-MMMM-yyyy',
+        datepickerShort: 'dd-MM-yyyy',
+        localeFormat: 'DD-MM-YYYY',
+        parse: function (strDate) {
+            if (!strDate)
+                return "";
+            return moment(strDate, $scope.dateOptions.localeFormat).format("YYYY-MM-DD");
+        },
+        parseDate: function (strDate, localeFormat) {
+            var format = localeFormat ? $scope.dateOptions.localeFormat : 'YYYY-MM-DD';
+            return moment(strDate, format).toDate();
+        },
+        parseDateObject: function (d) {
+            return moment(d).format($scope.dateOptions.localeFormat);
+        }
     };
 
     Service.list().success(function (r) {
@@ -28,7 +65,7 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
             if (!nc) {
                 $scope.data.city = '';
             }
-        })
+        });
     };
 
 
@@ -45,25 +82,16 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
         })
     });
 
-    $scope.$watch(function () {
-        return $scope.data.listing_type_id;
-    }, function (val) {
-        $scope.data.price = 0;
-        angular.forEach($scope.listing_types, function (l) {
-            if (l.id == val) {
-                $scope.data.price = l.price;
-            }
-        });
-    });
-
-    $scope.$watch(function () {
-        return $scope.data.listing_category_id;
-    }, function (val) {
-        if(!val) $scope.data.listing_type_id = '';
-    });
-
-
-
+    // $scope.$watch(function () {
+    //     return $scope.data.type_id;
+    // }, function (val) {
+    //     $scope.data.price = 0;
+    //     angular.forEach($scope.listing_types, function (l) {
+    //         if (l.id == val) {
+    //             $scope.data.price = l.price;
+    //         }
+    //     });
+    // });
 
     $scope.wizard = {
         currentStep: 1,
@@ -116,6 +144,9 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
             // this.percent -= 25;
         }
     };
+    $scope.cambio = function () {
+        console.log($scope.data);
+    };
 
     $scope.selectNewImage = function (files, event, invalidFiles) {
 
@@ -126,7 +157,7 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
                 is_primary: $scope.data.images.length == 0
             })
 
-        } else if (invalidFiles.length != 0) {
+        } else if (invalidFiles.length !== 0) {
             toaster.pop('error', $translate.instant("message.action_error"), $translate.instant("message.validation." + invalidFiles[0].$error) + '(' + invalidFiles[0].$errorParam + ')');
         }
     };
@@ -141,7 +172,6 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
         $scope.data.images.splice(i, 1);
     };
 
-   
 
     $scope.loadMap = function () {
         var modalInstance = $uibModal.open({
@@ -168,6 +198,94 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
                 }
             }
         });
-    }
+    };
+
+    // var newSegmentoId = null;
+    // $scope.insertSegmento = function () {
+    //
+    //     var modalInstance = $uibModal.open({
+    //         ariaLabelledBy: 'modal-title',
+    //         ariaDescribedBy: 'modal-body',
+    //         templateUrl: 'site/src/views/app/listing_segments/insert.html',
+    //         size: 'sm',
+    //         controller: function ($scope, $uibModalInstance) {
+    //             $scope.data = {
+    //                 id: null,
+    //                 name_es: '',
+    //                 name_en: ''
+    //             };
+    //             console.log(newSegmentoId);
+    //
+    //
+    //             $scope.close = function () {
+    //                 $uibModalInstance.dismiss();
+    //             };
+    //             $scope.save = function () {
+    //                 var d = angular.copy($scope.data);
+    //                 ListingSegment.insert(d).success(function (res) {
+    //                     newSegmentoId = res.complete;
+    //                     $uibModalInstance.dismiss();
+    //                 }).error(function () {
+    //                     $uibModalInstance.dismiss();
+    //                 });
+    //
+    //             };
+    //         }
+    //     });
+    //     modalInstance.closed.then(function () {
+    //         //$scope.tableParams.reload();
+    //         if (newSegmentoId !== null) {
+    //             ListingSegment.list().success(function (res) {
+    //                 $scope.segmentos = res.data.results;
+    //                 $scope.data.segmento_id = newSegmentoId;
+    //                 newSegmentoId = null;
+    //             });
+    //         }
+    //     });
+    // };
+
+    $scope.test = function () {
+      console.log($scope.data.type_id);
+    };
+    var newTypeId = null;
+    $scope.insertType = function () {
+
+        var modalInstance = $uibModal.open({
+            ariaLabelledBy: 'modal-title',
+            ariaDescribedBy: 'modal-body',
+            templateUrl: 'site/src/views/app/listing_type/insert.html',
+            size: 'sm',
+            controller: function ($scope, $uibModalInstance) {
+                $scope.data = {
+                    id: null,
+                    name_es: '',
+                    name_en: ''
+                };
+                $scope.close = function () {
+                    $uibModalInstance.dismiss();
+                };
+                $scope.save = function () {
+                    var d = angular.copy($scope.data);
+                    ListingType.insert(d).success(function (res) {
+                        newTypeId = res.complete;
+                        $uibModalInstance.dismiss();
+                    }).error(function () {
+                        $uibModalInstance.dismiss();
+                    });
+                };
+            }
+        });
+        modalInstance.closed.then(function () {
+            //$scope.tableParams.reload();
+            if (newTypeId !== null) {
+                ListingType.list().success(function (res) {
+                    $scope.listing_types = res.data;
+                    $scope.data.type_id = newTypeId.toString();
+                    newTypeId = null;
+                    console.log($scope.data.type_id);
+                });
+            }
+        });
+    };
 
 }]);

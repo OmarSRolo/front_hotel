@@ -6,8 +6,9 @@
 
     <div class="hidden-xs">
         <div uib-carousel interval="3000" active="0" no-pause="true">
-            <div uib-slide ng-repeat="slide in ['1','2','3','4']" index="$index">
-                <img ng-src="{{'site/img/home/slider/'+slide+'.jpg'}}" style="margin:auto;height: 500px" class="img-full">
+            <div uib-slide ng-repeat="slide in slides" index="$index">
+                <img ng-src="{{'site/img/home/slider/'+slide+'.jpg'}}" style="margin:auto;height: 500px"
+                     class="img-full">
                 <div class="carousel-caption">
                     <h4></h4>
                     <p></p>
@@ -17,156 +18,132 @@
     </div>
 
     <div class="home-search padder-md">
-        <h4>
-            <i class="icon-magnifier-add"></i>
-            <span class="" translate="home.search.header"></span>
-        </h4>
-
         <!-- <div class="has-feedback">
             <input type="text" ng-model="search.place" class="form-control" placeholder="{{'home.search.place'|translate}}">
             <span class="icon-rocket form-control-feedback"></span>
         </div> -->
-        <div class="row">
-            <div class="col-xs-6">
-                <div class="has-feedbac">
-                    <select class="form-control n-p-r" ng-model="search.country_code" ng-options="country.code as country.name for country in countries" ng-change="onChangeCountry(search.country_code,'search.city')">
+        <div class="container home-search-container">
+            <div class="d-flex justify-center wrap">
+                <h4>{{'home.search.header'|translate}}</h4>
+                <div class="has-feedback header-buttons">
+                    <select class="form-control n-p-r" ng-model="search.country_code"
+                            ng-options="country.code as country.name for country in countries"
+                            ng-change="onChangeCountry(search.country_code,'search.city')">
                         <option value="">{{'access.label_country'|translate}}</option>
                     </select>
                 </div>
-            </div>
-            <div class="col-xs-6">
-                <div class="has-feedback">
-                    <input type="text" placeholder="{{'listing.city'|translate}}" ng-model="search.city" uib-typeahead="city.name for city in cities | filter:$viewValue" class="form-control" typeahead-editable="true" typeahead-show-hint="true" typeahead-min-length="0">
+                <div class="has-feedback header-buttons">
+                    <input type="text" placeholder="{{'listing.city'|translate}}" ng-model="search.city"
+                           uib-typeahead="city.name for city in cities | filter:$viewValue" class="form-control"
+                           typeahead-editable="true" typeahead-show-hint="true" typeahead-min-length="0">
                     <span class="fa fa-location-arrow form-control-feedback"></span>
                 </div>
-            </div>
-        </div>
-
-        <div class="row m-t-xs">
-            <div class="col-xs-6">
-                <span translate="home.search.from_date"></span>
-                <div class="has-feedback">
-                    <datepicker date-format="{{dateOptions.datepickerShort}}">
-                        <input ng-model="search.start_date" placeholder="{{'home.search.date'|translate}}" type="text" class="input-filter form-control"/>
-                    </datepicker>
-                    <span class="icon-calendar form-control-feedback"></span>
+                <div class="has-feedback header-buttons">
+                    <input type="text" placeholder="{{'listing.listing_type_id'|translate}}" ng-model="listingTypeId"
+                           uib-typeahead="type as type.name for type in listingTypes| filter:$viewValue" class="form-control"
+                           typeahead-editable="true" typeahead-show-hint="true" typeahead-min-length="0">
+                    <span class="fa fa-home form-control-feedback"></span>
                 </div>
-            </div>
-            <div class="col-xs-6">
-                <span translate="home.search.to_date"></span>
-                <div class="has-feedback">
-                    <datepicker date-format="{{dateOptions.datepickerShort}}">
-                        <input ng-model="search.end_date" placeholder="{{'home.search.date'|translate}}" type="text" class="input-filter form-control"/>
-                    </datepicker>
-                    <span class="icon-calendar form-control-feedback"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="row m-t-xs hidden">
-            <div class="col-xs-12">
-                <span translate="home.search.capacity"></span>
-                <div class="text-center">
-                    <div class="btn-group text-center m-b-sm">
-                        <label class="btn btn-default" ng-model="search.capacity" uib-btn-radio="'1'">1</label>
-                        <label class="btn btn-default" ng-model="search.capacity" uib-btn-radio="'2'">2</label>
-                        <label class="btn btn-default" ng-model="search.capacity" uib-btn-radio="'3'">3</label>
-                        <label class="btn btn-default" ng-model="search.capacity" uib-btn-radio="'4'">4</label>
-                        <label class="btn btn-default" ng-model="search.capacity" uib-btn-radio="'5'">
-                            5+<i class="icon-users"></i>
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <hr style="margin:5px">
-        <button type="button" class="btn btn-default pull-right" ng-click="search()">
-            <i class=" icon-magnifier"></i>
-            <span translate="home.search"></span>
-        </button>
-
-    </div>
-
-    <h2 class="text-center">
-        <span  class="color-app">
-            <i class="glyphicon  glyphicon-globe"></i>
-            <span translate="home.city_prefered"></span>
-        </span>
-    </h2>
-
-    <div class="row padder-lg m-t-xs">
-        <div class="col-md-4 col-sm-4 col-xs-12" ng-repeat="place in places" ui-sref="app.listings_search({city:place.name,country_code:place.country})" style="cursor: pointer;">
-            <div class="panel b-a">
-                <div class="item m-l-n-xxs m-r-n-xxs">
-                    <div class="bottom wrapper bg-gd-dk text-white text-center">
-                        <div class="h1 m-b-sm text-ligth-lter" translate="home.place.{{place.name}}"></div>
-                    </div>
-                    <img ng-src="{{place.image}}" class="img-full" style="height:258px">
-                </div>
+                <button type="button" class="btn btn-default btn-header-search" ng-click="search()">
+                    <i class=" icon-magnifier"></i>
+                    <span translate="home.search"></span>
+                </button>
             </div>
         </div>
     </div>
-
-    <div class="row padder-lg m-t-xs not-visible" when-visible="animateElementIn" when-not-visible="animateElementOut">
-        <div class="bg-light lter m-md b b-ligth wrapper-md text-center color-app">
-            <h1 class="m-n font-thin h3" translate="home.rates_listings"></h1>
-            <small class="text-muted color-app">
-                <i class="icon-star" ng-repeat="s in [1,2,3,4,5]"></i>
-            </small>
-        </div>
-    </div>
-
-    <div class="row padder-lg m-t-xs custom-container">
-        <div class="color-app col-lg-3 col-sm-4 col-xs-12 not-visible" ng-repeat="listing in mainListings" when-visible="animateElementIn" when-not-visible="animateElementOut">
-            <a ui-sref="app.listings_details({id:listing.id})">
-                <div class="panel">
-                    <div class="b b-a wrapper-xs bg-white " style="    height: 215px;overflow:hidden">
-                        <img ng-src="{{listing.image_primary.path}}" class="img-full img-responsive img-lst">
-                        <div class="price-bx">
-                            <i class="icon-tag"></i>
-                            <span ng-bind="listing.price"></span>
-                            <span translate="common.euro"></span>
-                            <!-- <span translate="listing.per_day"></span> -->
-                        </div>
-                    </div>
-                    <div class="wrapper-sm">
-                        <div class="text-center">
-                            <i class="fa fa-home"></i>
-                            <span ng-bind="listing.owner.hotel_name"></span>
-                        </div>
-
-                        <div class="text-center">
-                            <i class="fa fa-map-marker"></i>
-                            <span ng-bind="listing.country.name +','+listing.city"></span>
-                        </div>
-                        
-                        <div class="text-muted text-center">
-
-                            <!-- <span>
-                                <i class="fa fa-user text-muted"></i>
-                                <a href="" class="m-r-sm" ng-bind="listing.owner.first_name"></a>
-                            </span>
-                            <br> -->
-                            <!-- <span>
-                                <i class="fa fa-clock-o text-muted"></i>
-                                <span ng-bind="listing.created_at| amDateFormat:'DD-MM-YYYY'"></span>
-                            </span> -->
-                            <!-- <span>
-                                <a href="" class="m-l-sm">
-                                    <i class="fa fa-comment-o text-muted"></i>
-                                    <span ng-bind="listing.comments_total"></span>
-                                </a>
-                            </span> -->
-                            <!-- <div class="text-center">
-                                <ax-rate ng-model="listing.rate"></ax-rate>
-                            </div> -->
-
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-
 </div>
+<div class="container">
+    <div class="row m-t-xs home-cities">
+        <div class="col-md-4 col-sm-4 col-xs-12 m-t-xs" ng-repeat="place in places"
+             ui-sref="app.listings_search({city:place.name,country_code:place.country})" style="cursor: pointer;">
+            <div ng-style="{'background-image': 'url({{place.image}})', 'background-position':'center center', 'background-size': 'cover', 'height': '320px'}"
+                 class="d-flex justify-center align-center ">
+                <div class="text-center ">
+                    <p class="city-name">{{place.name}}</p>
+                </div>
+
+            </div>
+
+            <!--<div class="panel b-a">-->
+                <!--<div class="item m-l-n-xxs m-r-n-xxs">-->
+                    <!--<div class="bottom wrapper bg-gd-dk text-white text-center">-->
+                        <!--<div class="h1 m-b-sm text-ligth-lter" translate="home.place.{{place.name}}"></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-xs-12"><p translate="home.process" class="text-center home-process"></p></div>
+        <div class="col-xs-12 d-flex justify-center align-center"><img ng-src="site/img/home/process.png" class="img-responsive home-process-img"/></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row m-t-xs not-visible" when-visible="animateElementIn">
+        <div class=" lter m-md  wrapper-md text-center color-app">
+            <h1 class="m-n font-thin h3 home-ofertas" translate="home.rates_listings"></h1>
+        </div>
+    </div>
+    <div class="col-12" style="background-color: #333"> <countdown countdown-stop="hideListing()" date="{{count}}"></countdown></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="" ng-repeat="listing in mainListings">
+            <div class="row" ng-if="$index%2 === 0 && $index !=0"></div>
+            <div class="col-md-6 ofertas-cell" when-visible="animateElementIn">
+                <div class="home-flash" style="background-image: url('{{listing.image_primary.path}}')">
+                    <div class="home-velo"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="home-listing-title">{{listing.owner.hotel_name}}</h4>
+                            <p class="home-listing-stars-container">
+                                <i class="fa"
+                                   ng-class="{'fa-star':listing.owner.hotel_rating>=1, 'fa-star-o':listing.owner.hotel_rating<1}"></i>
+                                <i class="fa"
+                                   ng-class="{'fa-star':listing.owner.hotel_rating>=2, 'fa-star-o':listing.owner.hotel_rating<2}"></i>
+                                <i class="fa"
+                                   ng-class="{'fa-star':listing.owner.hotel_rating>=3, 'fa-star-o':listing.owner.hotel_rating<3}"></i>
+                                <i class="fa"
+                                   ng-class="{'fa-star':listing.owner.hotel_rating>=4, 'fa-star-o':listing.owner.hotel_rating<4}"></i>
+                                <i class="fa"
+                                   ng-class="{'fa-star':listing.owner.hotel_rating>=5, 'fa-star-o':listing.owner.hotel_rating<5}"></i>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="home-listing-title text-right"><i class="fa fa-clock-o"></i> 23H 24M 30S</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3 class="text-right home-listing-city">{{listing.city}}</h3>
+                            <p class="text-right home-listing-city">Válido del 21/10/2018 hasta 23/11/2018</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 d-flex justify-right">
+                            <div class="home-listing-oferta d-flex justify-right">
+                                <h4 class="listing-porciento">19%</h4>
+                                <div class="precios text-center">
+                                    <p class="mb-0 tachado">100€</p>
+                                    <h3 class="mt-0 mb-0">
+                                        <span ng-bind="listing.price"></span>
+                                        <span translate="common.euro"></span>
+                                    </h3>
+                                </div>
+                                <a class="btn btn-default home-listing-reserve "
+                                   ui-sref="app.listings_details({id:listing.id})" translate="home.reserve"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p class="text-center"> La oferta incluye alojamiento con pensión completa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

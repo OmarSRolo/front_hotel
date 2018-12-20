@@ -65,16 +65,6 @@
                             <span class="icon-envelope form-control-feedback"></span>
                         </div>
                     </div>
-                    <div class="form-group" ng-show="data.role=='owner'">
-                        <label class="col-sm-4 control-label" translate="access.label_hotel_name"></label>
-                        <div class="col-sm-8  has-feedback">
-                            <input type="text" placeholder="{{'access.label_hotel_name'|translate}}" class="form-control" ng-model="data.hotel_name"
-                                   ng-required="data.role=='owner'" ax-valid="">
-                            <span class="icon-home form-control-feedback"></span>
-                        </div>
-                    </div>
-
-
                     <!--<div class="form-group" ng-show="data.role=='owner'">
                         <label class="col-sm-4 control-label" translate="access.label_bank_account_id"></label>
                         <div class="col-sm-8  has-feedback">
@@ -92,25 +82,6 @@
                             <span class="icon-frame form-control-feedback"></span>
                         </div>
                     </div>-->
-
-                    <div class="form-group" ng-show="data.role=='owner'">
-                        <label class="col-sm-4 control-label" translate="access.label_hotel_rating"></label>
-                        <div class="has-feedback col-sm-4">
-                            <span uib-rating ng-model="data.hotel_rating" max="5"></span>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group" ng-show="data.role=='owner'">
-                        <label class="col-sm-4 control-label" translate="access.label_hotel_id"></label>
-                        <div class=" has-feedback col-sm-8">
-                            <input type="text" placeholder="{{'access.label_hotel_id'|translate}}" class="form-control" ng-model="data.hotel_id"
-                                   ng-required="data.role=='owner'" ax-valid="">
-                            <span class="icon-home form-control-feedback"></span>
-                        </div>
-                    </div>
-
-
                     <div class="form-group" ng-show="data.role=='client'">
                         <label class="col-sm-4 control-label" translate="access.label_dni"></label>
 
@@ -176,45 +147,6 @@
                             <textarea class="form-control" ng-model="data.about_me" ng-readonly="!data.is_editable" ng-trim="false" placeholder="{{'access.label_about_me'|translate}}"></textarea>
                         </div>
                     </div>
-
-                    <div class="form-group" ng-show="data.role == 'owner'">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-8">
-                            <label class="control-label text-left" translate="access.label_owner_cancel_term_id"></label>
-
-                            <div class="has-feedback">
-                                <select ng-model="data.cancel_term_id" class="form-control" ng-options="c.id as c.name for c in cancel_terms" ng-required="data.role == 'owner'" ax-valid>
-                                    <option value="">{{'common.select_option'|translate}}</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group" ng-show="data.role == 'owner'">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-8">
-                            <label class="control-label text-left" translate="access.label_owner_cancel_prev_cost_id" translate-values="{ days: cancel_term_selected }"></label>
-                            <div class="has-feedback">
-                                <select ng-model="data.cancel_prev_cost_id" class="form-control" ng-options="c.id as c.name for c in cancel_prev_costs" ng-required="data.role == 'owner'" ax-valid>
-                                    <option value="">{{'common.select_option'|translate}}</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group" ng-show="data.role == 'owner'">
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-8">
-                            <label class="control-label" translate="access.label_owner_cancel_total_cost_id"></label>
-                            <div class="has-feedback">
-                                <select ng-model="data.cancel_total_cost_id" class="form-control" ng-options="c.id as c.name for c in cancel_total_costs" ng-required="data.role == 'owner'" ax-valid>
-                                    <option value="">{{'common.select_option'|translate}}</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-
                     <div ng-if="data.is_editable">
                         <hr>
                         <h5 class="text-info-dker">

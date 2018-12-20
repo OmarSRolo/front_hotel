@@ -1,677 +1,739 @@
 {
-    "menu": {
-        "header": {
-            "login": "Inicia sesi{{'unicode.o'|translate}}n",
-            "register": "Reg{{'unicode.i'|translate}}strate",
-            "faq": "Ayuda",
-            "search": "Encuentra habitaciones",
-            "about_us": "{{'unicode.iquest'|translate}}Qu{{'unicode.i'|translate}}enes somos{{'unicode.rquest'|translate}}",
-            "lang": {
-                "en": "Ingl{{'unicode.e'|translate}}s",
-                "es": "Espa{{'unicode.n'|translate}}ol",
-                "gr": "Alem{{'unicode.a'|translate}}n",
-                "fr": "Franc{{'unicode.e'|translate}}s"
-            },
-            "user_profile": {
-                "profile": "Mi perfil",
-                "logout": "Salir"
-            }
-        },
-        "aside": {
-            "navigation": "Opciones de administraci{{'unicode.o'|translate}}n",
-            "content": {
-                "all": "Contenidos",
-                "about_us": "{{'unicode.iquest'|translate}}Qu{{'unicode.i'|translate}}enes somos{{'unicode.rquest'|translate}}",
-                "why_is_diferent": "{{'unicode.iquest'|translate}}Por qu{{'unicode.e'|translate}} es diferente{{'unicode.rquest'|translate}}",
-                "termns": "T{{'unicode.e'|translate}}rminos",
-                "cookies": "Cookies",
-                "privacity": "Privacidad",
-                "signup_hotel":"Registra tu hotel"
-            },
-            "faqs": "Ayuda",
-            "services": "Servicios",
-            "coins": "Monedas",
-            "users": "Usuarios",
-            "listing_category": "Categoría de prop.",
-            "listing_type": "Tipos de prop.",
-            "listing": "Habitaciones",
-            "bank":"Bancos"
-        }
-    },
-    "content": {
-        "header": "Contenidos de la web",
-        "subheader": "Edite los contenidos en los distintos idiomas",
-        "insert": {
-            "msg_success": "El contenido se ha insertado correctamente"
-        },
-        "update": {
-            "msg_success": "El contenido se ha modificado correctamente"
-        }
-    },
-    "listing_type": {
-        "header": "Tipos de habitaciones",
-        "subheader": "Edite los tipos de propiedes en los distintos idiomas",
-        "btn_insert": "Nuevo tipo",
-        "btn_edit": "Editar tipo",
-        "btn_delete": "Eliminar tipo",
-        "id": "Id",
-        "category_id":"Categoría",
-        "name_es": "Nom. Espa{{'unicode.n'|translate}}ol",
-        "name_en": "Nom. Ingl{{'unicode.e'|translate}}s",
-        "name_fr": "Nom. Franc{{'unicode.e'|translate}}s",
-        "price":"Precio definido",
-        "insert": {
-            "header": "Insertar tipo de habitación",
-            "msg_success": "El tipo de habitación se ha insertado correctamente"
-        },
-        "update": {
-            "header": "Modificar tipo de habitación",
-            "msg_success": "El tipo de habitación se ha modificado correctamente"
-        },
-        "delete": {
-            "header": "Eliminar tipo de habitación",
-            "confirmation": "{{'unicode.iquest'|translate}}Esta seguro que desea eliminar el tipo de habitación{{'unicode.rquest'|translate}}",
-            "msg_success": "El tipo de habitación se ha eliminado correctamente"
-        }
-    },
-    "listing_category": {
-        "header": "Categor{{'unicode.i'|translate}}as de habitaciones",
-        "subheader": "Modifique las categor{{'unicode.i'|translate}}as los distintos idiomas",
-        "btn_insert": "Nueva categor{{'unicode.i'|translate}}a",
-        "btn_edit": "Editar categor{{'unicode.i'|translate}}a",
-        "btn_delete": "Eliminar categor{{'unicode.i'|translate}}a",
-        "id": "Id",
-        "name_es": "Nom. Espa{{'unicode.n'|translate}}ol",
-        "name_en": "Nom. Ingl{{'unicode.e'|translate}}s",
-        "name_fr": "Nom. Franc{{'unicode.e'|translate}}s",
-        "insert": {
-            "header": "Insertar categor{{'unicode.i'|translate}}a",
-            "msg_success": "La categor{{'unicode.i'|translate}}a se ha insertado correctamente"
-        },
-        "update": {
-            "header": "Modificar categor{{'unicode.i'|translate}}a",
-            "msg_success": "La categor{{'unicode.i'|translate}}a se ha modificado correctamente"
-        },
-        "delete": {
-            "header": "Eliminar categor{{'unicode.i'|translate}}a",
-            "confirmation": "{{'unicode.iquest'|translate}}Esta seguro que desea eliminar categor{{'unicode.i'|translate}}a{{'unicode.rquest'|translate}}",
-            "msg_success": "La categor{{'unicode.i'|translate}}a se ha eliminado correctamente"
-        }
-    },
-    "bank": {
-        "header": "Bancos que se aceptan para pagar con tarjeta",
-        "subheader": "Modifique que se aceptan en los distintos idiomas",
-        "btn_insert": "Nuevo banco",
-        "btn_edit": "Editar banco",
-        "btn_delete": "Eliminar banco",
-        "id": "Identificador del banco",
-        "name_es": "Nom. Espa{{'unicode.n'|translate}}ol",
-        "name_en": "Nom. Ingl{{'unicode.e'|translate}}s",
-        "name_fr": "Nom. Franc{{'unicode.e'|translate}}s",
-        "insert": {
-            "header": "Insertar banco",
-            "msg_success": "El banco se ha insertado correctamente"
-        },
-        "update": {
-            "header": "Modificar banco",
-            "msg_success": "El banco se ha modificado correctamente"
-        },
-        "delete": {
-            "header": "Eliminar banco",
-            "confirmation": "{{'unicode.iquest'|translate}}Está seguro que desea eliminar banco{{'unicode.rquest'|translate}}",
-            "msg_success": "El banco se ha eliminado correctamente"
-        }
-    },
-    "service": {
-        "header": "Servicios",
-        "subheader": "Edite los servicios en los distintos idiomas",
-        "btn_insert": "Nuevo servicio",
-        "btn_edit": "Editar servicio",
-        "btn_delete": "Eliminar servicio",
-        "id": "Id",
-        "name_es": "Nom. Espa{{'unicode.n'|translate}}ol",
-        "name_en": "Nom. Ingl{{'unicode.e'|translate}}s",
-        "name_fr": "Nom. Franc{{'unicode.e'|translate}}s",
-        "insert": {
-            "header": "Insertar servicio",
-            "msg_success": "El servicio se ha insertado correctamente"
-        },
-        "update": {
-            "header": "Modificar servicio",
-            "msg_success": "El servicio se ha modificado correctamente"
-        },
-        "delete": {
-            "header": "Eliminar servicio",
-            "confirmation": "{{'unicode.iquest'|translate}}Esta seguro que desea eliminar servicio{{'unicode.rquest'|translate}}",
-            "msg_success": "El servicio se ha eliminado correctamente"
-        }
-    },
-    "user": {
-        "header": "Administrar usuarios",
-        "subheader": "Usted puede usar esta vista para editar datos de usuarios as{{'unicode.i'|translate}} como aceptar o rechazar la verificaci{{'unicode.o'|translate}}n de datos de un propietario",
-        "email": "Email",
-        "country_code": "Pa{{'unicode.i'|translate}}s",
-        "city": "Ciudad",
-        "full_name": "Full name",
-        "role": "Rol",
-        "dni": "Dni",
-        "first_name": "Nombre",
-        "last_name": "Apellidos",
-        "phone": "Tel{{'unicode.e'|translate}}fono",
-        "phone_emergency": "Tel{{'unicode.e'|translate}}fono de emergencia",
-        "hotel_name": "Nombre de hotel",
-        "stop_sales":"Parar de vender",
-
-        "btn_details": "Detalles del usuario",
-        "btn_edit": "Editar usuario",
-        "btn_delete": "Eliminar usuario",
-        "btn_password": "Modificar contrase{{'unicode.n'|translate}}a",
-        "roles": {
-            "client": "Cliente",
-            "owner": "Propietario",
-            "admin": "Administrador"
-        },
-        "verification_id_status": "Verificaci{{'unicode.o'|translate}}n",
-        "verification": {
-            "header": "Verificaci{{'unicode.o'|translate}}n del usuario",
-            "modal": "Click para modificar el estado",
-            "pending": "Pendiente",
-            "waiting": "Esperado",
-            "refuted": "Rechazado",
-            "approved": "Aprobado",
-            "message_success": "El estado de verficaci{{'unicode.o'|translate}}n se ha cambiado corrrectamente"
-        },
-        "verification_document": {
-            "dni": "Dni",
-            "passport": "Pasaporte"
-        },
-        "filter": {
-            "email": "Filtrar por email",
-            "full_name": "Filtrar por nombre",
-            "country_code": "Filtrar por pa{{'unicode.i'|translate}}s",
-            "rol": "Filtrar por rol",
-            "verification_id_status": "Filtrar por estado de verificaci{{'unicode.o'|translate}}",
-            "role": "Filtrar por rol",
-            "country": "Filtrar por pa{{'unicode.i'|translate}}s"
-        },
-        "insert": {
-            "header": "Insertar usuario",
-            "msg_success": "El usuario ha sido creado correctamente"
-        },
-        "update": {
-            "header": "Modificar usuario",
-            "msg_success": "El usuario se ha modificado correctamente"
-        },
-        "password": {
-            "header": "Modificar contrase{{'unicode.n'|translate}}a",
-            "new_password": "Nueva contrase{{'unicode.n'|translate}}a",
-            "confirm_password": "Confirmar contrase{{'unicode.n'|translate}}a",
-            "message_success": "La contrase{{'unicode.n'|translate}}a se ha cambiado corrrectamente",
-            "password_match_error": "La <strong>contrase{{'unicode.n'|translate}}a</strong> y la <strong>confirmaci{{'unicode.o'|translate}}n</strong> no coinciden"
-        },
-        "details": {
-            "header": "Detalles del usuario"
-        },
-        "delete": {
-            "header": "Eliminar usuario",
-            "confirmation": "{{'unicode.iquest'|translate}}Esta seguro que desea eliminar el usuario{{'unicode.rquest'|translate}}",
-            "msg_success": "El usuario ha sido eliminado del sistema"
-        },
-        "stop_sales":{
-            "btn": "Parar ventas en el hotel",
-            "header": "Parar las ventas en hotel",
-            "confirmation": "{{'unicode.iquest'|translate}}Est{{'unicode.a'|translate}} seguro que desea descontinuar las ventas en el hotel {{'unicode.rquest'|translate}}",
-            "msg_success": "Las ventas ha sido descontinuadas, los datos de las habitaciones asociadaas al hotel se pueden ver en la web, pero no se brindara la opci{{'unicode.o'|translate}}n de reservar"
-        },
-        "play_sales":{
-            "btn": "Continuar ventas en el hotel",
-            "header": "Continuar las ventas en hotel",
-            "confirmation": "{{'unicode.iquest'|translate}}Est{{'unicode.a'|translate}} seguro que desea continuar las ventas en el hotel {{'unicode.rquest'|translate}}",
-            "msg_success": "Las ventas ha sido restablecidas, los datos de las habitaciones asociadaas al hotel se pueden reservar"
-        }
-    },
-
-    "access": {
-        "label_email": "Email",
-        "label_username": "Nombre de usuario",
-        "label_password": "Contrase{{'unicode.n'|translate}}a",
-        "label_confirmpwd": "Confirme contrase{{'unicode.n'|translate}}a",
-        "label_first_name": "Nombre",
-        "label_last_name": "Apellidos",
-        "label_date_birth": "Fecha de nacimiento",
-        "label_question": "Inserte una pregunta",
-        "label_answer": "Inserte la respuesta",
-        "label_role_client": "Soy cliente",
-        "label_role_owner": "Soy hotelero",
-        "label_dni": "Dni",
-        "label_phone": "Tel{{'unicode.e'|translate}}fono",
-        "label_phone_emergency": "Tel{{'unicode.e'|translate}}fono de emergencia",
-        "label_about_me": "Acerca de mi",
-        "label_profile_img": "Imagen de perfil",
-        "label_zip_code": "C{{'unicode.o'|translate}}digo postal",
-        "label_latitude": "Latitud geogr{{'unicode.a'|translate}}fica",
-        "label_longitude": "Longitud geogr{{'unicode.a'|translate}}fica",
-        "label_country": "Pa{{'unicode.i'|translate}}s",
-        "label_city": "Ciudad",
-        "label_time_zone": "Zona horaria",
-        "label_role": "Tipo de usuario",
-        "file_id_type": "Tipo de documento de identidad",
-        "file_id_type_passport": "Pasaporte",
-        "file_id_type_dni": "Documento DNI",
-        "image_dni": "Imagen de documento",
-        "label_amount_flexible": "Dinero acumulado",
-
-        "check_terms_police": "Estoy de acuerdo con los t{{'unicode.e'|translate}}rminos de privacidad",
-        "btn_login": "Entrar",
-        "btn_signup": "Continuar con el registro",
-        "btn_facebook": "Facebook",
-        "btn_google": "Google",
-
-        "btn_new_account": "Nuevo usuario de Atuhotel",
-        "link_sigin": "Acceder",
-        "text_not_account": "{{'unicode.iquest'|translate}}No tienes una cuenta a{{'unicode.u'|translate}}n{{'unicode.rquest'|translate}}",
-        "text_yes_account": "{{'unicode.iquest'|translate}}Tienes ya tiene una cuenta{{'unicode.rquest'|translate}}",
-        "link_forgotpwd": "{{'unicode.iquest'|translate}}Olvid{{'unicode.o'|translate}} su contrase{{'unicode.n'|translate}}a{{'unicode.rquest'|translate}}",
-        "login": {
-            "header": "Administrar a Atuhotel.com",
-            "message_fail": "Nombre de usuario o contrase{{'unicode.n'|translate}}a incorrecta",
-            "lock_access": "Su usuario no tiene los privilegios para realizar esta acci{{'unicode.o'|translate}}n"
-        },
-        "register": {
-            "header": "Nuevo usuario en Atuhotel",
-            "label_answer_info": "Entre una pregunta y la respuesta correspondiente para ser usados estos datos en caso de que necesite recuperar su clave de acceso",
-            "password_match_error": "La <strong>contrase{{'unicode.o'|translate}}a</strong> y la <strong>confirmaci{{'unicode.o'|translate}}n</strong> no coinciden",
-            "msg_success_owner": "Te has registrado en nuestra web, para poder comenzar a usar la cuenta debe confirmarla con el link  que le hemos enviado a su email",
-            "msg_success_client": "Te has registrado en nuestra web, su cuenta de acceso es como cliente. Pero desde su perfil de usuario puede convertirse en propietario"
-
-        },
-        "password": {
-            "header": "Resetear contase{{'unicode.n'|translate}}a",
-            "header_answer_question": "Inserte la respuesta a su pregunta",
-            "btn_recover": "Obtener nueva clave",
-            "msg_error_email": "El email es incorrecto, no podemos obtener la informaci{{'unicode.o'|translate}}n asociada a esta direcci{{'unicode.o'|translate}}n de correo",
-            "msg_success": "La contrase{{'unicode.n'|translate}}a ha sido reseteada y enviada a su correo, verif{{'unicode.i'|translate}}quelo por favor."
-        },
-        "profile": {
-            "confirmation": {
-                "header": "Verificar cuenta de acceso como propietario",
-                "verifcating": "Estamos verificando el token recibido",
-                "msg_success": "Su cuenta como propietario ha sido verificada, ahora puede hacer uso de las opciones para administrar habitaciones desde su perfil de usuario"
-            },
-
-            "info": {
-                "header": "Datos",
-                "upload_image": "Seleccione una imagen",
-                "password_edit_info": "Edite el campo contrase{{'unicode.n'|translate}}a solo si desea modificar la misma",
-                "confirm_password": "Confirmar contrase{{'unicode.n'|translate}}a",
-                "new_password": "Nueva contrase{{'unicode.n'|translate}}a",
-                "password_not_match": "Las contrase{{'unicode.n'|translate}}as no coinciden",
-                "img_uploaded": "La foto de su perfil ha sido actualizada",
-                "msg_success": "Los datos de su perfil han sido guardados satisfactoriamente",
-                "msg_owner_unverificated": "Estamos esperando que verifiques tu cuenta con el link que te enviamos por email",
-                "btn_resend_email": "Renviar email de confirmaci{{'unicode.o'|translate}}n",
-                "convert_propietary": "{{'unicode.iquest'|translate}}Deseas ser un tipo de usuario propietario y poder gestionar sus propias casas{{'unicode.rquest'|translate}} <p>De click en el bot{{'unicode.o'|translate}}n de abajo y le enviaremos un correo para que active su cuenta de acceso como propietario</p>",
-                "btn_activate_owner": "Quiero ser propietario",
-                "msg_success_owner_email": "Le hemos enviado un email con el link de confirmaci{{'unicode.o'|translate}}n para que pueda comenzar a usar su cuenta como propietario"
-            },
-            "location": {
-                "header": "Ubicaci{{'unicode.o'|translate}}n"
-            },
-            "verification": {
-                "header": "Verificaci{{'unicode.o'|translate}}n",
-                "upload_image": "Subir imagen del documento oficial",
-                "verification_id_status_pending": "No has enviado el documento de indentidad",
-                "verification_id_status_waiting": "Has enviado el documento de identidad, debes esperar a que un administrador lo revise para decidir si es aprovado",
-                "verification_id_status_refuted": "El documento de identidad ha sido rechazado",
-                "verification_id_status_approved": "Tu identidad ha sido aprovada, a partir de este momento todas las habitaciones que publiques tendr{{'unicode.a'|translate}}n el estado de verificads, lo cual inspira mayor confianza a los hu{{'unicode.e'|translate}}spedes"
-            },
-            "listings": {
-                "header": "Habitaciones"
-            },
-            "reservations": {
-                "header": "Reservas"
-            },
-            "subscriptions": {
-                "header": "Subscripciones"
-            }
-        }
-    },
-    "faq": {
-        "header": "Ayuda y soporte",
-        "subheader": "Preguntas y respuestas mas comunes",
-        "q": "{{'unicode.iquest'|translate}}Sobre qu{{'unicode.e'|translate}} quiere saber{{'unicode.rquest'|translate}}",
-        "btn_search": "B{{'unicode.u'|translate}}scar",
-        "question": "Pregunta",
-        "answer": "Respuesta",
-        "question_es": "Pregunta espa{{'unicode.n'|translate}}ol",
-        "question_en": "Pregunta ingl{{'unicode.e'|translate}}s",
-        "question_fr": "Pregunta franc{{'unicode.e'|translate}}s",
-        "answer_es": "Respuesta espa{{'unicode.n'|translate}}ol",
-        "answer_en": "Respuesta ingl{{'unicode.e'|translate}}s",
-        "answer_fr": "Respuesta franc{{'unicode.e'|translate}}s",
-        "insert": {
-            "header": "Insertar pregunta/respuesta",
-            "msg_success": "La pregunta/respuesta se ha insertado correctamente"
-        },
-        "update": {
-            "header": "Modificar pregunta/respuesta",
-            "msg_success": "La pregunta/respuesta se ha modificado correctamente"
-        },
-        "delete": {
-            "header": "Eliminar pregunta/respuesta",
-            "confirmation": "{{'unicode.iquest'|translate}}Esta seguro que desea eliminar el la pregunta/respuesta{{'unicode.rquest'|translate}}",
-            "msg_success": "La pregunta/respuesta se ha eliminado correctamente"
-        }
-    },
-    "coin": {
-        "header": "Monedas",
-        "subheader": "Administrar los tipos de monedas que se muestran en el convertidor",
-        "btn_edit": "Modificar moneda",
-        "btn_delete": "Eliminar moneda",
-        "code": "C{{'unicode.o'|translate}}digo",
-        "name": "Nombre",
-        "insert": {
-            "header": "Insertar moneda",
-            "msg_success": "La moneda se ha insertado correctamente"
-        },
-        "update": {
-            "header": "Modificar moneda",
-            "msg_success": "La moneda se ha modificado correctamente"
-        },
-        "delete": {
-            "header": "Eliminar moneda",
-            "confirmation": "{{'unicode.iquest'|translate}}Esta seguro que desea eliminar la moneda{{'unicode.rquest'|translate}}",
-            "msg_success": "La moneda se ha eliminado correctamente"
-        }
-    },
-    "about_us": {
-        "header": "{{'unicode.iquest'|translate}}Quienes somos{{'unicode.rquest'|translate}}",
-        "subheader": "En esta p{{'unicode.a'|translate}}gina le presentamos informaci{{'unicode.o'|translate}}n sobre nuestra empresa"
-    },
-    "listing": {
-        "btn_select_user":"Seleccionar Cliente",
-        "input_user":"Correo del cliente",
-        "input_user_close":"Cerrar",
-        "listing_category_id": "Categor{{'unicode.i'|translate}}a del hotel",
-        "header": "Administrar habitaciones",
-        "subheader": "Consultar detalles de propiedaes",
-        "tab_main_info": "Datos de la habitación",
-        "tab_images": "Imagenes de la habitación",
-        "tab_prices": "Precios especiales",
-        "tab_services": "Servicios",
-
-        "id": "Id Habitación",
-        "listing_type_id": "Tipo de habitación",
-        "listing_type_id_small": "Tipo prop.",
-        "capacity": "M{{'unicode.a'|translate}}ximo de hu{{'unicode.e'|translate}}spedes",
-        "capacity_small": "Num. hu{{'unicode.e'|translate}}sp.",
-        "country_code": "Pa{{'unicode.i'|translate}}s",
-        "city": "Ciudad",
-        "video_youtube": "Link de video en Youtube",
-        "video_vimeo": "Link de video en Vimeo",
-        "localization_help": "Los datos siguientes seran usados para mostrar google-maps",
-        "latitude": "Latitud",
-        "longitude": "Longitud",
-        "description": "Descripc{{'unicode.o'|translate}}n",
-        "description_es":"Descripción en español",
-        "description_en":"Descripción en inglés",
-        "created_at": "Fecha de publicado",
-        "owner": "Propitario",
-        "per_day": "Por noche",
-        "price_day": "Precio por noche",
-        "price_month": "Precio mensual",
-        "price_week": "Precio semanal",
-        "d_price": "Precio:",
-        "d_price_day": " la noche",
-        "d_price_month": " el mensual",
-        "d_price_week": " la semanal",
-        "coin_base": "Moneda base",
-        "price_avg": "Precio Avg:",
-        "price_subscriptions": "Precios:",
-        "reviews_total": "Calificaciones",
-        "comments_total": "Comentarios",
-        "services": "Servicios:",
-        "location": "Ubicaci{{'unicode.o'|translate}}n",
-        "owner": "Propietario",
-        "selft_description": "Descripci{{'unicode.o'|translate}}n dada por el propietario",
-        "avg_price_description": "Indica el precio promedio por noche, pero hay que tener en cuenta q algunas habitaciones tienen otro tipoo de subscripci{{'unicode.o'|trans_complete}} que no tiene que ser por noche o diaria",
-        "map_address": "Direcci{{'unicode.o'|translate}}n para ubicar mapa si lo necesita",
-        "select_image": "Seleccionar nueva imagen",
-        "image_caption": "T{{'unicode.i'|translate}}tulo de la imagen",
-        "image_primary": "{{'unicode.iquest'|translate}}Primaria{{'unicode.rquest'|translate}}",
-        "btn_details": "Ir a vista de la habitación",
-        "btn_insert": "Crear nueva habitación",
-        "btn_delete": "Eliminar",
-        "btn_relevant": "Agregar o quitar relevancia a la habitación",
-        "btn_edit": "Modificar",
-        "add_price": "Nuevo precio",
-        "btn_next": "Pr{{'unicode.o'|translate}}ximo",
-        "btn_prev": "Anterior",
-        "btn_load_map": "Cargar mapa",
-        "btn_publish": "Publicar",
-        "btn_reserve": "Reservar",
-        "btn_shared": "Compartir",
-        "btn_edit":"Editar",
-
-        "services_empty": "Debe seleccionar al menos un servicio",
-        "price_empty": "Debe definir al menos un precio para la habitación",
-
-        "list": {
-            "header": "Mis habitaciones"
-        },
-        "insert": {
-            "header": "Publicar nueva habitación",
-            "msg_success": "La habitación ha sido creada satisfactoriamente"
-        },
-        "update": {
-            "header": "Modificar habitación",
-            "msg_success": "La habitación ha sido modificada satisfactoriamente"
-        },
-        "delete": {
-            "header": "Eliminar habitación",
-            "confirmation": "{{'unicode.iquest'|translate}}Esta seguro que desea eliminar la habitación{{'unicode.rquest'|translate}}",
-            "msg_success": "La habitación ha sido eliminada satisfactoriamente"
-        },
-        "map": {
-            "header": "Defina la ubicaci{{'unicode.o'|translate}}n"
-        },
-
-        "price": {
-            "header": "Precio de la habitación",
-            "price": "Precio",
-            "subscription": "Subscripci{{'unicode.o'|translate}}n",
-            "coin": "Moneda",
-            "max_clients": "No. hu{{'unicode.e'|translate}}spedes",
-            "description": "Descripci{{'unicode.o'|translate}}n",
-            "is_subscription": "{{'unicode.iquest'|translate}}Subscripci{{'unicode.o'|translate}}n{{'unicode.rquest'|translate}}",
-            "without_subscription": "Sin Subscripci{{'unicode.o'|translate}}n",
-            "subscription_d": "Subscripci{{'unicode.o'|translate}}n diaria",
-            "subscription_m": "Subscripci{{'unicode.o'|translate}}n mensual",
-            "subscription_y": "Subscripci{{'unicode.o'|translate}}n anual"
-        },
-
-        "details": {
-            "header": "Detalles de la habitación",
-            "subheader": "En esta vista usted puede consultar la habitación y realizar la reserva",
-            "country": " en :",
-            "city": "En la ciudad:",
-            "reviews": "Popularidad",
-            "total_comments": "Comentarios",
-            "capacity": "M{{'unicode.a'|translate}}ximo de hu{{'unicode.e'|translate}}spedes permitidos:",
-            "created_at": "Publicado el: ",
-            "images": "Imagenes",
-            "verificated": "Habitación verificada",
-            "unverificated": "Habitación no verificada"
-        },
-        "search": {
-            "header": "Encuentra habitaciones",
-            "subheader": "Encuentre habitaciones en su ciudad o en cualquier otra ciudad del mundo",
-            "top_in_city": "Habitaciones encontradas",
-            "sort_by": "Ordernar por:",
-            "sort_rating": "Calificaciones",
-            "sort_price": "Precio por noche",
-            "sort_created_at": "Publicaci{{'unicode.o'|translate}}n",
-            "sort_desc": "Desc",
-            "sort_asc": "Asc",
-            "date_before": "Hasta",
-            "date_after": "Desde",
-            "range_date": "Fechas disponible",
-            "capacity": "No. hu{{'unicode.e'|translate}}spedes",
-            "services": "Servicios"
-        }
-
-    },
-    "listing_review": {
-        "give_your_rating": "Seleccionar la calificaci{{'unicode.o'|translate}}n",
-        "comment": "Entre sus comentarios",
-        "insert": {
-            "header": "Calificar habitación",
-            "msg_success": "Su calificaci{{'unicode.o'|translate}}n se ha enviado correctamente"
-        }
-    },
-    "listing_comment": {
-        "comment": "Envie su comentario sobre la habitación",
-        "insert": {
-            "header": "Comentar",
-            "msg_success": "Su comentario se ha enviado correctamente"
-        }
-    },
-    "listing_reserve": {
-        "price_type": "Tipo de subscripci{{'unicode.o'|translate}}n (precio)",
-        "period": "Periodo de tiempo",
-        "price_type_day": "Diaria",
-        "price_type_week": "Semanal",
-        "price_type_month": "Mensual",
-        "price_type_special": "Especial",
-        "start_date": "Fecha de entrada",
-        "end_date": "Fecha de salida",
-        "is_flexible": "Reserve flexible",
-        "by_is_flexible": "Por ser una reserva flexible",
-        "flexible_description": "Por ser una reserva flexible, usted podr{{'unicode.a'|translate}} cancelar su reserva en los pr{{'unicode.o'|translate}}ximos 3 dias despu{{'unicode.e'|translate}}s de reservar pagando un extra de 2 EUR y recuperando su dinero, para futuras reservas",
-        "is_flexible_description": "Usted podr{{'unicode.a'|translate}} cancelar su reserva recuperando su dinero, para futuras reservas",
-        "count_persons": "Cantidad de hu{{'unicode.e'|translate}}spedes",
-        "num_persons": "Num. hu{{'unicode.e'|translate}}spedes",
-        "amount_total": "Total de la reserva:",
-        "amount_owner": "A pagar al anfitri{{'unicode.o'|translate}}n:",
-        "amount_provider": "A pagar al proveder(Atuhotel):",
-        "amount_provider_description": "10% del total de la reserva",
-        "amount_salved": "Saldo guardado de reservas flexibles que fueron canceladas anteriormente",
-        "client": "Cliente",
-        "filter_owner": "Reservas recibidas",
-        "filter_client": "Reservas realizadas por usted",
-        "created_at": "Fecha de reserva",
-        "btn_confirm": "Confirmar",
-        "btn_payment": "Completar el pago",
-        "btn_details": "Ver detalles de la habitación",
-        "btn_cancel": "Cancelar reserva",
-        "btn_finish": "Terminar reserva",
-        "btn_ask_review": "Pedir calificaci{{'unicode.o'|translate}}n",
-        "ask_review_msg_success": "Se le ha enviado un email al cliente solcit{{'unicode.a'|translate}}ndole que de su calificaci{{'unicode.o'|translate}}n sobre su estancia en la habitación",
-        "childs":"{{'unicode.lquest|translate}}Lleva ni{{'unicode.n'|translate}}os{{'unicode.rquest|translate}}",
-        "insert": {
-            "header": "Realizar reserva",
-            "msg_success": "Su comentario se ha enviado correctamente",
-            "complete_payment": "Completar reserva",
-            "complete_register_without_payment": "Se ha confirmado la reserva. Sin necesidad de realizar el pago a atuhotel.com debido a que tenia suficiente saldo acumulado de reservas flexibles anteriores. Usted puede consultar sus reservas en su perfil de usuario",
-            "complete_payment_subheader": "Deber{{'unicode.a'|translate}} pagar el 10% a la web atuhotel.com por la gesti{{'unicode.o'|translate}}n",
-            "confirmation_header": "La reserva se ha completado satisfactoriamente",
-            "confirmation_subheader": "Usted puede cancelar su reserva en cualquier momento y en caso de ser una reserva flexible usted podr{{'unicode.a'|translate}} recuperar el dinero pagada a atuhotel.com y se le guardaremos para ser usado en futuras reservas",
-            "confirmation_view": "Vea sus reservas aqui"
-        },
-        "details": {
-            "header": "Detalles de la reserva"
-        },
-        "list": {
-            "header": "Mis reservas"
-        },
-        "cancel": {
-            "header": "Cancelar reserva",
-            "confirmation": "{{'unicode.iquest'|translate}}Est{{'unicode.a'|translate}} seguro que desea cancelar la habitación{{'unicode.rquest'|translate}}",
-            "message_success_flexible": "La reserva ha sido cancelada y el saldo pagado a atuhotel ha sido alamacenado para ser utilizado en otros reservas",
-            "message_success": "La reserva ha sido cancelada"
-        }
-    },
-
-
-    "common": {
-        "btn_continue": "Continuar",
-        "btn_send": "Enviar",
-        "btn_save": "Guardar cambios",
-        "btn_accept": "Aceptar",
-        "btn_close": "<i class='icon-close'></i> Cerrar",
-        "btn_cancel": "Cancelar",
-        "btn_insert": "Insertar",
-        "btn_edit": "Modificar",
-        "btn_delete": "Eliminar",
-        "btn_previous": "Anterior",
-        "btn_next": "Siguiente",
-        "btn_refresh": "Refrescar",
-        "btn_save": "Guardar",
-        "by": "por:",
-        "of": "de",
-        "euro": "&#8364;",
-        "of_total": " del total",
-        "huesped": "Hu{{'unicode.e'|translate}}sped",
-        "huespeds": "Hu{{'unicode.e'|translate}}spedes",
-        "date": {
-            "today": "Hoy",
-            "yesterday": "Ayer",
-            "days": "D{{'unicode.i'|translate}}as",
-            "day": "D{{'unicode.i'|translate}}a",
-            "weeks": "Semanas",
-            "week": "Semana",
-            "years": "A{{'unicode.n'|translate}}os",
-            "year": "A{{'unicode.n'|translate}}o",
-            "days_ago": "D{{'unicode.i'|translate}}as atr{{'unicode.a'|translate}}s",
-            "calendar": {
-                "label_day": "D{{'unicode.i'|translate}}a",
-                "label_month": "Mes",
-                "label_year": "A{{'unicode.n'|translate}}o",
-                "months": {
-                    "1": "Enero",
-                    "2": "Febrero",
-                    "3": "Marzo",
-                    "4": "Abril",
-                    "5": "Mayo",
-                    "6": "Junio",
-                    "7": "Julio",
-                    "8": "Agosto",
-                    "9": "Septiembre",
-                    "10": "Octubre",
-                    "11": "Noviembre",
-                    "12": "Diciembre"
-                }
-            }
-        }
-    },
-    "message": {
-        "ajax_error": "Error en el llamado al servidor",
-        "ajax_server_error": "Ha ocurrido un error en el llamado al servidor, intente de nuevo mas tarde.",
-        "action_succeded": "Acci{{'unicode.o'|translate}}n completada",
-        "action_error": "Acci{{'unicode.o'|translate}}n con error",
-        "validation": {
-            "empty": " Este campo es obligatorio",
-            "max": " El valor de este campo debe ser mayor que:",
-            "min": " El valor de este campo debe ser menor que:",
-            "equal": " El valor de este campo debe ser igual a:",
-            "email": " La direcci{{'unicode.o'|translate}}n de correo no es correcta",
-            "maxHeight": "Ha sobre pasado el alto m{{'a'|translate}}ximo: ",
-            "maxSize": "Ha sobre pasado el tama{{'unicode.n'|translate}}o m{{'a'|translate}}ximo: ",
-            " Image type not supported": "El archivo no es un fichero de tipo imagen",
-            "pattern": " El archivo no tiene el formato v{{'unicode.a'|translate}}lido: ",
-            "url": " Debe especificar una url con formato correcto"
-        }
-    },
-
-    "unicode": {
-        "n": "\u00f1",
-        "o": "\u00f3",
-        "a": "\u00E1",
-        "i": "\u00ED",
-        "U": "\u00DA",
-        "u": "\u00F9",
-        "e": "\u00E9",
-        "iquest": "\u00BF",
-        "rquest": "\u003F"
+  "Su":"Do",
+  "Mo":"Lu",
+  "Tu":"Ma",
+  "We":"Mi",
+  "Th":"Ju",
+  "Fr":"Vi",
+  "Sa":"Sa",
+  "Jan":"Ene",
+  "Apr":"Abr",
+  "May":"May",
+  "Jun":"Jun",
+  "Jul":"Jul",
+  "Aug":"Ago",
+  "Sep":"Sep",
+  "Oct":"Oct",
+  "Nov":"Nov",
+  "Dec":"Dic",
+  "menu": {
+    "header": {
+      "login": "Inicia sesi{{'unicode.o'|translate}}n",
+      "register": "Reg{{'unicode.i'|translate}}strate",
+      "faq": "Ayuda",
+      "search": "Buscar",
+      "search_sm": "Buscar",
+      "about_us": "{{'unicode.iquest'|translate}}Qui{{'unicode.e'|translate}}nes somos{{'unicode.rquest'|translate}}",
+      "lang": {
+        "en": "Ingl{{'unicode.e'|translate}}s",
+        "es": "Espa{{'unicode.n'|translate}}ol",
+        "gr": "Alem{{'unicode.a'|translate}}n",
+        "fr": "Franc{{'unicode.e'|translate}}s"
+      },
+      "conversor": "Convertidor",
+      "user_profile": {
+        "profile": "Mi Perfil",
+        "logout": "Salir"
+      }
     }
+  },
+  "message": {
+    "delete": {
+      "msg_success": "Objeto eliminado con éxito"
+    }
+  },
+  "home": {
+    "process":"Elige tu escapada + contacta y reserva + disfruta de la estancia",
+    "search": {
+      "header": "Elije tu destino",
+      "place": "{{'unicode.iquest'|translate}}A d{{'unicode.o'|translate}}nde quiero ir{{'unicode.rquest'|translate}}",
+      "from_date": "Desde",
+      "to_date": "Hasta",
+      "date": "Seleccione la fecha",
+      "add_room": "Otra habitaci{{'unicode.o'|translate}}n",
+      "capacity": "Cantidad de hu{{'unicode.e'|translate}}spedes",
+      "search": "Buscar"
+    },
+    "rates_listings": "Ofertas Flash",
+    "reserve": "Reservar",
+    "city_prefered": "Ciudades favoritas",
+    "place": {
+      "london": "Londres",
+      "paris": "París",
+      "berlin": "Berlín",
+      "madrid": "Madrid",
+      "barcelona": "Barcelona",
+      "alicante": "Alicante"
+    }
+  },
+  "access": {
+    "label_email": "Email",
+    "label_username": "Nombre de usuario",
+    "label_password": "Contrase{{'unicode.n'|translate}}a",
+    "label_confirmpwd": "Confirme contrase{{'unicode.n'|translate}}a",
+    "label_first_name": "Nombre",
+    "label_last_name": "Apellidos",
+    "label_date_birth": "Fecha de nacimiento",
+    "label_question": "Inserte una pregunta",
+    "label_answer": "Inserte la respuesta",
+    "label_role_client": "Soy cliente",
+    "label_role_owner": "Soy hotelero",
+    "label_hotel_name": "Nombre de hotel",
+    "label_hotel_rating": "Estrellas del hotel",
+    "label_dni": "Dni/Pasaporte/T. Identidad",
+    "label_phone": "Tel{{'unicode.e'|translate}}fono",
+    "label_phone_emergency": "Tel{{'unicode.e'|translate}}fono de emergencia",
+    "label_about_me": "Acerca de mi",
+    "label_profile_img": "Imagen de perfil",
+    "label_zip_code": "C{{'unicode.o'|translate}}digo postal",
+    "label_latitude": "Latitud geogr{{'unicode.a'|translate}}fica",
+    "label_longitude": "Longitud geogr{{'unicode.a'|translate}}fica",
+    "label_country": "Pa{{'unicode.i'|translate}}s",
+    "label_city": "Ciudad",
+    "label_time_zone": "Zona horaria",
+    "label_role": "Tipo de usuario",
+    "file_id_type": "Tipo de documento de identidad",
+    "file_id_type_passport": "Pasaporte",
+    "file_id_type_dni": "Documento Identidad",
+    "image_dni": "Imagen de documento",
+    "label_amount_flexible": "Dinero acumulado",
+    "label_hotel_id": "Cif/Vat del hotel",
+    "label_owner_cancel_term_id": "{{'unicode.iquest'|translate}}Cu{{'unicode.a'|translate}}nto tiempo antes de la fecha de llegada puede llegar a cancelar gratis el cliente{{'unicode.rquest'|translate}}",
+    "label_owner_cancel_prev_cost_id": "{{'unicode.iquest'|translate}}Cu{{'unicode.a'|translate}}nto tendr{{'unicode.a'|translate}} que pagar el cliente si cancela la reserva <b>{{days}}</b> {{'unicode.rquest'|translate}}",
+    "label_owner_cancel_total_cost_id": "{{'unicode.iquest'|translate}}Cu{{'unicode.a'|translate}}nto tendr{{'unicode.a'|translate}} que pagar el cliente si no se presenta{{'unicode.rquest'|translate}}",
+    "label_bank_account_id": "Banco de la cuenta",
+    "label_bank_account_number": "N{{'unicode.u'|translate}}mero de cuenta bancaria",
+    "check_terms_police": "Estoy de acuerdo con los t{{'unicode.e'|translate}}rminos de privacidad",
+    "btn_login": "Entrar",
+    "btn_signup": "Continuar con el registro",
+    "btn_register_hotel": "Registrar hotel",
+    "btn_facebook": "Facebook",
+    "btn_google": "Google",
+    "btn_new_account": "Nuevo usuario de Instabono",
+    "link_sigin": "Acceder",
+    "text_not_account": "{{'unicode.iquest'|translate}}No tienes una cuenta a{{'unicode.u'|translate}}n{{'unicode.rquest'|translate}}",
+    "text_yes_account": "{{'unicode.iquest'|translate}}Tienes ya una cuenta{{'unicode.rquest'|translate}}",
+    "link_forgotpwd": "{{'unicode.iquest'|translate}}Olvid{{'unicode.o'|translate}} su contrase{{'unicode.n'|translate}}a{{'unicode.rquest'|translate}}",
+    "login": {
+      "header": "Acceder a Instabono",
+      "message_fail": "Nombre de usuario o contrase{{'unicode.n'|translate}}a incorrecta"
+    },
+    "register": {
+      "header": "Nuevo usuario en Instabono",
+      "hotel": "Registro de hotel",
+      "label_answer_info": "Facilitar una pregunta y la respuesta correspondiente para ser usados en caso de que necesite recuperar su clave de acceso",
+      "password_match_error": "La <strong>contrase{{'unicode.o'|translate}}a</strong> y la <strong>confirmaci{{'unicode.o'|translate}}n</strong> no coinciden",
+      "msg_success_owner": "Te has registrado en nuestra web, para poder comenzar a usar la cuenta debes confirmarla con el link  que le hemos enviado a su email",
+      "msg_success_client": "Te has registrado en nuestra web, su cuenta de acceso es como cliente. Pero desde su perfil de usuario puede convertirse en propietario"
+    },
+    "password": {
+      "header": "Resetear contase{{'unicode.n'|translate}}a",
+      "header_answer_question": "Inserte la respuesta a su pregunta",
+      "btn_recover": "Obtener nueva clave",
+      "msg_error_email": "El email es incorrecto, no podemos obtener la informaci{{'unicode.o'|translate}}n asociada a esta direcci{{'unicode.o'|translate}}n de correo",
+      "msg_success": "La contrase{{'unicode.n'|translate}}a ha sido reseteada y enviada a su correo, por favor verif{{'unicode.i'|translate}}quelo."
+    },
+    "profile": {
+      "listing_segment": {
+        "btn_insert": "Nuevo Segmento",
+        "header": "Segmentos de escapada",
+        "name_es": "Nombre en Español",
+        "name_en": "Nombre en Inglés",
+        "delete_header": "Eliminar Segmento",
+        "delete_question": "Está seguro que desea eliminar el segmento?"
+      },
+      "confirmation": {
+        "header": "Verificar cuenta de acceso en Instabono",
+        "verifcating": "Estamos verificando el token recibido",
+        "msg_success": "Su cuenta ha sido verificada, ahora puede hacer uso de las opciones para administrar su perfil de usuario"
+      },
+      "listing_type":{
+        "header": "Tipos de escapada",
+        "single": "Tipo de escapada",
+        "btn_insert": "Crear nuevo tipo",
+        "name_es": "Nombre en español",
+        "name_en": "Nombre en inglés",
+        "price": "Precio",
+        "link": "Tipos de escapada",
+        "delete_header": "Eliminar Tipo",
+        "delete_question": "Está seguro que desea eliminar el tipo de escapada?"
+
+      },
+      "info": {
+        "header": "Datos Personales",
+        "upload_image": "Seleccione una imagen",
+        "password_edit_info": "Edite el campo contrase{{'unicode.n'|translate}}a solo si desea modificar la misma",
+        "confirm_password": "Confirmar contrase{{'unicode.n'|translate}}a",
+        "new_password": "Nueva contrase{{'unicode.n'|translate}}a",
+        "password_not_match": "Las contrase{{'unicode.n'|translate}}as no coinciden",
+        "img_uploaded": "La foto de su perfil ha sido actualizada",
+        "msg_success": "Los datos de su perfil han sido guardados satisfactoriamente",
+        "msg_owner_unverificated": "Estamos esperando que verifiques tu cuenta con el link que se ha enviamos a tu email",
+        "btn_resend_email": "Reenviar email de confirmaci{{'unicode.o'|translate}}n",
+        "convert_propietary": "{{'unicode.iquest'|translate}}Deseas ser un tipo de usuario PROPIETARIO y poder gestionar sus propios alojamientos{{'unicode.rquest'|translate}} <p>De click en el bot{{'unicode.o'|translate}}n de abajo y le enviaremos un correo para que active su cuenta de acceso como propietario</p>",
+        "btn_activate_owner": "Quiero ser propietario",
+        "msg_success_owner_email": "Le hemos enviado un email con el link de confirmaci{{'unicode.o'|translate}}n para que pueda comenzar a usar su cuenta como propietario"
+      },
+      "hotel": {
+        "header": "Datos del hotel",
+        "resumen": "Resumen del hotel",
+        "cancelaciones": "Política de cancelaciones"
+      },
+      "location": {
+        "header": "Ubicaci{{'unicode.o'|translate}}n"
+      },
+      "verification": {
+        "header": "Verificaci{{'unicode.o'|translate}}n",
+        "upload_image": "Subir imagen del documento de identidad oficial",
+        "verification_id_status_pending": "No has enviado el documento de indentidad",
+        "verification_id_status_waiting": "Has enviado el documento de identidad, debes esperar a que un administrador lo revise para su aprobaci{{'unicode.o'|translate}}n",
+        "verification_id_status_refuted": "El documento de identidad ha sido rechazado",
+        "verification_id_status_approved": "Tu identidad ha sido aprobada, a partir de este momento todas las habitaciones que publiques tendr{{'unicode.a'|translate}}n el estado de VERIFICADAS, lo cual inspira mayor confianza a los hu{{'unicode.e'|translate}}spedes"
+      },
+      "listings": {
+        "header": "Habitaciones"
+      },
+      "escapadas": {
+        "header": "Escapadas",
+        "insert": "Crear nueva escapada"
+      },
+      "reservations": {
+        "header": "Reservas"
+      },
+      "subscriptions": {
+        "header": "Subscripciones"
+      },
+      "delete": {
+        "btn": "Eliminar mi perfil",
+        "header": "Eliminar perfil de usuario",
+        "confirmation": "{{'unicode.iquest'|translate}}Est{{'unicode.a'|translate}} seguro que desea eliminar su perfil de usuario{{'unicode.rquest'|translate}}",
+        "msg_success": "Su perfil de usuario ha sido eliminado correctamente"
+      },
+      "stop_sales": {
+        "btn": "Parar ventas en el hotel",
+        "header": "Parar las ventas en hotel",
+        "confirmation": "{{'unicode.iquest'|translate}}Est{{'unicode.a'|translate}} seguro que desea descontinuar las ventas en el hotel {{'unicode.rquest'|translate}}",
+        "msg_success": "Las ventas ha sido descontinuadas, los datos de las habitaciones asociadaas al hotel se pueden ver en la web, pero no se brindara la opci{{'unicode.o'|translate}}n de reservar"
+      },
+      "play_sales": {
+        "btn": "Continuar ventas en el hotel",
+        "header": "Continuar las ventas en hotel",
+        "confirmation": "{{'unicode.iquest'|translate}}Est{{'unicode.a'|translate}} seguro que desea continuar las ventas en el hotel {{'unicode.rquest'|translate}}",
+        "msg_success": "Las ventas ha sido restablecidas, los datos de las habitaciones asociadaas al hotel se pueden reservar"
+      }
+    }
+  },
+  "faq": {
+    "header": "Ayuda y soporte",
+    "subheader": "Preguntas y respuestas m{{'unicode.a'|translate}}s comunes",
+    "q": "{{'unicode.iquest'|translate}}Sobre qu{{'unicode.e'|translate}} quiere saber{{'unicode.rquest'|translate}}",
+    "btn_search": "Buscar"
+  },
+  "about_us": {
+    "header": "{{'unicode.iquest'|translate}}Qui{{'unicode.e'|translate}}nes somos{{'unicode.rquest'|translate}}",
+    "subheader": "En esta p{{'unicode.a'|translate}}gina le presentamos informaci{{'unicode.o'|translate}}n sobre nuestra empresa"
+  },
+  "listing": {
+    "nights": "Cantidad de noches",
+    "segmento_id": "Segmento de escapada",
+    "tab_main_info": "Datos de la escapada",
+    "tab_images": "Imagenes de la escapada",
+    "tab_prices": "Precios especiales",
+    "tab_services": "Servicios",
+    "tab_youtube": "V{{'unicode.i'|translate}}deo en youtube",
+    "tab_vimeo": "V{{'unicode.i'|translate}}deo en vimeo",
+    "tab_location": "Mapa",
+    "tab_reviews": "Calificaciones",
+    "tab_comments": "Comentarios",
+    "id": "Id escapada",
+    "listing_category_id": "Categor{{'unicode.i'|translate}}a del hotel",
+    "listing_type_id": "Tipo de escapada",
+    "capacity": "M{{'unicode.a'|translate}}ximo de hu{{'unicode.e'|translate}}spedes",
+    "country_code": "Pa{{'unicode.i'|translate}}s",
+    "city": "Ciudad",
+    "hotel_name": "Hotel",
+    "price": "Precio por escapada",
+    "base_price": "Precio base",
+    "cancel_previusly_days": "{{'unicode.iquest'|translate}}Cu{{'unicode.a'|translate}}nto tiempo antes de la fecha de llegada puede cancelar gratis el cliente{{'unicode.rquest'|translate}}",
+    "cancel_previusly_amount": "{{'unicode.iquest'|translate}}Cu{{'unicode.a'|translate}}nto tendr{{'unicode.a'|translate}} que pagar el cliente si cancela la reserva durante los 3 dias de la fecha de llegada{{'unicode.rquest'|translate}}",
+    "cancel_total_amount": "{{'unicode.iquest'|translate}}Cu{{'unicode.a'|translate}}nto debe pagar el cliente si no se presenta{{'unicode.rquest'|translate}}",
+    "video_youtube": "Link de video en Youtube",
+    "video_vimeo": "Link de video en Vimeo",
+    "localization_help": "Los datos siguientes seran usados para mostrarse en google-maps",
+    "latitude": "Latitud",
+    "longitude": "Longitud",
+    "description": "Descripci{{'unicode.o'|translate}}n",
+    "created_at": "Fecha de publicaci{{'unicode.o'|translate}}n",
+    "owner": "Propitario",
+    "expiration": "Fecha de vencimiento",
+    "desde": "Desde",
+    "hasta": "Hasta",
+    "days": "Días de la escapada",
+    "discount":"% de descuento",
+    "per_day": "Por noche",
+    "price_day": "Precio por escapada",
+    "price_month": "Precio mensual",
+    "price_week": "Precio semanal",
+    "d_price": "Precio:",
+    "d_price_day": " La noche",
+    "d_price_month": " Mensual",
+    "d_price_week": " Semanal",
+    "coin_base": "Moneda base",
+    "price_avg": "Precio Avg:",
+    "price_subscriptions": "Precios:",
+    "reviews_total": "Calificaciones",
+    "comments_total": "Comentarios",
+    "services": "Servicios:",
+    "location": "Ubicaci{{'unicode.o'|translate}}n",
+    "owner": "Encargado del hotel",
+    "hotel_name": "Nombre del hotel",
+    "selft_description": "Descripci{{'unicode.o'|translate}}n dada por el encargado del hotel",
+    "avg_price_description": "Indica el precio promedio por noche, pero hay que tener en cuenta que algunas habitaciones tienen otro tipo de subscripci{{'unicode.o'|trans_complete}}n que no tiene que ser por noche o diaria",
+    "map_address": "Direcci{{'unicode.o'|translate}}n para ubicar mapa si lo necesita",
+    "select_image": "Seleccionar nueva imagen",
+    "image_caption": "T{{'unicode.i'|translate}}tulo de la imagen",
+    "image_primary": "{{'unicode.iquest'|translate}}Principal{{'unicode.rquest'|translate}}",
+    "btn_insert": "Crear nueva habitación",
+    "btn_delete": "Eliminar",
+    "btn_edit": "Modificar",
+    "add_price": "Nuevo precio",
+    "btn_next": "Pr{{'unicode.o'|translate}}ximo",
+    "btn_prev": "Anterior",
+    "btn_load_map": "Cargar mapa",
+    "btn_publish": "Publicar",
+    "btn_reserve": "Reservar",
+    "btn_shared": "Compartir",
+    "description_es": "Descripción en español",
+    "description_en": "Descripción en inglés",
+    "services_empty": "Debe seleccionar al menos un servicio",
+    "price_empty": "Debe definir al menos un precio para la habitación",
+    "list": {
+      "header": "Mis escapadas"
+    },
+    "insert": {
+      "header": "Publicar nueva escapada",
+      "msg_success": "La escapada ha sido creada satisfactoriamente"
+    },
+    "update": {
+      "header": "Modificar escapada",
+      "msg_success": "La escapada ha sido modificada satisfactoriamente"
+    },
+    "delete": {
+      "header": "Eliminar escapada",
+      "confirmation": "{{'unicode.iquest'|translate}}Est{{'unicode.a'|translate}} seguro que desea eliminar la escapada{{'unicode.rquest'|translate}}",
+      "msg_success": "La escapada ha sido eliminada satisfactoriamente"
+    },
+    "map": {
+      "header": "Defina la ubicaci{{'unicode.o'|translate}}n"
+    },
+    "price": {
+      "header": "Precio de la escapada",
+      "price": "Precio",
+      "subscription": "Subscripci{{'unicode.o'|translate}}n",
+      "coin": "Moneda",
+      "max_clients": "No. hu{{'unicode.e'|translate}}spedes",
+      "description": "Descripci{{'unicode.o'|translate}}n",
+      "is_subscription": "{{'unicode.iquest'|translate}}Subscripci{{'unicode.o'|translate}}n{{'unicode.rquest'|translate}}",
+      "without_subscription": "Sin Subscripci{{'unicode.o'|translate}}n",
+      "subscription_d": "Subscripci{{'unicode.o'|translate}}n diaria",
+      "subscription_m": "Subscripci{{'unicode.o'|translate}}n mensual",
+      "subscription_y": "Subscripci{{'unicode.o'|translate}}n anual"
+    },
+    "details": {
+      "header": "Detalles de la escapada",
+      "subheader": "En esta vista usted puede consultar la escapada y realizar la reserva",
+      "country": " en :",
+      "city": "En la ciudad:",
+      "reviews": "Popularidad",
+      "total_comments": "Comentarios",
+      "capacity": "M{{'unicode.a'|translate}}ximo de hu{{'unicode.e'|translate}}spedes permitidos:",
+      "created_at": "Publicado el: ",
+      "images": "Imagenes",
+      "verificated": "Escapada verificada",
+      "unverificated": "Escapada no verificada"
+    },
+    "search": {
+      "header": "¿A dónde quieres ir?",
+      "subheader": "Encuentre escapadas en su ciudad o en cualquier otra ciudad del mundo",
+      "top_in_city": "Habitaciones encontradas",
+      "sort_by": "Ordernar por:",
+      "sort_rating": "Calificaciones",
+      "sort_price": "Precio por escapada",
+      "sort_created_at": "Publicaci{{'unicode.o'|translate}}n",
+      "sort_desc": "Descendiente",
+      "sort_asc": "Ascendiente",
+      "date_before": "Hasta",
+      "date_after": "Desde",
+      "range_date": "Fechas disponible",
+      "capacity": "No. hu{{'unicode.e'|translate}}spedes",
+      "services": "Servicios"
+    }
+  },
+  "listing_review": {
+    "give_your_rating": "Seleccionar la calificaci{{'unicode.o'|translate}}n",
+    "comment": "Enviar sus comentarios",
+    "insert": {
+      "header": "Calificar habitación",
+      "msg_success": "Su calificaci{{'unicode.o'|translate}}n se ha enviado correctamente"
+    }
+  },
+  "listing_comment": {
+    "comment": "Env{{'unicode.i'|translate}}e su comentario sobre la habitación",
+    "insert": {
+      "header": "Comentar",
+      "msg_success": "Su comentario se ha enviado correctamente"
+    }
+  },
+  "listing_reserve": {
+    "price_type": "Tipo de subscripci{{'unicode.o'|translate}}n (precio)",
+    "period": "Periodo de tiempo",
+    "price_type_day": "Diaria",
+    "price_type_week": "Semanal",
+    "price_type_month": "Mensual",
+    "price_type_special": "Especial",
+    "start_date": "Fecha de entrada",
+    "end_date": "Fecha de salida",
+    "is_flexible": "Reserve flexible",
+    "by_is_flexible": "Por ser una reserva flexible",
+    "flexible_description": "Por ser una reserva flexible, usted podr{{'unicode.a'|translate}} cancelar su reserva en los pr{{'unicode.o'|translate}}ximos 3 dias despu{{'unicode.e'|translate}}s de reservar pagando un extra de 2 EUR y recuperando su dinero, para futuras reservas",
+    "is_flexible_description": "Usted podr{{'unicode.a'|translate}} cancelar su reserva recuperando su dinero, para futuras reservas",
+    "count_persons": "Cantidad de hu{{'unicode.e'|translate}}spedes",
+    "num_persons": "Num. hu{{'unicode.e'|translate}}spedes",
+    "amount_total": "Total de la reserva:",
+    "amount_owner": "A pagar al anfitri{{'unicode.o'|translate}}n:",
+    "amount_provider": "A pagar al proveder(Instabono): Esto nos permite cubrir los gastos de nuestra plataforma y ofrecer servicios como el de asistencia en el viaje las 24 horas.",
+    "amount_provider_description": "10% del total de la reserva",
+    "amount_salved": "Saldo guardado de reservas flexibles que fueron canceladas anteriormente",
+    "client": "Cliente",
+    "filter_owner": "Reservas recibidas",
+    "filter_client": "Reservas realizadas por usted",
+    "created_at": "Fecha de reserva",
+    "btn_confirm": "Confirmar",
+    "btn_payment": "Completar la reserva",
+    "btn_details": "Ver detalles de la habitación",
+    "btn_cancel": "Cancelar reserva",
+    "btn_finish": "Finalizar reserva",
+    "btn_started": "Iniciar reserva",
+    "btn_confirmed": "Confirmar reserva",
+    "btn_ask_review": "Pedir calificaci{{'unicode.o'|translate}}n",
+    "ask_review_msg_success": "Se le ha enviado un email al cliente solicit{{'unicode.a'|translate}}ndo que de su calificaci{{'unicode.o'|translate}}n sobre su estancia en la habitación",
+    "childs": "{{'unicode.iquest'|translate}}Lleva ni{{'unicode.n'|translate}}os{{'unicode.rquest'|translate}}",
+    "extra_persons_info": "Al a{{'unicode.n'|translate}}adir un extra o m{{'unicode.a'|translate}}s personas, el precio a pagar en el hotel podr{{'unicode.a'|translate}} variar en funci{{'unicode.o'|translate}}n de la cantidad de personas extras. Por lo que seg{{'unicode.u'|translate}}n y la categor{{'unicode.i'|translate}}a del mismo la tarifa a pagar ser{{'unicode.a'|translate}} distinta.",
+    "extra_child_age_info": "En caso de viajar con ni{{'unicode.n'|translate}}os mayores de dos a{{'unicode.n'|translate}}os o una tercera persona, debe contactar con el establecimiento para confirmar los cargos extras",
+    "termns": "T{{'unicode.e'|translate}}rminos y condiciones del hotel",
+    "agree_termns": "Estoy de acuerdo con los terminos y condiciones de cancelaci{{'unicode.o'|translate}}n",
+    "extra_general_header": "A tener en cuenta:",
+    "extra_general_details": "Las camas supletorias y las cunas están disponibles bajo petición y deben ser confirmadas por el hotel con antelación. Los huéspedes que deseen hacer uso de este servicio pueden indicarlo en el apartado de peticiones especiales al hacer la reserva. DICHOS SERVICIOS PUEDEN GENERAL CARGOS ADICIONALES.",
+    "complete_payment_not_card_subheader": "¿Puedo hacer una reserva sin tarjeta de crédito? (Click para detalles)",
+    "complete_payment_not_card_details": "La mayoría de hoteles requiere una tarjeta de crédito válida para garantizar la reserva. Sin embargo, cada vez hay más hoteles que garantizan la reserva sin necesidad de una tarjeta de crédito. También puedes hacer la reserva usando la tarjeta de otra persona, con su consentimiento. En ese caso, indica el nombre del titular de la tarjeta y especifica que tienes su permiso para usar su tarjeta.",
+    "complete_payment_not_card": "¿Sin tarjeta?",
+    "client_info": "Introduce tus datos",
+    "client_name": "Nombre completo",
+    "client_first_name": "Nombre",
+    "client_last_name": "Apellidos",
+    "client_email": "Correo electrónico",
+    "client_city": "Ciudad",
+    "client_phone": "Teléfono",
+    "client_reason": "Motivo de la reserva",
+    "client_reason_leisure": "Ocio",
+    "client_reason_work": "Trabajo",
+    "about_it": "Sobre tu reserva",
+    "client_special_request": "Peticiones especiales",
+    "introduce_info": "Introduce los datos para asegurar tu reserva",
+    "account_number": "Número de tarjeta",
+    "account_number_necesary": "Es necesaria para garantizar la reserva",
+    "account_expire": "Fecha de caducidad",
+    "account_month_expire": "Mes",
+    "account_year_expire": "Año",
+    "cvs_code": "Código CVC",
+    "cvs_code_none": "No es necesario que indiques el código CVC para hacer esta reserva.",
+    "text_cond1": "Al reservar esta habitación estás aceptando",
+    "text_cond2": "las condiciones de la reserva",
+    "text_cond3": "las condiciones generales",
+    "text_cond4": "la política de privacidad",
+    "btn_prev": "Anterior",
+    "btn_next": "Siguiente",
+    "insert": {
+      "header": "Realizar reserva",
+      "msg_success": "Su comentario se ha enviado correctamente",
+      "complete_payment": "Completar reserva",
+      "complete_register_without_payment": "Se ha confirmado la reserva. Sin necesidad de realizar el pago a Instabono.com debido a que tenia suficiente saldo acumulado de reservas flexibles anteriores. Usted puede consultar sus reservas en su perfil de usuario",
+      "complete_payment_subheader": "Debe ingresar sus datos de cuenta bancaria para completar la reserva",
+      "confirmation_header": "La reserva se ha completado satisfactoriamente",
+      "confirmation_subheader": "Usted puede cancelar su reserva en cualquier momento teniendo en cuenta que los cargos a pagar fueron aceptados por usted al momento de reservar",
+      "confirmation_view": "Vea sus reservas aqui"
+    },
+    "insert_pre": {
+      "confirmation_header": "La PRE-reserva se ha completado satisfactoriamente",
+      "confirmation_subheader": "Usted a realizado una PRE-reserva y debe esperar la confirmación del hotel. Debe revisar su correo en espera de notificaciones. Usted puede cancelar su reserva en cualquier momento teniendo en cuenta que los cargos a pagar fueron aceptados por usted al momento de reservar.",
+      "confirmation_view": "Vea sus reservas aqui"
+    },
+    "cancelled": {
+      "header": "La reserva se ha cancelado satisfactoriamente",
+      "subheader": "Usted a realizado una cancelación.",
+      "view": "Vea sus reservas aqui"
+    },
+    "details": {
+      "header": "Detalles de la reserva",
+      "client_header": "Datos del huespued"
+    },
+    "list": {
+      "header": "Mis reservas"
+    },
+    "cancel": {
+      "header": "Cancelar reserva",
+      "confirmation": "{{'unicode.iquest'|translate}}Est{{'unicode.a'|translate}} seguro que desea cancelar la reserva{{'unicode.rquest'|translate}}",
+      "message_success_flexible": "La reserva ha sido cancelada y el saldo pagado a Instabono.com ha sido alamacenado para ser utilizado en otras reservas",
+      "message_success": "La reserva ha sido cancelada"
+    },
+    "finish": {
+      "header": "Finalizar reserva",
+      "confirmation": "{{'unicode.iquest'|translate}}Est{{'unicode.a'|translate}} seguro que desea finalizar la reserva{{'unicode.rquest'|translate}}",
+      "message_success_flexible": "La reserva ha sido finalizada y el saldo pagado a Instabono.com ha sido alamacenado para ser utilizado en otras reservas",
+      "message_success": "La reserva ha sido finalizada"
+    },
+    "started": {
+      "header": "Comenzar reserva",
+      "confirmation": "{{'unicode.iquest'|translate}}Est{{'unicode.a'|translate}} seguro que desea comenzar la reserva{{'unicode.rquest'|translate}}",
+      "message_success_flexible": "La reserva ha sido iniciada",
+      "message_success": "La reserva ha sido iniciada"
+    },
+    "confirm": {
+      "header": "Confirmar reserva",
+      "confirmation": "{{'unicode.iquest'|translate}}Est{{'unicode.a'|translate}} seguro que desea confirmar la reserva{{'unicode.rquest'|translate}}",
+      "message_success_flexible": "La reserva ha sido confirmada",
+      "message_success": "La reserva ha sido confirmada"
+    }
+  },
+  "coins": {
+    "header": "Convertidor de moneda",
+    "base": "Moneda base",
+    "convert": "Moneda destino",
+    "amount": "Importe a convertir",
+    "unknow_currency": "Nuestra api no ha podido calcular la tasa de cambio para estas monedas",
+    "btn_calc": "Calcular"
+  },
+  "listing_stop_sales": {
+    "header":"Detener/Reactivar ventas en el hotel",
+    "event_title":"Ventas detenidas en esta fecha",
+    "search_filter_on":"Filtrar",
+    "search_year_only" : "Año específico",
+    "search_year_range" : "Rango de años",
+    "search_date_only" : "Fecha específica",
+    "search_date_range" : "Rango de Fecha",
+    "search_label_start_date" : "Fecha Inicial",
+    "search_label_end_date" : "Fecha Final",
+    "stop":"Detener",
+    "continue":"Reactivar",
+    "insert": {
+      "header": "Parar ventas en el hotel para la fecha seleccionada",
+      "confirmation": "¿Está seguro que desea continuar?",
+      "msg_success": "Las ventas han sido detenidas en el rango de fecha seleccionado"
+    },
+    "delete": {
+      "header": "Reactivar ventas en el hotel para la fecha seleccionada",
+      "confirmation": "¿Está seguro que desea continuar?",
+      "msg_success": "Las ventas han sido reactivadas en el rango de fecha seleccionado"
+    }
+  },
+  "contact_us": {
+    "header": "¿EN QUÉ TE PODEMOS AYUDAR?",
+    "subheader": "Contacte con nosotros. Por favor, introduzca su solicitud . Un miembro de nuestro equipo le responderá lo antes posible. Por favor, asegúrese que no introduce ningún dato de su tarjeta, nombre de usuario o contraseña en este documento.",
+    "role": "Rol de usuario",
+    "subject": "Asunto del mensaje",
+    "content": "Contenido del mensaje",
+    "btn_send": "Enviar",
+    "reserve_id": "Nº de reserva / ID",
+    "msg_success": "El mensaje de contacto se ha enviado correctamente",
+    "has_reserve": "¿Ha realizado una reserva?",
+    "category": "Categoría",
+    "categories": {
+      "reserve_cancel": "Cancelar Reserva",
+      "reserve_change": "Cambiar Reserva",
+      "reserve_confirmation": "Reenviar Confirmación",
+      "reserve_grantee": "Garantía de Reserva",
+      "request_called": "Solicitar una Llamada",
+      "reserve_troubles": "Problemas con una Reserva",
+      "others": "Otros"
+    }
+  },
+  "legal_terms": {
+    "header": "T{{'unicode.e'|translate}}rminos legales",
+    "subheader": "TERMINOS Y CONDICIONES DE USO Y CONTRATACION & POLITICA DE PRIVACIDAD"
+  },
+  "different": {
+    "header": "{{'unicode.iquest'|translate}}Por qu{{'unicode.e'|translate}} somos diferentes{{'unicode.rquest'|translate}}",
+    "subheader": ""
+  },
+  "cookies": {
+    "header": "Cookies",
+    "subheader": ""
+  },
+  "privacity": {
+    "header": "AVISO LEGAL. TERMINOS Y CONDICIONES DE USO Y CONTRATACION.",
+    "subheader": ""
+  },
+  "signup_hotel": {
+    "header": "Publica tu alojamiento en Instabono!",
+    "subheader": "Si eres hotelero"
+  },
+  "registrarse": "Regístrate ya!",
+  "footer": {
+    "reasons": "Razones para hospedar",
+    "politics": "Términos y condiciones de uso y contratación",
+    "how_works": "Cómo reservar?",
+    "publica": "Publica tu alojamiento",
+    "be_host": "Ser un anfitrión",
+    "about_us": "{{'unicode.iquest'|translate}}Qui{{'unicode.e'|translate}}nes somos{{'unicode.rquest'|translate}}",
+    "help": "Faqs",
+    "legal_terms": "T{{'unicode.e'|translate}}rminos legales",
+    "why_different": "{{'unicode.iquest'|translate}}Por qu{{'unicode.e'|translate}} somos diferentes{{'unicode.rquest'|translate}}",
+    "privacity": "Privacidad",
+    "cookies": "Cookies",
+    "contact_us": "Contacto",
+    "signup_hotel": "Registra tu hotel",
+    "sections": {
+      "legal_notice": {
+        "header": "Pie de imprenta",
+        "content1": "GRUPO TURISTICO Y HOSTELERO ESVAR, SL",
+        "content2": "CUSTA CARAVACA-CALASPARRA, S/N",
+        "content3": "30430 CEHEGIN, MURCIA",
+        "content4": "N{{'unicode.u'|translate}}mero de identificación del impuesto sobre la venta: B73939431"
+      },
+      "address": {
+        "header": "Direcci{{'unicode.o'|translate}}n",
+        "content1": "Email: info@instabono.com ",
+        "content2": "Internet: www.instabono.com",
+        "content3": "Dirección Postal: Av. de la Noria 2 - 6A 30500, Molina de Segura Murcia"
+      }
+    }
+  },
+  "common": {
+    "btn_continue": "Continuar",
+    "btn_back": "Atrás",
+    "btn_send": "Enviar",
+    "btn_save": "Guardar cambios",
+    "btn_accept": "Aceptar",
+    "btn_close": "<i class='icon-close'></i> Cerrar",
+    "btn_cancel": "Cancelar",
+    "btn_edit": "Modificar",
+    "btn_delete": "Eliminar",
+    "btn_previous": "Anterior",
+    "btn_next": "Siguiente",
+    "btn_refresh": "Refrescar",
+    "by": "por:",
+    "of": "de",
+    "and": "y",
+    "euro": "&#8364;",
+    "of_total": " del total",
+    "huesped": "Hu{{'unicode.e'|translate}}sped",
+    "huespeds": "Hu{{'unicode.e'|translate}}spedes",
+    "starts": "Estrellas",
+    "select_option": "Seleccione una opci{{'unicode.o'|translate}}n",
+    "date": {
+      "today": "Hoy",
+      "yesterday": "Ayer",
+      "days": "Noches",
+      "day": "Noche",
+      "weeks": "Semanas",
+      "week": "Semana",
+      "years": "A{{'unicode.n'|translate}}os",
+      "year": "A{{'unicode.n'|translate}}o",
+      "days_ago": "D{{'unicode.i'|translate}}as atr{{'unicode.a'|translate}}s",
+      "calendar": {
+        "label_day": "D{{'unicode.i'|translate}}a",
+        "label_month": "Mes",
+        "label_year": "A{{'unicode.n'|translate}}o",
+        "months": {
+          "1": "Enero",
+          "2": "Febrero",
+          "3": "Marzo",
+          "4": "Abril",
+          "5": "Mayo",
+          "6": "Junio",
+          "7": "Julio",
+          "8": "Agosto",
+          "9": "Septiembre",
+          "10": "Octubre",
+          "11": "Noviembre",
+          "12": "Diciembre"
+        },
+        "days": {
+          "1": "Dom",
+          "2": "Lun",
+          "3": "Mar",
+          "4": "Mie",
+          "5": "Jue",
+          "6": "Vie",
+          "7": "Sab"
+        }
+      }
+    }
+  },
+  "message": {
+    "ajax_error": "Error en el llamado al servidor",
+    "ajax_server_error": "Ha ocurrido un error en el llamado al servidor, int{{'unicode.e'|translate}}ntelo m{{'unicode.a'|translate}}s tarde.",
+    "action_succeded": "Acci{{'unicode.o'|translate}}n completada",
+    "action_error": "Acci{{'unicode.o'|translate}}n con error",
+    "validation": {
+      "empty": " Este campo es obligatorio",
+      "max": " El valor de este campo debe ser mayor que:",
+      "min": " El valor de este campo debe ser menor que:",
+      "equal": " El valor de este campo debe ser igual a:",
+      "email": " La direcci{{'unicode.o'|translate}}n de correo no es correcta",
+      "maxHeight": "Ha sobrepasado el alto m{{'a'|translate}}ximo: ",
+      "maxSize": "Ha sobrepasado el tama{{'unicode.n'|translate}}o m{{'a'|translate}}ximo: ",
+      " Image type not supported": "El archivo no es un fichero de tipo imagen",
+      "pattern": " El archivo no tiene el formato v{{'unicode.a'|translate}}lido: ",
+      "url": " Debe especificar una URL con formato correcto"
+    }
+  },
+  "unicode": {
+    "n": "\u00f1",
+    "o": "\u00f3",
+    "a": "\u00E1",
+    "i": "\u00ED",
+    "U": "\u00DA",
+    "u": "\u00F9",
+    "e": "\u00E9",
+    "iquest": "\u00BF",
+    "rquest": "\u003F"
+  },
+  "price_period":{
+    "menu_title": "Precios de temporada",
+    "header": "Mis Precios de temporada",
+    "btn_insert": "Crear una temporada",
+    "btn_delete": "Eliminar",
+    "btn_edit": "Editar",
+    "btn_detail": "Detalle",
+    "btn_save": "Guardar",
+    "btn_close": "Cerrar",
+    "sort_desc": "Descendiente",
+    "sort_asc": "Ascendiente",
+    "label_insert": "/ Nuevo",
+    "label_edit": "/ Editar",
+    "label_detail": "/ Detalle",
+    "label_name": "Nombre de la temporada",
+    "label_name_room": "ID de Habitación #",
+    "label_price_day":"Precio por día",
+    "search_label_start_date": "Fecha Inicial",
+    "search_label_end_date": "Fecha Final",
+    "between":"entre",
+    "and": "y",
+    "delete": {
+      "header": "Eliminar temporada",
+      "confirmation": "{{'unicode.iquest'|translate}} Está usted seguro que desea eliminar{{'unicode.rquest'|translate}}",
+      "msg_success": "La temporada ha sido eliminada correctamente."
+    },
+    "insert": {
+      "header": "Insertar temporada",
+      "confirmation": "{{'unicode.iquest'|translate}} Está usted seguro que desea continuar{{'unicode.rquest'|translate}}",
+      "msg_success": "La temporada ha sido creada correctamente."
+    },
+    "update": {
+      "header": "Editar temporada",
+      "confirmation": "{{'unicode.iquest'|translate}} Está usted seguro que desea continuar{{'unicode.rquest'|translate}}",
+      "msg_success": "La temporada ha sido editada correctamente."
+    }
+  }
 }

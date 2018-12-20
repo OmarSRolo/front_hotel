@@ -1,1 +1,68 @@
-<div class="fade-in-up" ui-view></div>
+<!-- navbar -->
+<div data-ng-include=" 'site/src/views/blocks/header.html' " class="app-header navbar bg-custom"></div>
+<!-- / navbar -->
+
+<!-- content -->
+<div class="app-content">
+    <div ui-butterbar></div>
+    <a href class="off-screen-toggle hide" ui-toggle-class="off-screen" data-target=".app-aside"></a>
+
+    <div class="app-content-body fade-in-up" ui-view></div>
+</div>
+<!-- /content -->
+<footer class="container-fluid app-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="site/img/instabono_logo.png" alt="." class="img-responsive footer-logo">
+            </div>
+            <div class="col-md-4">
+                <div class="footer-group-link">
+                    <a ui-sref="app.about_us" ui-sref-active="active" class="footer-link">
+                        <span translate="footer.about_us"></span>
+                    </a>
+                    <a ui-sref="app.privacity" ui-sref-active="active" class="footer-link">
+                        <span translate="footer.politics"></span>
+                    </a>
+                    <a ui-sref="app.faqs" ui-sref-active="active" class="footer-link">
+                        <span translate="footer.help"></span>
+                    </a>
+                    <a ui-sref="app.how_works" ui-sref-active="active" class="footer-link">
+                        <span translate="footer.how_works"></span>
+                    </a>
+                    <a ui-sref="app.signup_hotel" ui-sref-active="active" class="footer-link">
+                        <span translate="footer.publica"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="m-b not-visible footer-redes" when-visible="animateIn" animated-scroll="fadeInDown">
+                    <a href="https://www.facebook.com/#" target="_blank">
+                        <img src="site/img/home/social/icon-facebook.png " alt="">
+                    </a>
+                    <a href="https://twitter.com/#" class="redes-margin" target="_blank">
+                        <img src="site/img/home/social/icon-twitter.png" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/#"  class="redes-margin" target="_blank">
+                        <img src="site/img/home/social/icon-instagram.png" alt="">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="row b-t m-t m-b"></div>
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <div class="m-b">
+                    Copyright © 2018
+                    <a href="#">Instabono</a>
+                </div>
+
+                <a href ui-scroll-to="app" class="not-visible" when-visible="animateIn"  animated-scroll="fadeInUpBig">
+                    <i class="icon-arrow-up" style="font-size: 37px;"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+

@@ -20,13 +20,20 @@ angular.module('app', [
     'angular-storage',
     'angular-loading-bar',
     'ngTable',
+    'textAngular',
+    'videosharing-embed',
+    'ngEmoticons',
     'angular-scroll-animate',
+    'socialLogin',
     'ngFileUpload',
     'ui.utils.masks',
     'angularMoment',
+    'ngMap',
     'angular-preload-image',
+    '720kb.socialshare',
     '720kb.datepicker',
+    'ui.calendar',
     'truncate',
-    'ui.tinymce',
-    'ngMap'
+    'ui.bootstrap.datetimepicker',
+    'smart-table'
 ]);

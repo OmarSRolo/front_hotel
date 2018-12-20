@@ -3,10 +3,10 @@
         <div class="col-sm-12 col-xs-12">
             <h1 class="m-n font-thin h3 text-black">
                 <i class="icon-pin"></i>
-                <span translate="access.profile.listing_type.header"></span>
+                <span translate="access.profile.listing_segment.header"></span>
                 <a ng-click="insert()" class="btn btn-default pull-right">
                     <i class="icon-plus"></i>
-                    <span translate="access.profile.listing_type.btn_insert"></span>
+                    <span translate="access.profile.listing_segment.btn_insert"></span>
                 </a>
             </h1>
         </div>
@@ -20,8 +20,6 @@
             <tr ng-repeat="type in $data">
                 <td ng-bind="type.name_es" header="'header/name_es.html'"></td>
                 <!--<td ng-bind="type.name_en" header="'header/name_en.html'"></td>-->
-                <td ng-bind="type.price|number:2" header="'header/price.html'"></td>
-                <!--<td ng-bind="type.name_fr" header="'header/name_fr.html'"></td>-->
                 <td class="text-center">
                     <a ng-click="insert(type)" tooltip-placement="top" uib-tooltip="{{'listing.btn_edit'|translate}}">
                         <i class="icon-note"></i>

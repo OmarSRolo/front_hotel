@@ -1,0 +1,42 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" ng-click="close()">
+        <i class="icon-close"></i>
+    </button>
+    <h4 class="modal-title">
+        <i class="icon-home"></i>
+        <span translate="access.register.hotel"></span>
+    </h4>
+</div>
+
+<div class="modal-body">
+    <form ng-submit="register()" ax-form-valid="" novalidate>
+        <div class="form-group" ng-show="data.role=='owner'">
+            <div class=" has-feedback">
+                <input type="text" placeholder="{{'access.label_hotel_name'|translate}}" class="form-control" ng-model="data.hotel_name"
+                    ng-required="data.role=='owner'" ax-valid="">
+                <span class="icon-home form-control-feedback"></span>
+            </div>
+        </div>
+
+        <div class="form-group" ng-show="data.role=='owner'">
+            <div class=" has-feedback">
+                <input type="text" placeholder="{{'access.label_hotel_id'|translate}}" class="form-control" ng-model="data.hotel_id"
+                       ng-required="data.role=='owner'" ax-valid="">
+                <span class="icon-home form-control-feedback"></span>
+            </div>
+        </div>
+
+        <div class="form-group" ng-show="data.role=='owner'">
+            <div class="has-feedback">
+                <label translate="access.label_hotel_rating" class="m-r-xs"></label>
+                <span uib-rating ng-model="data.hotel_rating" max="5"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-lg btn-default dker b-dark btn-block">
+                <i class="icon-check"></i>
+                <span translate="access.btn_signup"></span>
+            </button>
+        </div>
+    </form>
+</div>

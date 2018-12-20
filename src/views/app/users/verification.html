@@ -26,11 +26,11 @@
                 </label>
             </div>
         </div>
-        <div class="form-group text-center ">
+        <div class="form-group text-center">
             <img class="img-full b b-1x b-dark r r-2x" ng-src="{{data.image_dni}}" style="min-height:80px"/>
         </div>
 
-        <div class="form-group text-center" ng-if="true">
+        <div class="form-group text-center" ng-if="data.image_dni">
 
             <div class="has-feedback">
                 <label class="i-checks m-t-sm">
@@ -57,7 +57,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" ng-if="data.image_dni">
             <div class="col-xs-12 form-group">
                 <button type="submit" class="btn btn-lg btn-default dker b-dark pull-right" >
                     <i class="icon-check"></i>

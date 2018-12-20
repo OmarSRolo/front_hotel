@@ -1,37 +1,66 @@
-app.controller('ContenCtr', ['$scope', '$rootScope', '$state', '$translate', 'Content', function($scope, $rootScope, $state, $translate, Content) {
+'use strict';
 
-    if ($state.params.key != 'about_us' && $state.params.key != 'termns' && $state.params.key != 'signup_hotel' && $state.params.key != 'why_is_diferent' && $state.params.key != 'termns' && $state.params.key != 'cookies' && $state.params.key != 'privacity') {
-        $state.go('app.dashboard', {
-            key: 'about_us'
-        });
-    }
-
-    $scope.action = 1; //1 Insert, 2 Update
-    $scope.data = {};
-    Content.get($state.params.key).success(function(r) {
-        if (r.data != null) {
-            $scope.data = r.data;
-            $scope.action = 2;
-        } else {
-            $scope.data = {
-                key: $state.params.key,
-                content_es: '',
-                content_en: '',
-                content_fr: ''
-            };
-            $scope.action = 1;
+app.controller('DashboardCtr', ['$scope', '$rootScope', 'MessagesFunc', 'SocialFunc', 'NgTableParams', 'Post', '$state', 'FriendFunc', 'Notification', '$translate', function($scope, $rootScope, MessagesFunc, SocialFunc, NgTableParams, Post, $state, FriendFunc, Notification, $translate) {
+    $scope.video = {
+        theme: {
+            url: ""
+        },
+        plugins: {
+            controls: {
+                autoHide: true,
+                autoHideTime: 5000
+            }
         }
-
-    });
-
-    $scope.save = function() {
-        if ($scope.action == 1) {
-            Content.insert($scope.data);
-        } else {
-            Content.update($scope.data);
-        }
-
     };
 
-    $rootScope.tinymceOptions.height = 200;
+    $scope.tablePosts = new NgTableParams({
+        page: 1,
+        count: 10,
+        sorting: {
+            name: 'asc'
+        },
+        filter: {
+            post_type: (angular.isDefined($state.params.post_type) && $state.params.post_type != '') ? $translate.instant('post.post_type_url_rev.' + $state.params.post_type) : 0
+        },
+    }, {
+        counts: [10],
+        paginationMaxBlocks: 9,
+        count: 10,
+        total: 0,
+        getData: function($defer, params) {
+            Post.filter(params.page(), params.count(), {
+                post_type: params.filter().post_type != null ? params.filter().post_type : '',
+            }).success(function(r) {
+                params.total(r.data.total);
+                /*angular.forEach(r.data.data, function (d) {
+                    if (d.video != '') {
+                        d.video = {
+                            sources: [
+                                {src: d.video},
+                            ]
+                        };
+                    }
+                })*/
+                $defer.resolve(r.data.data);
+                $scope.tablePosts.initiated = true;
+            })
+        }
+    });
+    $scope.tablePosts.initiated = false;
+
+    FriendFunc.getRequests().success(function(r) {
+        $scope.friendRequests = r.data.data;
+    });
+
+    $scope.openRequest = function(id) {
+        FriendFunc.openRequest(id).then(function() {
+            FriendFunc.getRequests().success(function(r) {
+                $scope.friendRequests = r.data.data;
+            })
+        })
+    };
+
+    MessagesFunc.reloadThreads(1, 5).then(function(r) {
+        $rootScope.messages.threadsTop = r;
+    })
 }]);

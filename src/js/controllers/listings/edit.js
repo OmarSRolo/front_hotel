@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('ListingsEditCtr', ['$scope', 'toaster', '$state', 'Auth', '$translate', 'ListingType', 'Country', 'Listing', 'store', '$uibModal', 'Coin', 'Service', 'ListingCategory', function ($scope, toaster, $state, Auth, $translate, ListingType, Country, Listing, store, $uibModal, Coin, Service, ListingCategory) {
+app.controller('ListingsEditCtr', ['$scope', 'toaster', '$state', 'Auth', '$translate', 'ListingType', 'Country', 'Listing', 'store', '$uibModal', 'Coin', 'Service', function ($scope, toaster, $state, Auth, $translate, ListingType, Country, Listing, store, $uibModal, Coin, Service) {
 
     $scope.data = {};
 
@@ -31,14 +31,6 @@ app.controller('ListingsEditCtr', ['$scope', 'toaster', '$state', 'Auth', '$tran
 
     Service.list().success(function (r) {
         $scope.services = r.data;
-    });
-
-
-
-    $scope.$watch(function () {
-        return $scope.data.listing_category_id;
-    }, function (val) {
-        if (!val) $scope.data.listing_type_id = '';
     });
 
     $scope.$watch(function () {

@@ -1,9 +1,233 @@
+/*Hecho por mi*/
+.bg-custom {
+    background: #4f81bd;
+    color: #fff3e0;
+}
+
+.app-footer {
+    background: #4f81bd;
+    color: #fff3e0;
+}
+.inline-block{
+    display:inline-block;
+}
+.home-cities {
+    margin-top: 50px;
+}
+.city-name{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: #fff;
+    text-transform: uppercase;
+}
+.city-subheader{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+@media all and (min-width: 768px) and (max-width: 992px) {
+    .city-name{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 3rem;
+        margin-bottom: 0;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .city-subheader{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #fff;
+        text-transform: uppercase;
+    }
+}
+.home-flash {
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    color: #fff;
+}
+.home-listing-title{
+    margin-bottom: 2px;
+    margin-top: 10px;
+    padding: 5px;
+}
+.home-listing-stars-container{
+    padding-left: 7px;
+}
+.home-ofertas{
+    font-size: 30px;
+    font-weight: 500;
+}
+.home-velo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(29, 28, 28, 0.5);
+}
+.home-process{
+    color: #4f81bd;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.justify-right{
+    justify-content: flex-end;
+}
+.tachado{
+    text-decoration: line-through;
+}
+.listing-porciento{
+    margin-top: 12px;
+    margin-right: 20px;
+}
+.mb-0{
+    margin-bottom: 0 !important;
+}
+.mb-2{
+    margin-bottom: 20px !important;
+}
+.mt-0{
+    margin-top: 0 !important;
+}
+.pt-5{
+    padding-top: 20px;
+}
+.home-process-img{
+    max-height: 200px;
+
+}
+.home-listing-oferta{
+    background-color: #9a9a9a;
+    padding:5px 10px;
+    margin-bottom: 10px;
+}
+.list-text li, .list-text ol{
+    margin-bottom: 10px;
+}
+.about-us-img{
+    max-height: 200px;
+    margin-top: 25px;
+}
+.list-pages{
+    line-height: 30px;
+}
+.ofertas-cell{
+    margin-bottom: 20px;
+}
+.text-big-pages{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.btn-bg-red{
+    background-color: #ef3e34;
+    color: #fff;
+    margin: 25px 0;
+    font-size: 25px;
+}
+.home-listing-reserve{
+    margin: 7px -15px 7px 15px;
+}
+.precios{
+}
+.home-listing-city{
+    margin: 5px;
+}
+h3.home-listing-city{
+margin-bottom: 0;
+}
+p.home-listing-city{
+    margin-top: 0;
+}
+.footer-logo {
+    max-width: 194px;
+    margin-bottom: 5px;
+    margin-top: 37px;
+}
+.redes-margin{
+    margin-left: 5px;
+}
+
+
+.footer-group-link {
+    margin-top: 30px;
+}
+
+.footer-link:hover, .footer-link.active {
+    font-weight: bold;
+}
+
+.footer-redes {
+    margin-top: 37px;
+}
+
+.footer-link {
+    display: block;
+    padding: 5px 20px;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+.navbar-brand {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.header-buttons {
+    max-width: 192px;
+    margin: 5px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.btn-header-search {
+    box-sizing: border-box;
+    max-height: 34px;
+    margin: 5px;
+}
+
+.home-search-container {
+    box-shadow: 0 1px 12px rgba(115, 56, 56, 0.3) !important;
+    border: 1px solid rgb(85, 163, 167);
+    padding: 12px 12px 0 12px;
+    background: #4f81bd;
+    z-index: 20;
+}
+
+.home-search-container h4 {
+    color: #fff;
+}
+
+/***********************************/
+
 .nav, .pagination, .carousel, .panel-title a {
     cursor: pointer;
 }
 
 .app-content, .app-footer {
-    /*margin-left: 0 !important;*/
+    margin-left: 0 !important;
 }
 
 .not-visible {
@@ -11,23 +235,18 @@
 }
 
 .app-content-body {
-    /*padding-bottom: 170px;*/
+    padding-bottom: 10px;
+    padding-top: 50px;
 }
 
 .home-search {
     /*overflow-x: hidden;*/
-    width: 300px;
+    width: 100%;
     position: absolute;
-    top: 95px;
-    left: 55px;
-    border: 1px solid rgb(85, 163, 167);
-    box-shadow: 0 1px 12px rgba(115, 56, 56, 0.3) !important;
-    padding: 12px;
+    top: 492px;
+    left: 0;
+    z-index: 20;
     /*overflow-y: hidden;*/
-    background: #fff;
-    background-image: linear-gradient(to left, rgb(245, 236, 224), transparent);
-    z-index: 9;
-    border-radius: 8px;
 }
 
 .navbar-brand img {
@@ -54,19 +273,19 @@
 }
 
 .top-20 {
-    margin-top: 20px!important;
+    margin-top: 40px !important;
 }
 
 .top-50 {
-    margin-top: 50px!important;
+    margin-top: 70px !important;
 }
 
 .top-80 {
-    margin-top: 80px!important;
+    margin-top: 100px !important;
 }
 
 .top-100 {
-    margin-top: 100px!important;
+    margin-top: 120px !important;
 }
 
 .icon-2x {
@@ -91,13 +310,17 @@
 
 .tab-container .tab-content {
     background-color: #fff;
-    border: 1px solid #0A98CD;
+    border: 1px solid #e11f84;
     box-shadow: 0 1px 32px rgba(29, 28, 28, 0.3) !important;
 }
 
-.nav-tabs>li.active>a {
-    border: #0A98CD !important;
-    background-color: #0A98CD !important;
+.tab-container-tiny .tab-content {
+    padding: 1px !important;
+}
+
+.nav-tabs > li.active > a {
+    border: #e11f84 !important;
+    background-color: #e11f84 !important;
 }
 
 .btn-remove {
@@ -132,7 +355,7 @@
 }
 
 .color-app {
-    color: #0083C6;
+    color: #4f81bd;
 }
 
 .simulate-in-tab .angular-google-map {
@@ -155,17 +378,17 @@
 
 .bg-app {
     color: #f4f3f9;
-    background-color: #0A98CD;
+    background-color: #e11f84;;
 }
 
 .btn-app {
     color: #ffffff !important;
-    background-color: #0A98CD !important;
-    border-color: #0A98CD !important;
+    background-color: #e11f84 !important;
+    border-color: #e11f84 !important;
 }
 
 .arrow.bottom.arrow-app:after {
-    border-top-color: #0A98CD;
+    border-top-color: #e11f84;
 }
 
 .price-types div:first {
@@ -175,25 +398,114 @@
 .panel-search {
     display: block !important;
     position: absolute;
-    top: 215px;
+    top: 200px;
     z-index: 99;
     border: 1px solid;
     width: 300px;
-    background: #e2e2d6;
+    background: #b0bdb7;
     padding-top: 8px;
-    left: 30px;
+    left: 55px;
     border-radius: 5px;
     box-shadow: 0 1px 52px rgba(29, 28, 28, 0.3) !important;
+    left: 10%;
 }
-.tab-container-tiny .tab-content{
-  padding: 1px !important;
+
+.text-wrap {
+    word-wrap: break-word;
 }
-.header-page{
-  height: 84px;
+
+.app-header {
+    left: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 1000;
 }
-th.filter{
-  padding: 2px !important;
+
+.app-footer .links {
+    border-bottom: 1px solid #dee5e7;
+    padding-bottom: 12px;
 }
-.date-picket-left{
-  right: 0 !important;
+
+.app-footer .links a {
+    border-right: 1px inset #7f9094;
+    font-size: 14px;
+    color: #000;
+    padding: 0 5px;
+    margin-bottom: 5px;
+}
+
+.app-footer .links a:hover, .app-footer .links a.active {
+    font-weight: bold;
+}
+
+.app-footer .links a.nb {
+    border-right: none;
+}
+
+.navbar-collapse {
+    /*background: linear-gradient(to bottom, #e4efc0 0%,#f0fef1 100%) !important;*/
+    /* background: red; */
+}
+
+.navbar-brand {
+    /*background: linear-gradient(to bottom, #e4efc0 0%,#f0fef1 100%) !important;*/
+}
+
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+
+    border-right: 10px solid blue;
+}
+
+@media (max-width: 767px) {
+    .home-search {
+        border-radius: 8px;
+        position: inherit;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 15px;
+    }
+}
+
+.ng-table-responsive td:before {
+    /*position: absolute;*/
+    /*padding: 8px;*/
+    /*left: 0;*/
+    /*top: 0;*/
+    /*width: 50%;*/
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+}
+
+.ng-table-responsive td:before {
+    content: attr(data-title-text) ":";
+}
+
+/*.color-app{*/
+/*color:#e11f84 !important;*/
+/*}*/
+.price-bx {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 30px;
+    color: #4f81bd;
+    opacity: 0.7;
+    background: white;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-weight: bold;
+}
+
+.price-bx-m {
+    font-size: 20px;
+}
+.form-listing select{
+    max-width: 190px;
 }

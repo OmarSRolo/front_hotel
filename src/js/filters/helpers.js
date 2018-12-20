@@ -59,7 +59,7 @@ app.filter('rawHtml', ['$sce', function ($sce) {
     return function (val) {
         return $sce.trustAsHtml(val);
     };
-}])
+}]);
 
 app.filter('subs', function () {
     return function (dt, v) {
@@ -72,7 +72,7 @@ app.filter('rawHtml', ['$sce', function ($sce) {
     return function (val) {
         return $sce.trustAsHtml(val);
     };
-}])
+}]);
 
 app.filter('subs', function () {
     return function (dt, v) {

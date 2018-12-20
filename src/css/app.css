@@ -145,8 +145,9 @@ a:hover .caret-white {
 }
 
 .progress-bar-info {
-  background-color: #23b7e5;
+  background-color: #4f81bd;
 }
+
 
 .progress-bar-success {
   background-color: #27c24c;
@@ -197,7 +198,7 @@ a:hover .caret-white {
 }
 
 .form-control:focus {
-  border-color: #23b7e5;
+  border-color: #4f81bd;
 }
 
 .form-horizontal .control-label.text-left {
@@ -254,8 +255,8 @@ a.list-group-item.hover {
 
 .list-group-item.active {
   color: #fff;
-  background-color: #23b7e5 !important;
-  border-color: #23b7e5 !important;
+  background-color: #4f81bd !important;
+  border-color: #4f81bd !important;
 }
 
 .list-group-item.active .text-muted {
@@ -391,7 +392,7 @@ a.list-group-item.hover {
 }
 
 .nav-tabs-alt .nav-tabs > li.active > a {
-  border-bottom-color: #23b7e5 !important;
+  border-bottom-color: #4f81bd !important;
 }
 
 .tab-container {
@@ -774,7 +775,7 @@ body {
 }
 
 .app-footer {
-  position: absolute;
+
   right: 0;
   bottom: 0;
   left: 0;
@@ -1217,7 +1218,7 @@ html.bg {
 }
 
 .navi ul.nav li li a {
-  padding-left: 45px;
+  padding-left: 55px;
 }
 
 .navi ul.nav li li ul {
@@ -1571,7 +1572,7 @@ html.bg {
 }
 
 .arrow.top.arrow-info:after {
-  border-bottom-color: #23b7e5;
+  border-bottom-color: #4f81bd;
 }
 
 .arrow.top.arrow-success:after {
@@ -1618,7 +1619,7 @@ html.bg {
 }
 
 .arrow.right.arrow-info:after {
-  border-left-color: #23b7e5;
+  border-left-color: #4f81bd;
 }
 
 .arrow.right.arrow-success:after {
@@ -1665,7 +1666,7 @@ html.bg {
 }
 
 .arrow.bottom.arrow-info:after {
-  border-top-color: #23b7e5;
+  border-top-color: #4f81bd;
 }
 
 .arrow.bottom.arrow-success:after {
@@ -1712,7 +1713,7 @@ html.bg {
 }
 
 .arrow.left.arrow-info:after {
-  border-right-color: #23b7e5;
+  border-right-color: #4f81bd;
 }
 
 .arrow.left.arrow-success:after {
@@ -1906,8 +1907,8 @@ fieldset[disabled] .btn-success.active {
 
 .btn-info {
   color: #ffffff !important;
-  background-color: #23b7e5;
-  border-color: #23b7e5;
+  background-color: #4f81bd;
+  border-color: #4f81bd;
 }
 
 .btn-info:hover,
@@ -1941,8 +1942,8 @@ fieldset[disabled] .btn-info:active,
 .btn-info.disabled.active,
 .btn-info[disabled].active,
 fieldset[disabled] .btn-info.active {
-  background-color: #23b7e5;
-  border-color: #23b7e5;
+  background-color: #4f81bd;
+  border-color: #4f81bd;
 }
 
 .btn-warning {
@@ -2564,7 +2565,7 @@ fieldset[disabled] .btn-black.active {
 }
 
 .i-checks input:checked + i {
-  border-color: #23b7e5;
+  border-color: #4f81bd;
 }
 
 .i-checks input:checked + i:before {
@@ -2572,7 +2573,7 @@ fieldset[disabled] .btn-black.active {
   left: 4px;
   width: 10px;
   height: 10px;
-  background-color: #23b7e5;
+  background-color: #4f81bd;
 }
 
 .i-checks input:checked + span .active {
@@ -3401,7 +3402,7 @@ fieldset[disabled] .i-checks input + i:before {
 
 .bg-info {
   color: #dcf2f8;
-  background-color: #23b7e5;
+  background-color: #4f81bd;
 }
 
 .bg-info.lt,
@@ -3426,7 +3427,7 @@ fieldset[disabled] .i-checks input + i:before {
 
 .bg-info.bg,
 .bg-info .bg {
-  background-color: #23b7e5;
+  background-color: #4f81bd;
 }
 
 .bg-info a {
@@ -3788,7 +3789,7 @@ a.text-info:hover {
 }
 
 .text-info {
-  color: #23b7e5;
+  color: #4f81bd;
 }
 
 .text-info-lt {
@@ -4285,7 +4286,7 @@ a.text-#000000:hover {
 }
 
 .b-info {
-  border-color: #23b7e5;
+  border-color: #4f81bd#4f81bd;
 }
 
 .b-warning {
@@ -4325,7 +4326,7 @@ a.text-#000000:hover {
 }
 
 .b-l-info {
-  border-left-color: #23b7e5;
+  border-left-color: #4f81bd;
 }
 
 .b-l-warning {
@@ -5058,7 +5059,7 @@ a.text-#000000:hover {
   width: 100%;
   height: 0;
   text-indent: -9999px;
-  background-color: #23b7e5;
+  background-color: #e11f84;
 }
 
 .butterbar .bar:before {
@@ -5139,10 +5140,10 @@ a.text-#000000:hover {
 
 @-webkit-keyframes changebar {
   0% {
-    background-color: #23b7e5;
+    background-color: #e11f84;
   }
   33.3% {
-    background-color: #23b7e5;
+    background-color: #e11f84;
   }
   33.33% {
     background-color: #fad733;
@@ -5160,10 +5161,10 @@ a.text-#000000:hover {
 
 @-moz-keyframes changebar {
   0% {
-    background-color: #23b7e5;
+    background-color: #e11f84;
   }
   33.3% {
-    background-color: #23b7e5;
+    background-color: #e11f84;
   }
   33.33% {
     background-color: #fad733;
@@ -5181,10 +5182,10 @@ a.text-#000000:hover {
 
 @keyframes changebar {
   0% {
-    background-color: #23b7e5;
+    background-color: #e11f84;
   }
   33.3% {
-    background-color: #23b7e5;
+    background-color: #e11f84;
   }
   33.33% {
     background-color: #fad733;
@@ -5260,4 +5261,24 @@ p a{
 }
 .home-carousel .carousel-control{
   background-image: none !important;
+}
+
+/*Yeiniel*/
+.media-body {
+  width: 10000px;
+  font-size: 18px;
+}
+
+@media (min-width: 768px)  {
+  #imagen_400{
+    height: 400px;
+    align-content: stretch;
+  }
+}
+
+@media (max-width: 768px)  {
+  #imagen_400{
+    height: 200px;
+    align-content: stretch;
+  }
 }

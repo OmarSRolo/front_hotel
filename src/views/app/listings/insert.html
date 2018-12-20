@@ -2,7 +2,7 @@
     <h3>
         <i class="icon-check"></i>
         <span translate="listing.insert.header"></span>
-        <a ui-sref="app.dashboard.listing" class="btn btn-default pull-right">
+        <a ui-sref="app.profile.listings_list" class="btn btn-default pull-right">
             <i class="icon-grid"></i>
             <span translate="listing.list.header"></span>
         </a>
@@ -20,105 +20,42 @@
             </uib-tab-heading>
             <uib-progressbar value="wizard.percent" class="progress-xs" type="success"></uib-progressbar>
 
-            <form name="step1" class="form-validation" ax-form-valid novalidate>
-
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button" translate="listing.btn_select_user" data-toggle="modal" data-target="#myModal"></button>
-                            </span>
-                            <input ng-model="userTemp.email" type="text" class="form-control" placeholder="{{'listing.input_user'|translate}}" readonly>
-                        </div><!-- /input-group -->
-                    </div>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel" translate="listing.btn_select_user"></h4>
-                                </div>
-                                <div class="modal-body">
-
-                                    <div class="wrapper-md">
-                                        <div loading-container="tableParams.settings().$loading">
-
-                                            <table ng-table="tableParams" class="table table-condensed table-bordered table-striped">
-
-                                                <tr ng-repeat="user in $data">
-                                                    <td ng-bind="user.email" title="'user.email'|translate" filter="{email:'filter/email.html'}"></td>
-                                                    <td ng-bind="user.first_name+' '+user.last_name" title="'user.full_name'|translate" filter="{name:'filter/name.html'}"></td>
-                                                    <td class="text-center">
-                                                        <a ng-click="select(user)" data-dismiss="modal" tooltip-placement="top" uib-tooltip="{{'listing.btn_select_user'|translate}}">
-                                                            <i class="glyphicon glyphicon-ok"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-
-                                    <script type="text/ng-template" id="filter/email.html">
-                                        <input type="text" name="{{name}}" ng-model="params.filter()[name]" class="input-filter form-control" placeholder="{{'user.filter.email'|translate}}"/>
-                                    </script>
-
-                                    <script type="text/ng-template" id="filter/name.html">
-                                        <input type="text" name="{{name}}" ng-model="params.filter()[name]" class="input-filter form-control" placeholder="{{'user.filter.full_name'|translate}}"/>
-                                    </script>
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal" translate="listing.input_user_close"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <hr>
-
-                <div ng-show="userTemp.id!=''">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <label class="" translate="listing.listing_category_id"></label>
-
-                        <div class="has-feedback">
-                            <select class="form-control" ng-model="data.listing_category_id" required ax-valid ng-options="category.id as category.name for category in listing_categories">
-                                <option value="">{{'listing.listing_category_id'|translate}}</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
+            <form name="step1" class="form-validation form-listing" ax-form-valid novalidate>
+                <div class="row mb-2">
+                    <div class="form-inline col-sm-6">
                         <label class="" translate="listing.listing_type_id"></label>
-
                         <div class="has-feedback">
-                            <select class="form-control" ng-model="data.listing_type_id" required ax-valid ng-options="listing.id as listing.name for listing in listing_types| filter:{listing_category_id:data.listing_category_id}:true"
-                                ng-disabled="!data.listing_category_id">
-                                <option value="">{{'listing.listing_type_id'|translate}}</option>
+                            <select class="form-control" ng-model="data.type_id" required ng-change="test()" ax-valid ng-options="listing.id as listing.name for listing in listing_types">
                             </select>
+                            <a class="btn btn-default" ng-click="insertType()" ><i class="fa fa-plus"></i></a>
                         </div>
                     </div>
-                    <div class="col-sm-6 hidden">
-                        <label class="" translate="listing.capacity"></label>
+                    <div class=" col-sm-6 ">
+                        <label class="" translate="listing.nights"></label>
                         <div class="has-feedback">
-                            <input type="text" ui-number-mask="0" min="1" ng-model="data.capacity" placeholder="{{'listing.capacity'|translate}}" class="form-control">
-                            <span class=" icon-users form-control-feedback"></span>
+                            <input type="text" ui-number-mask="0" min="1" ng-model="data.nights" required placeholder="{{'listing.nights'|translate}}" class="form-control">
                         </div>
                     </div>
                 </div>
 
-                <div class="row m-t-xs">
+                <div class="row mb-2">
                     <div class="col-sm-6">
-                        <label class="" translate="listing.price_day"></label>
+                        <label class="" translate="listing.base_price"></label>
                         <div class="has-feedback">
-                            <input type="text" ui-money-mask min="0.01" ng-model="data.price" placeholder="{{'listing.price_day'|translate}}" class="form-control"
-                                ax-valid required ng-readonly="true">
+                            <input type="text" ui-money-mask min="0.01" ng-model="data.base_price" placeholder="{{'listing.price_day'|translate}}" class="form-control"
+                                ax-valid required>
                             <span class="icon-tag form-control-feedback"></span>
                         </div>
                     </div>
 
+                    <div class="col-sm-6">
+                        <label class="" translate="listing.discount"></label>
+                        <div class="has-feedback">
+                            <input type="text" ui-number-mask="0" min="35" max="100" ng-model="data.discount" placeholder="{{'listing.discount'|translate}}" class="form-control"
+                                   ax-valid required>
+                            <span class="icon-tag form-control-feedback"></span>
+                        </div>
+                    </div>
 
                     <!-- <div class="col-sm-3">
                         <label translate="listing.coin_base"></label>
@@ -128,7 +65,38 @@
                             </select>
                         </div>
                     </div> -->
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-12 col-md-6">
+                        <label translate="listing.expiration"></label>
+                        <div class="has-feedback">
+                            <datepicker date-format="{{dateOptions.datepickerShort}}" >
+                                <input ng-model="data.expiration_date" type="text" class="input-filter form-control" readonly/>
+                            </datepicker>
 
+                            <span class="icon-calendar form-control-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-sm-12">
+                        <p translate="listing.days"></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="" translate="listing.desde"></label>
+                        <div class="has-feedback">
+                            <select class="form-control" ng-model="data.begin_day" required ax-valid ng-options="start_day for start_day in week_days">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="" translate="listing.hasta"></label>
+                        <div class="has-feedback">
+                            <select class="form-control" ng-model="data.end_day" required ax-valid ng-options="start_day for start_day in week_days">
+                            </select>
+                        </div>
+                    </div>
                 </div>
 
               
@@ -153,7 +121,24 @@
                         </div>
                     </div>
                 </div>
+                <!--<div class="row m-t-xs">
+                    <div class="col-sm-6">
+                        <label translate="listing.video_youtube"></label>
+                        <div class="has-feedback">
+                            <input type="url" ng-model="data.video_youtube" placeholder="{{'listing.video_youtube'|translate}}" class="form-control"
+                                ax-valid="">
+                            <span class="fa fa-youtube form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label translate="listing.video_vimeo"></label>
 
+                        <div class="has-feedback">
+                            <input type="url" ng-model="data.video_vimeo" placeholder="{{'listing.video_vimeo'|translate}}" class="form-control" ax-valid="">
+                            <span class="fa  fa-vimeo-square form-control-feedback"></span>
+                        </div>
+                    </div>
+                </div>-->
                 <hr>
                 <div class="row">
                     <div class="col-sm-12 text-info">
@@ -191,7 +176,17 @@
 
                     </div>
                 </div>
+                <!--<div class="row m-t-xs">-->
+                    <!--<div class="col-sm-12">-->
+                        <!--<label translate="listing.description"></label>-->
 
+                        <!--<div class="has-feedback">-->
+                            <!--<textarea class="form-control" ng-model="data.description" ng-trim="false" placeholder="{{'listing.description'|translate}}"-->
+                                <!--ax-valid required></textarea>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--</div>-->
                 <hr>
                 <div class="row m-xs m-t-xs">
                     <uib-tabset class="tab-container tab-container-tiny" style="padding:1px">
@@ -228,7 +223,6 @@
                         </button>
                     </div>
 
-                </div>
                 </div>
             </form>
         </uib-tab>

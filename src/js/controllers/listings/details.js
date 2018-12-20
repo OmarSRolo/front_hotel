@@ -83,7 +83,7 @@ app.controller('ListingsDetailsCtr', ['$scope', 'toaster', '$state', 'Auth', '$t
 
         modalInstance.result.then(function() {
 
-            window.location = 'http://atuhotel.com/listings/details/' + $state.params.id;
+            window.location = 'http://instabono.com/listings/details/' + $state.params.id;
         })
     };
     

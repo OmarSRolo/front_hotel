@@ -1,547 +1,699 @@
 {
-    "menu": {
-        "header": {
-            "login": "Loging",
-            "register": "Register",
-            "faq": "FAQ",
-            "search": "Find the best accommodation",
-            "search_sm": "Find",
-            "about_us": "About Atuhotel.com",
-            "lang": {
-                "en": "English",
-                "es": "Spanish",
-                "gr": "German",
-                "fr": "French"
-            },
-            "conversor": "Conversor",
-            "user_profile": {
-                "profile": "My Profile",
-                "logout": "Logout"
-            }
-        }
-    },
-    "home": {
-        "search": {
-            "header": "Find the best accommodation",
-            "place": "Where to{{'unicode.rquest'|translate}}",
-            "from_date": "Check in",
-            "to_date": "Chec out",
-            "date": "Choose Your Date",
-            "add_room": "Add Room",
-            "capacity": "Capacity",
-            "search": "Search"
-        },
-        "rates_listings": "Top room",
-        "city_prefered": "Featured destination"
-    },
-    "access": {
-        "label_email": "Email",
-        "label_username": "Username",
-        "label_password": "Password",
-        "label_confirmpwd": "Verify password",
-        "label_first_name": "Name",
-        "label_last_name": "Last Name",
-        "label_date_birth": "Date of Birth",
-        "label_question": "Adding New Question",
-        "label_answer": "Adding an Answer",
-        "label_role_client": "Guest Account",
-        "label_role_owner": "Hotel Account",
-        "label_hotel_name": "Hotel name",
-        "label_hotel_rating": "Hotel rating",
-        "label_dni": "ID / Passport",
-        "label_phone": "Telephone Number",
-        "label_phone_emergency": "Emergency Telephone",
-        "label_about_me": "About Myself",
-        "label_profile_img": "My profile picture",
-        "label_zip_code": "Zip Code",
-        "label_latitude": "Latitude",
-        "label_longitude": "Longitude",
-        "label_country": "Country",
-        "label_city": "City",
-        "label_time_zone": "Time Zone",
-        "label_role": "User Type",
-        "file_id_type": "Identification Type",
-        "file_id_type_passport": "Passport",
-        "file_id_type_dni": "ID",
-        "image_dni": "Photo ID",
-        "label_amount_flexible": "Your Total Amount",
-
-        "label_owner_cancel_term_id": "How much time before arive time the client can cancell the reservation without cost{{'unicode.rquest'|translate}}",
-        "label_owner_cancel_prev_cost_id": "How much must deliver the client if cancell the reservation <b> {{days}} </b>  {{'unicode.rquest'|translate}}",
-        "label_owner_cancel_total_cost_id": "How much must deliver the client not arrive to reservation{{'unicode.rquest'|translate}}",
-
-        "label_bank_account_id": "Bank of account",
-        "label_bank_account_number": "Account number",
-
-        "check_terms_police": "I have read and agree to the Terms & Conditions.",
-        "btn_login": "Loging",
-        "btn_signup": "Continue with the registration",
-        "btn_facebook": "Facebook",
-        "btn_google": "Google",
-
-        "btn_new_account": "New Atuhotel account",
-        "link_sigin": "Sign in",
-        "text_not_account": "You don't have an account yet",
-        "text_yes_account": "Don't Have an Account{{'unicode.rquest'|translate}}",
-        "link_forgotpwd": "Have you forgotten your password{{'unicode.rquest'|translate}}",
-        "login": {
-            "header": "Atuhotel Loging",
-            "message_fail": "The email address or password you entered is not valid"
-        },
-        "register": {
-            "header": "New Atuhotel Account",
-            "label_answer_info": "Choose your new security questions, then enter the answers. It's very important to remember the answers to your security questions to avoid being locked out of your account.",
-            "password_match_error": "Sorry. . . Your password do not match. Please try again.",
-            "msg_success_owner": "You have registered on our website. In the email we send you, click the link to complete the confirmation process.",
-            "msg_success_client": "Congratulations, you have registered successfully as a client. if you want through your user profile you can become as owner."
-
-        },
-        "password": {
-            "header": "Reset password",
-            "header_answer_question": "Enter your answer to your security question.",
-            "btn_recover": "Create new password",
-            "msg_error_email": "Invalid email address, we can not get the associated information. Please try again or contact us directly. ",
-            "msg_success": "Congratulations, you have successfully reset your Atuhotel password. Click on ìLoginî link to sign in to your Atuhotel account using the new password."
-        },
-        "profile": {
-            "confirmation": {
-                "header": "Verify  Account.",
-                "verifcating": "We are verifying the token received.",
-                "msg_success": "Congratulations, We have successfully verified your Atuhotel Account. Now you can manage your user profile."
-            },
-
-            "info": {
-                "header": "Information of Interest",
-                "upload_image": "Upload Images",
-                "password_edit_info": "Change the password. Only if you want.",
-                "confirm_password": "Confirm your password",
-                "new_password": "New Password",
-                "password_not_match": "The password don't match. Please try it again",
-                "img_uploaded": "Your profile photo has been approved and modified.",
-                "msg_success": "The profile information has been updated.",
-                "msg_owner_unverificated": "Check your email inbox, there will be an email with the subject Account verify. Wait for a few minutes if you do not immediately see the email in your inbox. If you still do not see an email, then check your Spam or Junk Mail folder.",
-                "btn_resend_email": "Forward email account confirmation.",
-                "convert_propietary": "Do You Want to be an Owner hotel{{'unicode.rquest'|translate}} <p>Click the Button to complete the confirmation process</p>",
-                "btn_activate_owner": "I want to be an Owner.",
-                "msg_success_owner_email": "You will receive a link to confirm your Owner Account.",
-                "btn_stop_sales":"I want stop sales in the hotel"
-            },
-            "location": {
-                "header": "Located In"
-            },
-            "verification": {
-                "header": " Verify an account.",
-                "upload_image": "Upload your ID",
-                "verification_id_status_pending": "You have not submitted the identity document.",
-                "verification_id_status_waiting": "You have submitted your ID. Now The manager needs to approve your request.",
-                "verification_id_status_refuted": "Your ID has been rejected.",
-                "verification_id_status_approved": "Your ID has been approved, from this moment all the rooms that you post will appear as verified status."
-            },
-            "listings": {
-                "header": "Rooms"
-            },
-            "reservations": {
-                "header": "My Bookings"
-            },
-            "subscriptions": {
-                "header": "Subscriptions"
-            },
-            "delete": {
-                "btn": "Remove my profile",
-                "header": "Remove user profile",
-                "confirmation": "Are you sure to remove your user profile{{'unicode.rquest'|translate}}",
-                "msg_success": "Your user profile has been deleted"
-            },
-            "stop_sales":{
-                "btn": "Stop sales in hotel",
-                "header": "Stop sales in hotel",
-                "confirmation": "Are you sure you want to discontinue sales at the hotel?",
-                "msg_success": "Sales have been discontinued, room data associated with the hotel can be viewed on the web, but there will be no option to reserve"
-            },
-            "play_sales":{
-                "btn": "Restart sales in hotel",
-                "header": "Restart sales in hotel",
-                "confirmation": "Are you sure you want to restart sales at the hotel?",
-                "msg_success": "Sales have been restored, the room data associated with the hotel can be booked"
-            }
-        }
-    },
-    "faq": {
-        "header": "Help and Support",
-        "subheader": "Common questions and answers.",
-        "q": "What do you want to know{{'unicode.rquest'|translate}}",
-        "btn_search": "Search"
-    },
-    "about_us": {
-        "header": "About Atuhotel",
-        "subheader": "A bit of history about Atuhotel.com"
-    },
-    "listing": {
-        "btn_select_user":"Select Client",
-        "input_user":"Email client",
-        "input_user_close":"Close"
-        "listing_category_id": "Hotel category",
-        "tab_main_info": "Room Description.",
-        "tab_images": "Photos of the Accommodation",
-        "tab_prices": "Special Prices",
-        "tab_services": "Services",
-        "tab_youtube": "YouToube Videos",
-        "tab_vimeo": "Vimeo Videos",
-        "tab_location": "Map",
-        "tab_reviews": "Score",
-        "tab_comments": "Recent reviews",
-        "id": "Room ID",
-        "listing_category_id": "Hotel category",
-        "listing_type_id": "Room type",
-        "capacity": "Maximum occupancy",
-        "country_code": "Country",
-        "hotel_name": "Hotel name",
-        "city": "City",
-        "cancel_previusly_days": "How much time before the arrive date the client can cancell the reserve for without cost{{'unicode.rquest'|translate}}",
-        "cancel_previusly_amount": "How much must deliever the client if cancel the reserve 3 days before arrive date{{'unicode.rquest'|translate}}",
-        "cancel_total_amount": "How much must deliever the client if not arrive to him reservation{{'unicode.rquest'|translate}}",
-        "video_youtube": "Link to YouTube Videos",
-        "video_vimeo": "Link Vimeo Videos",
-        "localization_help": "The following data will be used to display Google Maps",
-        "latitude": "Latitude",
-        "longitude": "Longitude",
-        "description": "Descriptions",
-        "created_at": "Publication Date",
-        "owner": "Owner",
-        "per_day": "Per Day",
-        "price_day": "Price per Day",
-        "price_month": "Monthly Price",
-        "price_week": "Weekly Price",
-        "d_price": "Price:",
-        "d_price_day": "Night",
-        "d_price_month": "Monthly",
-        "d_price_week": "Weekly",
-        "coin_base": "Currency",
-        "price_avg": "Avg Prices:",
-        "price_subscriptions": "Prices:",
-        "reviews_total": "Total Reviews",
-        "comments_total": "Reviews",
-        "services": "Services:",
-        "location": "Located In",
-        "selft_description": "Owner Description",
-        "avg_price_description": "Indicates the average price per night, Weekly or Monthly",
-        "map_address": "Room Address",
-        "select_image": "Select New Image",
-        "image_caption": "Image Title",
-        "image_primary": "Main Image",
-        "btn_insert": "Add New Room",
-        "btn_delete": "Remove",
-        "btn_edit": "Edit Room",
-        "add_price": "New Price",
-        "btn_next": "Next",
-        "btn_prev": "Previous",
-        "btn_load_map": "Load Map",
-        "btn_publish": "Post your Room",
-        "btn_reserve": "Book Now",
-        "btn_shared": "Share",
-        "description_es":"Spanish description",
-        "description_en":"English description",
-
-        "services_empty": "Amenities",
-        "price_empty": "Room Price",
-
-        "list": {
-            "header": "My Rooms"
-        },
-        "insert": {
-            "header": "Post a New Room",
-            "msg_success": "The room has been created successfully"
-        },
-        "update": {
-            "header": "View or Modify your Rooms",
-            "msg_success": "The room has been modified successfully"
-        },
-        "delete": {
-            "header": "Remove room",
-            "confirmation": "Are you sure you want to remove the room{{'unicode.rquest'|translate}}",
-            "msg_success": "The room has been removed successfully"
-        },
-        "map": {
-            "header": "Define the location of the room."
-        },
-
-        "price": {
-            "header": "Room Price",
-            "price": "Price",
-            "subscription": "Subscription",
-            "coin": "Currency",
-            "max_clients": "Guest Number",
-            "description": "Description",
-            "is_subscription": "Do you want to subscribe{{'unicode.rquest'|translate}}",
-            "without_subscription": "Without Subscription{{'unicode.o'|translate}}",
-            "subscription_d": "Daily Subscription",
-            "subscription_m": "Monthly Subscription",
-            "subscription_y": "Annual Subscription"
-        },
-
-        "details": {
-            "header": "Room Details",
-            "subheader": "In this section you can check the room and booking.",
-            "country": " Country :",
-            "city": "City:",
-            "reviews": "Reviews",
-            "total_comments": "Total Reviews",
-            "capacity": "Maximum allowed Guests:",
-            "created_at": "Posted Date: ",
-            "images": "Images",
-            "verificated": "Verified room",
-            "unverificated": "Unverified room"
-        },
-        "search": {
-            "header": "Search rooms",
-            "subheader": "Find rooms in your city or around the world.",
-            "top_in_city": "Rooms Found",
-            "sort_by": "Sort by:",
-            "sort_rating": "Score",
-            "sort_price": "Price per Night",
-            "sort_created_at": "Room Listing",
-            "sort_desc": "Descendant",
-            "sort_asc": "Ascendancy",
-            "date_before": "Check In",
-            "date_after": "Check Out",
-            "range_date": "Availability",
-            "capacity": "Guest Number",
-            "services": "Services"
-        }
-
-    },
-    "listing_review": {
-        "give_your_rating": "Select Rating",
-        "comment": "Give your review",
-        "insert": {
-            "header": "Room Rate",
-            "msg_success": "Your rating has been submitted."
-        }
-    },
-    "listing_comment": {
-        "comment": "Send your review about the room.",
-        "insert": {
-            "header": "Comment",
-            "msg_success": "Your review has been submitted"
-        }
-    },
-    "listing_reserve": {
-        "price_type": "Subscription type (Price)",
-        "period": "Time frame",
-        "price_type_day": "Daily",
-        "price_type_week": "Weekly",
-        "price_type_month": "Monthly",
-        "price_type_special": "Special",
-        "start_date": "Check In",
-        "end_date": "Check Out",
-        "is_flexible": "Flexible Booking",
-        "by_is_flexible": "By been a flexible Booking",
-        "flexible_description": "By been a flexible Booking, you can cancel your reservation in the next 3 days after reservation paying an extra of 2Ä and recovering their money for future Bookings",
-        "is_flexible_description": "You can cancel your reservation and will get your money back for future Bookings",
-        "count_persons": "Total of guest",
-        "num_persons": "Guest Number",
-        "amount_total": "Total Price:",
-        "amount_owner": "Payable upon Arrival:",
-        "amount_provider": "Payable to Provider (Atuhotel):",
-        "amount_provider_description": "Service Fee. (This helps us run our platform and offer service like 24/7 support on your trip. It includes VAT)",
-        "amount_salved": "Your Balance of flexible Bookings who were canceled earlier.",
-        "client": "Client",
-        "filter_owner": "Bookings received",
-        "filter_client": "Bookings made for you",
-        "created_at": "Reservation date",
-        "btn_confirm": "Confirm",
-        "btn_payment": "Complete the payment",
-        "btn_details": "View room details",
-        "btn_cancel": "Cancel booking",
-        "btn_ask_review": "Request accommodation reviews",
-        "ask_review_msg_success": "We've sent an email to the customer requesting their review on their stay at the room.",
-
-        "childs": "Reserve with childs{{'unicode.rquest'|translate}}",
-        "extra_persons_info":"When adding an extra or more people, the price to pay at the hotel may vary depending on the amount of extra people. So according to the category of the same the rate to pay will be different.",
-        "extra_child_age_info":"If you travel with childs with more than 2 years old r with more than 2 persons yous must contact with the hotel to check the extra charges",
-        "termns":"Termns and coditions of hotel",
-        "agree_termns":"Im agree with termns and coditions about cancel book",
-
-        "insert": {
-            "header": "Confirm Booking",
-            "msg_success": "Your review has been submitted",
-            "complete_payment": "Complete reservation",
-            "complete_register_without_payment": "We have confirmed the booking. Dont need to make payment to Atuhotel.com because you had enough credit accumulated from previous flexible Booking. You can check your reservations on your user profile.",
-            "complete_payment_subheader": "You must enter your bank account details to complete the reserve.",
-            "confirmation_header": "The reservation has been completed successfully",
-            "confirmation_subheader": "You can cancel your reservation at any time taking into account that the charges to be paid were accepted by you at the time of booking.",
-            "confirmation_view": "Check your reservations here"
-        },
-        "details": {
-            "header": "Booking details"
-        },
-        "list": {
-            "header": "My Bookings"
-        },
-        "cancel": {
-            "header": "Cancel Booking",
-            "confirmation": "Are you sure you want to cancel this reservation{{'unicode.rquest'|translate}}",
-            "message_success_flexible": "Your reservation has been cancelled. The balance paid through Atuhotel.com it will be stored in your client account to be used in other reserves.",
-            "message_success": "Your reservation has been cancelled successfully"
-        }
-    },
-    "coins": {
-        "header": "Currency convertor",
-        "base": "Currency base",
-        "convert": "Currency to convert",
-        "amount": "Amount to convert",
-        "unknow_currency": "Our api used not has defined the method to calculate current currency",
-        "btn_calc": "Calculate"
-    },
-    "contact_us": {
-        "header": "HOW CAN WE HELP?",
-        "subheader": "Contact Us. Please enter the details of your request. A member of our support staff will respond as soon as possible. Please ensure that you do not enter credit card details/ Username / Passwords in this form.",
-        "role": "User role",
-        "subject": "Subject of message",
-        "content": "Content of message",
-        "btn_send": "Send",
-        "msg_success": "The message has been sent success",
-        "reserve_id":"Booking Number / ID",
-        "has_reserve":"Have you made a booking?",
-        "category":"Category",
-        "categories":{
-
-            "reserve_cancel":"Cancel a Booking",
-            "reserve_change":"Change a Booking",
-            "reserve_confirmation":"Resend Confirmation",
-            "reserve_grantee":"AtuHotel Booking Garantee",
-            "request_called":"Request call Back",
-            "reserve_troubles":"Problem with a Booking",
-            "others":"Other"
-        }
-
-    },
-    "legal_terms": {
-        "header": "Legal terms",
-        "subheader": ""
-    },
-    "different": {
-        "header": "Why we are different",
-        "subheader": ""
-    },
-    "cookies": {
-        "header": "Cookies",
-        "subheader": ""
-    },
-    "privacity": {
-        "header": "Privacity",
-        "subheader": ""
-    },
-    "signup_hotel": {
-        "header": "Signup your hotel",
-        "subheader": "If you are hotel admin"
-    },
-    "footer": {
-        "about_us": "About Us",
-        "help": "Help",
-        "legal_terms": "Legal terms",
-        "why_different": "Why we are different",
-        "privacity": "Privacity",
-        "cookies": "Cookies",
-        "contact_us": "Contact",
-        "signup_hotel":"Signup you hotel",
-        "sections": {
-            "legal_notice": {
-                "header": "Legal notice",
-                "content1": "GRUPO TURISTICO Y HOSTELERO ESVAR, SL",
-                "content2": "CUSTA CARAVACA-CALASPARRA, S/N",
-                "content3": "30430 CEHEGIN, MURCIA",
-                "content4": "Sales tax identification number: VAT ESB73939431"
-            },
-            "address": {
-                "header": "Address",
-                "content1": "Email: info@Atuhotel.com ",
-                "content2": "Internet: www.Atuhotel.com",
-                "content3": "Mailing address  Av. de la Noria 2 - 6A 30500, Molina de Segura Murcia"
-            }
-        }
-    },
-
-
-    "common": {
-        "btn_continue": "Continue",
-        "btn_send": "Submit",
-        "btn_save": "Save changes",
-        "btn_accept": "Accept",
-        "btn_close": "<i class='icon-close'></i> Close",
-        "btn_cancel": "Cancel",
-        "btn_edit": "Change ",
-        "btn_delete": "Remove the booking",
-        "btn_previous": "Previous",
-        "btn_next": "Next",
-        "btn_refresh": "Refresh",
-        "select_option": "Select option",
-        "by": "By:",
-        "of": "Of",
-        "euro": "&#8364;",
-        "starts": "Starts",
-        "of_total": " of Total",
-        "huesped": "Guest",
-        "huespeds": "Guests",
-        "date": {
-            "today": "Today",
-            "yesterday": "Yesterday",
-            "days": "Days",
-            "day": "Day",
-            "weeks": "Weeks",
-            "week": "Week",
-            "years": "Years",
-            "year": "Year",
-            "days_ago": "Days ago",
-            "calendar": {
-                "label_day": "Day",
-                "label_month": "Month",
-                "label_year": "Year",
-                "months": {
-                    "1": "January",
-                    "2": "February",
-                    "3": "March",
-                    "4": "April",
-                    "5": "May",
-                    "6": "June",
-                    "7": "July",
-                    "8": "August",
-                    "9": "September",
-                    "10": "October",
-                    "11": "November",
-                    "12": "December"
-                }
-            }
-        }
-    },
-    "message": {
-        "ajax_error": "Error in the call to the server",
-        "ajax_server_error": "An error has occurred in the call to the server, try again later.",
-        "action_succeded": "Action Completed",
-        "action_error": "Action Failed",
-        "validation": {
-            "empty": "This field is required",
-            "max": "The value of this field must be greater than:",
-            "min": "The value of this field must be less than:",
-            "equal": "The value of this field must be equal to:",
-            "email": "The email address is incorrectly",
-            "maxHeight": "You have exceeded the maximum high: ",
-            "maxSize": "You have exceeded the maximum size: ",
-            " Image type not supported": "The file is not an image file type.",
-            "pattern": "The file does not have a valid format: ",
-            "url": "You must specify a correct URL format"
-        }
-    },
-
-    "unicode": {
-        "n": "\u00f1",
-        "o": "\u00f3",
-        "a": "\u00E1",
-        "i": "\u00ED",
-        "U": "\u00DA",
-        "u": "\u00F9",
-        "e": "\u00E9",
-        "iquest": "\u00BF",
-        "rquest": "\u003F"
+  "Su":"Su",
+  "Mo":"Mo",
+  "Tu":"Tu",
+  "We":"We",
+  "Th":"Tu",
+  "Fr":"Fr",
+  "Sa":"Sa",
+  "Jan":"Jan",
+  "Feb":"Feb",
+  "Mar":"Mar",
+  "Apr":"Apr",
+  "May":"May",
+  "Jun":"Jun",
+  "Jul":"Jul",
+  "Aug":"Aug",
+  "Sep":"Sep",
+  "Oct":"Oct",
+  "Nov":"Nov",
+  "Dec":"Dec",
+  "menu": {
+    "header": {
+      "login": "Loging",
+      "register": "Register",
+      "faq": "FAQ",
+      "search": "Search",
+      "search_sm": "Search",
+      "about_us": "About Instabono",
+      "lang": {
+        "en": "English",
+        "es": "Spanish",
+        "gr": "German",
+        "fr": "French"
+      },
+      "conversor": "Conversor",
+      "user_profile": {
+        "profile": "My Profile",
+        "logout": "Logout"
+      }
     }
+  },
+  "home": {
+    "process":"Elige tu escapada + contacta y reserva + disfruta de la estancia",
+    "search": {
+      "header": "Choose your destination",
+      "place": "Where to{{'unicode.rquest'|translate}}",
+      "from_date": "Check in",
+      "to_date": "Chec out",
+      "date": "Choose Your Date",
+      "add_room": "Add Room",
+      "capacity": "Capacity",
+      "search": "Search"
+    },
+    "rates_listings": "Flash Offers",
+    "reserve": "Reserve",
+    "city_prefered": "Featured destination",
+    "place": {
+      "london": "London",
+      "paris": "Paris",
+      "berlin": "Berlin",
+      "madrid": "Madrid",
+      "barcelona": "Barcelona",
+      "alicante": "Alicante"
+    }
+  },
+  "access": {
+    "label_email": "Email",
+    "label_username": "Username",
+    "label_password": "Password",
+    "label_confirmpwd": "Verify password",
+    "label_first_name": "Name",
+    "label_last_name": "Last Name",
+    "label_date_birth": "Date of Birth",
+    "label_question": "Adding New Question",
+    "label_answer": "Adding an Answer",
+    "label_role_client": "Guest Account",
+    "label_role_owner": "Hotel Account",
+    "label_hotel_name": "Hotel name",
+    "label_hotel_rating": "Hotel rating",
+    "label_dni": "ID / Passport",
+    "label_phone": "Telephone Number",
+    "label_phone_emergency": "Emergency Telephone",
+    "label_about_me": "About Myself",
+    "label_profile_img": "My profile picture",
+    "label_zip_code": "Zip Code",
+    "label_latitude": "Latitude",
+    "label_longitude": "Longitude",
+    "label_country": "Country",
+    "label_city": "City",
+    "label_time_zone": "Time Zone",
+    "label_role": "User Type",
+    "file_id_type": "Identification Type",
+    "file_id_type_passport": "Passport",
+    "file_id_type_dni": "ID",
+    "image_dni": "Photo ID",
+    "label_amount_flexible": "Your Total Amount",
+    "label_hotel_id": "Hotel Cif/Vat",
+    "label_owner_cancel_term_id": "How much time before arive time the client can cancell the reservation without cost{{'unicode.rquest'|translate}}",
+    "label_owner_cancel_prev_cost_id": "How much must deliver the client if cancell the reservation <b> {{days}} </b>  {{'unicode.rquest'|translate}}",
+    "label_owner_cancel_total_cost_id": "How much must deliver the client not arrive to reservation{{'unicode.rquest'|translate}}",
+    "label_bank_account_id": "Bank of account",
+    "label_bank_account_number": "Account number",
+    "check_terms_police": "I have read and agree to the Terms & Conditions.",
+    "btn_login": "Loging",
+    "btn_signup": "Continue with the registration",
+    "btn_facebook": "Facebook",
+    "btn_google": "Google",
+    "btn_new_account": "New Instabono account",
+    "link_sigin": "Sign in",
+    "text_not_account": "You don't have an account yet",
+    "text_yes_account": "Don't Have an Account{{'unicode.rquest'|translate}}",
+    "link_forgotpwd": "Have you forgotten your password{{'unicode.rquest'|translate}}",
+    "login": {
+      "header": "Instabono Login",
+      "message_fail": "The email address or password you entered is not valid"
+    },
+    "register": {
+      "header": "New Instabono Account",
+      "label_answer_info": "Choose your new security questions, then enter the answers. It's very important to remember the answers to your security questions to avoid being locked out of your account.",
+      "password_match_error": "Sorry. . . Your password do not match. Please try again.",
+      "msg_success_owner": "You have registered on our website. In the email we send you, click the link to complete the confirmation process.",
+      "msg_success_client": "Congratulations, you have registered successfully as a client. if you want through your user profile you can become as owner."
+    },
+    "password": {
+      "header": "Reset password",
+      "header_answer_question": "Enter your answer to your security question.",
+      "btn_recover": "Create new password",
+      "msg_error_email": "Invalid email address, we can not get the associated information. Please try again or contact us directly. ",
+      "msg_success": "Congratulations, you have successfully reset your Instabono password. Click on ìLoginî link to sign in to your Instabono account using the new password."
+    },
+    "profile": {
+      "confirmation": {
+        "header": "Verify  Account.",
+        "verifcating": "We are verifying the token received.",
+        "msg_success": "Congratulations, We have successfully verified your Instabono Account. Now you can manage your user profile."
+      },
+      "info": {
+        "header": "Information of Interest",
+        "upload_image": "Upload Images",
+        "password_edit_info": "Change the password. Only if you want.",
+        "confirm_password": "Confirm your password",
+        "new_password": "New Password",
+        "password_not_match": "The password don't match. Please try it again",
+        "img_uploaded": "Your profile photo has been approved and modified.",
+        "msg_success": "The profile information has been updated.",
+        "msg_owner_unverificated": "Check your email inbox, there will be an email with the subject Account verify. Wait for a few minutes if you do not immediately see the email in your inbox. If you still do not see an email, then check your Spam or Junk Mail folder.",
+        "btn_resend_email": "Forward email account confirmation.",
+        "convert_propietary": "Do You Want to be an Owner hotel{{'unicode.rquest'|translate}} <p>Click the Button to complete the confirmation process</p>",
+        "btn_activate_owner": "I want to be an Owner.",
+        "msg_success_owner_email": "You will receive a link to confirm your Owner Account.",
+        "btn_stop_sales": "I want stop sales in the hotel"
+      },
+      "location": {
+        "header": "Located In"
+      },
+      "verification": {
+        "header": " Verify an account.",
+        "upload_image": "Upload your ID",
+        "verification_id_status_pending": "You have not submitted the identity document.",
+        "verification_id_status_waiting": "You have submitted your ID. Now The manager needs to approve your request.",
+        "verification_id_status_refuted": "Your ID has been rejected.",
+        "verification_id_status_approved": "Your ID has been approved, from this moment all the rooms that you post will appear as verified status."
+      },
+      "listings": {
+        "header": "Rooms"
+      },
+      "reservations": {
+        "header": "My Bookings"
+      },
+      "subscriptions": {
+        "header": "Subscriptions"
+      },
+      "delete": {
+        "btn": "Remove my profile",
+        "header": "Remove user profile",
+        "confirmation": "Are you sure to remove your user profile{{'unicode.rquest'|translate}}",
+        "msg_success": "Your user profile has been deleted"
+      },
+      "stop_sales": {
+        "btn": "Stop sales in hotel",
+        "header": "Stop sales in hotel",
+        "confirmation": "Are you sure you want to discontinue sales at the hotel?",
+        "msg_success": "Sales have been discontinued, room data associated with the hotel can be viewed on the web, but there will be no option to reserve"
+      },
+      "play_sales": {
+        "btn": "Restart sales in hotel",
+        "header": "Restart sales in hotel",
+        "confirmation": "Are you sure you want to restart sales at the hotel?",
+        "msg_success": "Sales have been restored, the room data associated with the hotel can be booked"
+      }
+    }
+  },
+  "faq": {
+    "header": "Help and Support",
+    "subheader": "Common questions and answers.",
+    "q": "What do you want to know{{'unicode.rquest'|translate}}",
+    "btn_search": "Search"
+  },
+  "about_us": {
+    "header": "About Instabono",
+    "subheader": "A bit of history about Instabono.com"
+  },
+  "listing": {
+    "tab_main_info": "Room Description.",
+    "tab_images": "Photos of the Accommodation",
+    "tab_prices": "Special Prices",
+    "tab_services": "Services",
+    "tab_youtube": "YouToube Videos",
+    "tab_vimeo": "Vimeo Videos",
+    "tab_location": "Map",
+    "tab_reviews": "Score",
+    "tab_comments": "Recent reviews",
+    "id": "Room ID",
+    "listing_category_id": "Hotel category",
+    "listing_type_id": "Room type",
+    "capacity": "Maximum occupancy",
+    "country_code": "Country",
+    "hotel_name": "Hotel name",
+    "city": "City",
+    "cancel_previusly_days": "How much time before the arrive date the client can cancell the reserve for without cost{{'unicode.rquest'|translate}}",
+    "cancel_previusly_amount": "How much must deliever the client if cancel the reserve 3 days before arrive date{{'unicode.rquest'|translate}}",
+    "cancel_total_amount": "How much must deliever the client if not arrive to him reservation{{'unicode.rquest'|translate}}",
+    "video_youtube": "Link to YouTube Videos",
+    "video_vimeo": "Link Vimeo Videos",
+    "localization_help": "The following data will be used to display Google Maps",
+    "latitude": "Latitude",
+    "longitude": "Longitude",
+    "description": "Descriptions",
+    "created_at": "Publication Date",
+    "owner": "Owner",
+    "hotel_name":"Name of hotel",
+    "per_day": "Per Day",
+    "price_day": "Getaway Price",
+    "price_month": "Monthly Price",
+    "price_week": "Weekly Price",
+    "d_price": "Price:",
+    "d_price_day": "Night",
+    "d_price_month": "Monthly",
+    "d_price_week": "Weekly",
+    "coin_base": "Currency",
+    "price_avg": "Avg Prices:",
+    "price_subscriptions": "Prices:",
+    "reviews_total": "Total Reviews",
+    "comments_total": "Reviews",
+    "services": "Services:",
+    "location": "Located In",
+    "selft_description": "Owner Description",
+    "avg_price_description": "Indicates the average price per night, Weekly or Monthly",
+    "map_address": "Room Address",
+    "select_image": "Select New Image",
+    "image_caption": "Image Title",
+    "image_primary": "Main Image",
+    "btn_insert": "Add New Room",
+    "btn_delete": "Remove",
+    "btn_edit": "Edit Room",
+    "add_price": "New Price",
+    "btn_next": "Next",
+    "btn_prev": "Previous",
+    "btn_load_map": "Load Map",
+    "btn_publish": "Post your Room",
+    "btn_reserve": "Book Now",
+    "btn_shared": "Share",
+    "description_es": "Spanish description",
+    "description_en": "English description",
+    "services_empty": "Amenities",
+    "price_empty": "Room Price",
+    "list": {
+      "header": "My Rooms"
+    },
+    "insert": {
+      "header": "Post a New Room",
+      "msg_success": "The room has been created successfully"
+    },
+    "update": {
+      "header": "View or Modify your Rooms",
+      "msg_success": "The room has been modified successfully"
+    },
+    "delete": {
+      "header": "Remove room",
+      "confirmation": "Are you sure you want to remove the room{{'unicode.rquest'|translate}}",
+      "msg_success": "The room has been removed successfully"
+    },
+    "map": {
+      "header": "Define the location of the room."
+    },
+    "price": {
+      "header": "Room Price",
+      "price": "Price",
+      "subscription": "Subscription",
+      "coin": "Currency",
+      "max_clients": "Guest Number",
+      "description": "Description",
+      "is_subscription": "Do you want to subscribe{{'unicode.rquest'|translate}}",
+      "without_subscription": "Without Subscription{{'unicode.o'|translate}}",
+      "subscription_d": "Daily Subscription",
+      "subscription_m": "Monthly Subscription",
+      "subscription_y": "Annual Subscription"
+    },
+    "details": {
+      "header": "Room Details",
+      "subheader": "In this section you can check the room and booking.",
+      "country": " Country :",
+      "city": "City:",
+      "reviews": "Reviews",
+      "total_comments": "Total Reviews",
+      "capacity": "Maximum allowed Guests:",
+      "created_at": "Posted Date: ",
+      "images": "Images",
+      "verificated": "Verified room",
+      "unverificated": "Unverified room"
+    },
+    "search": {
+      "header": "Where do you want to stay?",
+      "subheader": "Find rooms in your city or around the world.",
+      "top_in_city": "Rooms Found",
+      "sort_by": "Sort by:",
+      "sort_rating": "Score",
+      "sort_price": "Getaway Price",
+      "sort_created_at": "Room Listing",
+      "sort_desc": "Descendant",
+      "sort_asc": "Ascendancy",
+      "date_before": "Check In",
+      "date_after": "Check Out",
+      "range_date": "Availability",
+      "capacity": "Guest Number",
+      "services": "Services"
+    }
+  },
+  "listing_review": {
+    "give_your_rating": "Select Rating",
+    "comment": "Give your review",
+    "insert": {
+      "header": "Room Rate",
+      "msg_success": "Your rating has been submitted."
+    }
+  },
+  "listing_comment": {
+    "comment": "Send your review about the room.",
+    "insert": {
+      "header": "Comment",
+      "msg_success": "Your review has been submitted"
+    }
+  },
+  "listing_reserve": {
+    "price_type": "Subscription type (Price)",
+    "period": "Time frame",
+    "price_type_day": "Daily",
+    "price_type_week": "Weekly",
+    "price_type_month": "Monthly",
+    "price_type_special": "Special",
+    "start_date": "Check In",
+    "end_date": "Check Out",
+    "is_flexible": "Flexible Booking",
+    "by_is_flexible": "By been a flexible Booking",
+    "flexible_description": "By been a flexible Booking, you can cancel your reservation in the next 3 days after reservation paying an extra of 2Ä and recovering their money for future Bookings",
+    "is_flexible_description": "You can cancel your reservation and will get your money back for future Bookings",
+    "count_persons": "Total of guest",
+    "num_persons": "Guest Number",
+    "amount_total": "Total Price:",
+    "amount_owner": "Payable upon Arrival:",
+    "amount_provider": "Payable to Provider (Instabono):",
+    "amount_provider_description": "Service Fee. (This helps us run our platform and offer service like 24/7 support on your trip. It includes VAT)",
+    "amount_salved": "Your Balance of flexible Bookings who were canceled earlier.",
+    "client": "Client",
+    "filter_owner": "Bookings received",
+    "filter_client": "Bookings made for you",
+    "created_at": "Reservation date",
+    "btn_confirm": "Confirm",
+    "btn_payment": "Complete the reserve",
+    "btn_details": "View room details",
+    "btn_cancel": "Cancel booking",
+    "btn_finish": "Finish booking",
+    "btn_started": "Start booking",
+    "btn_confirmed": "Confirm booking",
+    "btn_ask_review": "Request accommodation reviews",
+    "ask_review_msg_success": "We've sent an email to the customer requesting their review on their stay at the room.",
+    "childs": "Reserve with childs{{'unicode.rquest'|translate}}",
+    "extra_persons_info": "When adding an extra or more people, the price to pay at the hotel may vary depending on the amount of extra people. So according to the category of the same the rate to pay will be different.",
+    "extra_child_age_info": "If you travel with childs with more than 2 years old r with more than 2 persons yous must contact with the hotel to check the extra charges",
+
+    "extra_general_header":"The Fine Print:",
+    "extra_general_details":"Please note that any extra beds or cribs must be requested and confirmed by the hotel in advance. They can be requested using the Special Requests box during booking. THESE SERVICES CAN CARRY EXTRA CHARGES.",
+
+    "termns": "Termns and coditions of hotel",
+    "agree_termns": "Im agree with termns and coditions about cancel book",
+    "complete_payment_not_card": "No card?",
+    "complete_payment_not_card_subheader": "Can I make a reservation without a credit card? (Click for details)",
+    "complete_payment_not_card_details": "A valid credit card is needed to guarantee your reservation with most hotels. We do offer a small but growing number of hotels, however, that will guarantee your reservation without a credit card. You can also make a booking using someone else’s card provided you have their permission. In this case please confirm the card holder’s name and that you have permission to use their card, in the ‘Special Requests’ box when making your booking.",
+    "client_info": "Enter your details",
+    "client_name":"Full name",
+    "client_first_name": "Name",
+    "client_last_name": "Last Name",
+    "client_email": "Email address",
+    "client_city": "City",
+    "client_phone": "Telephone (mobile number preferred)",
+    "client_reason": "Reason for staying",
+    "client_reason_leisure": "Leisure",
+    "client_reason_work": "Work",
+    "about_it": "ABOUT YOUR BOOKING",
+    "client_special_request": "Special requests",
+    "introduce_info": "Enter details to hold your booking",
+    "account_number": "Card number",
+    "account_number_necesary": "Needed to hold your booking",
+    "account_expire": "Expiry date",
+    "account_month_expire": "Month",
+    "account_year_expire": "Year",
+    "cvs_code": "CVC-code",
+    "cvs_code_none": "You do not need to enter a CVC code for this booking.",
+    "text_cond1": "I agree with",
+    "text_cond2": "the booking conditions",
+    "text_cond3": "general terms",
+    "text_cond4": "and privacy policy by booking this room.",
+
+    "btn_prev":"Prev",
+    "btn_next":"Next",
+
+    "insert": {
+      "header": "Confirm Booking",
+      "msg_success": "Your review has been submitted",
+      "complete_payment": "Complete reservation",
+      "complete_register_without_payment": "We have confirmed the booking. Dont need to make payment to Instabono.com because you had enough credit accumulated from previous flexible Booking. You can check your reservations on your user profile.",
+      "complete_payment_subheader": "You must enter your bank account details to complete the reserve.",
+      "confirmation_header": "The reservation has been completed successfully",
+      "confirmation_subheader": "You can cancel your reservation at any time taking into account that the charges to be paid were accepted by you at the time of booking.",
+      "confirmation_view": "Check your reservations here"
+    },
+    "insert_pre": {
+      "confirmation_header": "The pre-reservation has been completed successfully",
+      "confirmation_subheader": "The pre-reservation has been completed and you must wait the confirmation. You should check your e-mail in wait of notification. You can cancel your reservation at any time taking into account that the charges to be paid were accepted by you at the time of booking.",
+      "confirmation_view": "Check your reservations here"
+    },
+    "cancelled": {
+      "header": "The reservation has been cancelled successfully",
+      "subheader": "Your reservation has been cancelled",
+      "view": "Check your reservations here"
+    },
+    "details": {
+      "header": "Booking details",
+      "client_header":"Info of guest"
+    },
+    "list": {
+      "header": "My Bookings"
+    },
+    "cancel": {
+      "header": "Cancel Booking",
+      "confirmation": "Are you sure you want to cancel this reservation{{'unicode.rquest'|translate}}",
+      "message_success_flexible": "Your reservation has been cancelled. The balance paid through Instabono.com it will be stored in your client account to be used in other reserves.",
+      "message_success": "Your reservation has been cancelled successfully"
+    },
+    "finish": {
+      "header": "Finish Booking",
+      "confirmation": "Are you sure you want to finished this reservation{{'unicode.rquest'|translate}}",
+      "message_success_flexible": "Your reservation has been finished. The balance paid through Instabono.com it will be stored in your client account to be used in other reserves.",
+      "message_success": "Your reservation has been finished successfully"
+    },
+    "started": {
+      "header": "Start Booking",
+      "confirmation": "Are you sure you want to start this reservation{{'unicode.rquest'|translate}}",
+      "message_success_flexible": "Your reservation has been started.",
+      "message_success": "Your reservation has been started successfully"
+    },
+    "confirm": {
+      "header": "Confirm Booking",
+      "confirmation": "Are you sure you want to confirm this reservation{{'unicode.rquest'|translate}}",
+      "message_success_flexible": "Your reservation has been confirmed.",
+      "message_success": "Your reservation has been confirmed successfully"
+    }
+  },
+  "listing_stop_sales": {
+    "header":"Stop/Continue sales in hotel",
+    "event_title":"Stopped sales at this date",
+    "search_filter_on":"Filter on",
+    "search_year_only" : "Specific Year",
+    "search_year_range" : "Year Range",
+    "search_date_only" : "Specific Date",
+    "search_date_range" : "Date Range",
+    "search_label_start_date" : "Start Date",
+    "search_label_end_date" : "End Date",
+    "stop":"Stop",
+    "continue":"Continue",
+    "insert": {
+      "header": "Stop sales int the hotel for the selected date",
+      "confirmation": "Are you sure to continue?",
+      "msg_success": "The sales has been stopped for the selected date"
+    },
+    "delete": {
+      "header": "Continue sales in hotel for selected date",
+      "confirmation": "Are you sure to continue?",
+      "msg_success": "The sales has been reactived for the selected date"
+    }
+  },
+  "coins": {
+    "header": "Currency convertor",
+    "base": "Currency base",
+    "convert": "Currency to convert",
+    "amount": "Amount to convert",
+    "unknow_currency": "Our api used not has defined the method to calculate current currency",
+    "btn_calc": "Calculate"
+  },
+  "contact_us": {
+    "header": "HOW CAN WE HELP?",
+    "subheader": "Contact Us. Please enter the details of your request. A member of our support staff will respond as soon as possible. Please ensure that you do not enter credit card details/ Username / Passwords in this form.",
+    "role": "User role",
+    "subject": "Subject of message",
+    "content": "Content of message",
+    "btn_send": "Send",
+    "msg_success": "The message has been sent success",
+    "reserve_id": "Booking Number / ID",
+    "has_reserve": "Have you made a booking?",
+    "category": "Category",
+    "categories": {
+      "reserve_cancel": "Cancel a Booking",
+      "reserve_change": "Change a Booking",
+      "reserve_confirmation": "Resend Confirmation",
+      "reserve_grantee": "Instabono Booking Garantee",
+      "request_called": "Request call Back",
+      "reserve_troubles": "Problem with a Booking",
+      "others": "Other"
+    }
+  },
+  "legal_terms": {
+    "header": "Legal terms",
+    "subheader": ""
+  },
+  "different": {
+    "header": "Why we are different",
+    "subheader": ""
+  },
+  "cookies": {
+    "header": "Cookies",
+    "subheader": ""
+  },
+  "privacity": {
+    "header": "AVISO LEGAL. TERMINOS Y CONDICIONES DE USO Y CONTRATACION.",
+    "subheader": ""
+  },
+  "signup_hotel": {
+    "header": "Publica tu alojamiento en Instabono!",
+    "subheader": "If you are hotel admin"
+  },
+  "registrarse": "Regístrate ya!",
+  "footer": {
+    "about_us": "About Us",
+    "politics":  "Términos y condiciones de uso y contratación",
+    "how_works": "How it works?",
+    "publica": "Register your place",
+    "be_host": "Be a host",
+    "reasons": "Reasons to host",
+    "help": "Faqs",
+    "legal_terms": "Legal terms",
+    "why_different": "Why we are different",
+    "privacity": "Privacity",
+    "cookies": "Cookies",
+    "contact_us": "Contact",
+    "signup_hotel": "Signup you hotel",
+    "sections": {
+      "legal_notice": {
+        "header": "Legal notice",
+        "content1": "GRUPO TURISTICO Y HOSTELERO ESVAR, SL",
+        "content2": "CUSTA CARAVACA-CALASPARRA, S/N",
+        "content3": "30430 CEHEGIN, MURCIA",
+        "content4": "Sales tax identification number: VAT ESB73939431"
+      },
+      "address": {
+        "header": "Address",
+        "content1": "Email: info@instabono.com ",
+        "content2": "Internet: www.instabono.com",
+        "content3": "Mailing address  Av. de la Noria 2 - 6A 30500, Molina de Segura Murcia"
+      }
+    }
+  },
+  "common": {
+    "btn_continue": "Continue",
+    "btn_back": "Back",
+    "btn_send": "Submit",
+    "btn_save": "Save changes",
+    "btn_accept": "Accept",
+    "btn_close": "<i class='icon-close'></i> Close",
+    "btn_cancel": "Cancel",
+    "btn_edit": "Change ",
+    "btn_delete": "Remove the booking",
+    "btn_previous": "Previous",
+    "btn_next": "Next",
+    "btn_refresh": "Refresh",
+    "select_option": "Select option",
+    "by": "By:",
+    "of": "Of",
+    "euro": "&#8364;",
+    "starts": "Starts",
+    "of_total": " of Total",
+    "huesped": "Guest",
+    "huespeds": "Guests",
+    "date": {
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "days": "Nigths",
+      "day": "Nigth",
+      "weeks": "Weeks",
+      "week": "Week",
+      "years": "Years",
+      "year": "Year",
+      "days_ago": "Days ago",
+      "calendar": {
+        "label_day": "Day",
+        "label_month": "Month",
+        "label_year": "Year",
+        "months": {
+          "1": "January",
+          "2": "February",
+          "3": "March",
+          "4": "April",
+          "5": "May",
+          "6": "June",
+          "7": "July",
+          "8": "August",
+          "9": "September",
+          "10": "October",
+          "11": "November",
+          "12": "December"
+        },
+        "days": {
+          "1": "Sun",
+          "2": "Mon",
+          "3": "Tue",
+          "4": "Wed",
+          "5": "Tur",
+          "6": "Fri",
+          "7": "Sat"
+        }
+      }
+    }
+  },
+  "message": {
+    "ajax_error": "Error in the call to the server",
+    "ajax_server_error": "An error has occurred in the call to the server, try again later.",
+    "action_succeded": "Action Completed",
+    "action_error": "Action Failed",
+    "validation": {
+      "empty": "This field is required",
+      "max": "The value of this field must be greater than:",
+      "min": "The value of this field must be less than:",
+      "equal": "The value of this field must be equal to:",
+      "email": "The email address is incorrectly",
+      "maxHeight": "You have exceeded the maximum high: ",
+      "maxSize": "You have exceeded the maximum size: ",
+      " Image type not supported": "The file is not an image file type.",
+      "pattern": "The file does not have a valid format: ",
+      "url": "You must specify a correct URL format"
+    }
+  },
+  "unicode": {
+    "n": "\u00f1",
+    "o": "\u00f3",
+    "a": "\u00E1",
+    "i": "\u00ED",
+    "U": "\u00DA",
+    "u": "\u00F9",
+    "e": "\u00E9",
+    "iquest": "\u00BF",
+    "rquest": "\u003F"
+  },
+  "price_period": {
+    "menu_title": "Prices of period",
+    "header": "My Prices of Period",
+    "btn_insert": "Add New Period",
+    "btn_delete": "Remove",
+    "btn_edit": "Edit",
+    "btn_detail": "Detail",
+    "btn_save": "Save",
+    "btn_close": "Close",
+    "sort_desc": "Descendant",
+    "sort_asc": "Ascendancy",
+    "label_insert": "/ New",
+    "label_edit": "/ Edit",
+    "label_detail": "/ Detail",
+    "label_name": "Name of Period",
+    "label_name_room": "Room ID #",
+    "label_price_day":"Price per Day",
+    "search_label_start_date": "Start Date",
+    "search_label_end_date": "End Date",
+    "between":"between",
+    "and": "and",
+    "delete": {
+      "header": "Remove period",
+      "confirmation": "Are you sure you want to remove the period{{'unicode.rquest'|translate}}",
+      "msg_success": "The period has been removed successfully"
+    },
+    "insert": {
+      "header": "Insert period",
+      "confirmation": "Are you sure to continue?",
+      "msg_success": "The period has been inserted"
+    },
+    "update": {
+      "header": "Update period",
+      "confirmation": "Are you sure to continue?",
+      "msg_success": "The period has been edited"
+    }
+  }
 }

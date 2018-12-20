@@ -17,8 +17,7 @@ app.controller('ListingsSearchCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
         page: 1,
         count: 9,
         filter: {
-            listing_category_id: '',
-            listing_type_id: '',
+            listing_type_id: $state.params.listing_type_id,
             country_code: $state.params.country_code,
             city:$state.params.city,
             start_date: $state.params.start_date,
@@ -39,7 +38,6 @@ app.controller('ListingsSearchCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
             var defer = $q.defer();
             Listing.query(params.page(), params.count(), {
                 hotel_name:params.filter().hotel_name,
-                listing_category_id: params.filter().listing_category_id,
                 listing_type_id: params.filter().listing_type_id,
                 country_code: params.filter().country_code,
                 city: params.filter().city,

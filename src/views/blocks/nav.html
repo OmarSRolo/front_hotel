@@ -4,97 +4,82 @@
         <span translate="menu.aside.navigation"></span>
     </li>
     <li class="">
-        <a ui-sref="app.dashboard.content({key:'about_us'})" class="">
+        <a ui-sref="app.dashboard({post_type:''})" class="">
             <span class="pull-right text-muted" ng-if="false">
                 <i class="fa fa-fw fa-angle-right text"></i>
                 <i class="fa fa-fw fa-angle-down text-active"></i>
             </span>
-            <i class="icon-note icon text-primary-dker"></i>
-            <span class="font-bold" translate="menu.aside.content.all"></span>
+            <i class="icon-home icon text-primary-dker"></i>
+            <span class="font-bold" translate="menu.aside.posts.all"></span>
         </a>
         <ul class="nav dk">
-            <li ng-class="{'active':$state.includes('app.dashboard.content') && $state.params.key == 'about_us'}">
-                <a ui-sref="app.dashboard({key:'about_us'})">
-                    <span translate="menu.aside.content.about_us"></span>
+            <li ui-sref-active="active">
+                <a ui-sref="app.dashboard({post_type:$translate.instant('post.post_type_url.home')})">
+                    <span translate="menu.aside.posts.home"></span>
                 </a>
             </li>
-            <!--<li ng-class="{'active':$state.includes('app.dashboard.content') && $state.params.key == 'why_is_diferent'}">-->
-                <!--<a ui-sref="app.dashboard.content({key:'why_is_diferent'})">-->
-                    <!--<span translate="menu.aside.content.why_is_diferent"></span>-->
-                <!--</a>-->
-            <!--</li>-->
-            <!--<li ng-class="{'active':$state.includes('app.dashboard.content') && $state.params.key == 'termns'}">-->
-                <!--<a ui-sref="app.dashboard.content({key:'termns'})">-->
-                    <!--<span translate="menu.aside.content.termns"></span>-->
-                <!--</a>-->
-            <!--</li>-->
-            <!--<li ng-class="{'active':$state.includes('app.dashboard.content') && $state.params.key == 'cookies'}">-->
-                <!--<a ui-sref="app.dashboard.content({key:'cookies'})">-->
-                    <!--<span translate="menu.aside.content.cookies"></span>-->
-                <!--</a>-->
-            <!--</li>-->
-            <li ng-class="{'active':$state.includes('app.dashboard.content') && $state.params.key == 'signup_hotel'}">
-                <a ui-sref="app.dashboard.content({key:'signup_hotel'})">
-                    <span translate="menu.aside.content.signup_hotel"></span>
+            <li ui-sref-active="active">
+                <a ui-sref="app.dashboard({post_type:$translate.instant('post.post_type_url.denounce')})">
+                    <span translate="menu.aside.posts.reports"></span>
                 </a>
             </li>
-            <li ng-class="{'active':$state.includes('app.dashboard.content') && $state.params.key == 'privacity'}">
-                <a ui-sref="app.dashboard.content({key:'privacity'})">
-                    <span translate="menu.aside.content.privacity"></span>
+            <li ui-sref-active="active">
+                <a ui-sref="app.dashboard({post_type:$translate.instant('post.post_type_url.adopting')})">
+                    <span translate="menu.aside.posts.adopting"></span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.dashboard({post_type:$translate.instant('post.post_type_url.losts')})">
+                    <span translate="menu.aside.posts.lost_pets"></span>
                 </a>
             </li>
         </ul>
     </li>
     <li ui-sref-active="active">
-        <a ui-sref="app.dashboard.faqs">
-            <i class=" icon-support icon text-info-lter"></i>
-            <span class="font-bold" translate="menu.aside.faqs"></span>
+        <a ui-sref="app.threads">
+            <b class="badge bg-info pull-right" ng-bind="messages.newsCount"></b>
+            <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
+            <span class="font-bold" translate="menu.aside.messages">Email</span>
         </a>
     </li>
-    <li ui-sref-active="active">
-        <a ui-sref="app.dashboard.coins">
-            <i class="fa fa-euro  text-info-lter"></i>
-            <span class="font-bold" translate="menu.aside.coins"></span>
-        </a>
-    </li>
-    <li ui-sref-active="active">
-        <a ui-sref="app.dashboard.services">
-            <i class=" icon-tag icon text-info-lter"></i>
-            <span class="font-bold" translate="menu.aside.services"></span>
-        </a>
-    </li>
-    <li ui-sref-active="active">
-        <a ui-sref="app.dashboard.users">
-            <i class=" icon-user icon text-info-lter"></i>
-            <span class="font-bold" translate="menu.aside.users"></span>
-        </a>
-    </li>
-    <li ui-sref-active="active">
-        <a ui-sref="app.dashboard.listing_category">
-            <i class="icon-magic-wand icon text-info-lter"></i>
-            <span class="font-bold" translate="menu.aside.listing_category"></span>
-        </a>
-    </li>
-    <li ui-sref-active="active">
-        <a ui-sref="app.dashboard.listing_type">
-            <i class="icon-pin icon text-info-lter"></i>
-            <span class="font-bold" translate="menu.aside.listing_type"></span>
-        </a>
-    </li>
-    <li ui-sref-active="active">
-        <a ui-sref="app.dashboard.listing">
-            <i class="icon-home icon text-info-lter"></i>
-            <span class="font-bold" translate="menu.aside.listing"></span>
-        </a>
-    </li>
-    <!--<li ui-sref-active="active">
-        <a ui-sref="app.dashboard.bank">
-            <i class="fa fa-bank icon text-info-lter"></i>
-            <span class="font-bold" translate="menu.aside.bank"></span>
-        </a>
-    </li>-->
 
+    <li class="line dk hidden-folded"></li>
 
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span translate="menu.aside.profile"></span>
+    </li>
+    <li>
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="icon-users icon text-success"></i>
+            <span class="font-bold" translate="menu.aside.user_profile.header"></span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li ui-sref-active="active">
+                <a ui-sref="app.profile.info({id:Auth.get().username})">
+                    <span translate="menu.aside.user_profile.info"></span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.profile.pets({id:Auth.get().username})">
+                    <span translate="menu.aside.user_profile.pets"></span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.profile.posts({id:Auth.get().username})">
+                    <span translate="menu.aside.user_profile.posts"></span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.profile.friends({id:Auth.get().username})">
+                    <span translate="menu.aside.user_profile.friends"></span>
+                </a>
+            </li>
+        </ul>
+    </li>
 
 </ul>
 <!-- / list -->
