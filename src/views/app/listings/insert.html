@@ -13,7 +13,7 @@
 
 <div class="">
     <uib-tabset class="tab-container" active="wizard.currentStep">
-        <uib-tab index="1" select="wizard.percent = 33">
+        <uib-tab index="1" select="wizard.percent = 25">
             <uib-tab-heading>
                 <i class="icon-screen-desktop"></i>
                 <span translate="listing.tab_main_info"></span>
@@ -34,8 +34,9 @@
                     <div class=" col-sm-6 ">
                         <label class="" translate="listing.nights"></label>
                         <div class="has-feedback">
-                            <input type="text" ui-number-mask="0" min="1" ng-model="data.nights" required
+                            <input type="text" ui-number-mask="0" min="1" ng-model="data.nights"  ax-valid required
                                    placeholder="{{'listing.nights'|translate}}" class="form-control">
+                            <span class="icon-tag form-control-feedback"></span>
                         </div>
                     </div>
                 </div>
@@ -74,11 +75,11 @@
                     <div class="col-sm-12 col-md-6">
                         <label translate="listing.expiration"></label>
                         <div class="has-feedback">
-                            <datepicker date-format="{{dateOptions.datepickerShort}}">
-                                <input ng-model="data.expiration_date" type="text" class="input-filter form-control"
+                            <datepicker date-format="{{dateOptions.datepickerShort}}" >
+                                <input ng-model="data.expiration_date" name="expiration" type="text" class="input-filter form-control"
                                        readonly/>
                             </datepicker>
-
+<span  class="text-danger" ng-show="step1.$submitted && data.expiration_date == null ">Este campo es obligatorio</span>
                             <span class="icon-calendar form-control-feedback"></span>
                         </div>
                     </div>
@@ -253,7 +254,44 @@
                 </div>
             </form>
         </uib-tab>
-        <uib-tab index="2" disable="wizard.currentStep <= 1" select="wizard.percent = 66">
+        <uib-tab index="2" disable="wizard.currentStep <= 1" select="wizard.percent = 50">
+            <uib-tab-heading>
+                <i class=" icon-pin"></i>
+                <span translate="access.profile.listing_segment.header"></span>
+            </uib-tab-heading>
+            <uib-progressbar value="wizard.percent" class="progress-xs" type="success"></uib-progressbar>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a class="btn btn-default " ng-click="insertSegmento()"><i class="icon-plus"> <span translate="segmento.nuevo"></span></i></a>
+                </div>
+            </div>
+            <form name="step2" class="form-validation" ax-form-valid novalidate>
+                <hr>
+                <div class="row m-t">
+                    <div class="col-sm-3  m-t-xs" ng-repeat="segmento in segmentos">
+                        <label class="i-checks m-t-sm">
+                            <input type="checkbox" ng-model="data.segmentos[segmento.id]">
+                            <i></i>
+                            {{segmento.name_es}}
+                        </label>
+                    </div>
+                </div>
+                <div class="row m-t-xs">
+                    <div class="col-sm-12">
+                        <button type="button" class="btn btn-default pull-right" ng-click="wizard.next()">
+                            <i class="icon-arrow-right"></i>
+                            <span translate="listing.btn_next"></span>
+                        </button>
+                        <button type="button" class="m-r-xs btn btn-default pull-right" ng-click="wizard.prev()">
+                            <i class="icon-arrow-left"></i>
+                            <span translate="listing.btn_prev"></span>
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </uib-tab>
+        <uib-tab index="3" disable="wizard.currentStep <= 2" select="wizard.percent = 75">
             <uib-tab-heading>
                 <i class=" icon-pin"></i>
                 <span translate="listing.tab_services"></span>
@@ -286,7 +324,7 @@
 
             </form>
         </uib-tab>
-        <uib-tab index="3" disable="wizard.currentStep <= 2" select="wizard.percent = 99">
+        <uib-tab index="4" disable="wizard.currentStep <= 3" select="wizard.percent = 100">
             <uib-tab-heading>
                 <i class=" icon-picture"></i>
                 <span translate="listing.tab_images"></span>
@@ -340,7 +378,7 @@
 
             </form>
         </uib-tab>
-        <uib-tab index="4" disable="wizard.currentStep <= 3" ng-if="false">
+        <uib-tab index="5" disable="wizard.currentStep <= 4" ng-if="false">
             <uib-tab-heading>
                 <i class=" icon-tag"></i>
                 <span translate="listing.tab_prices"></span>

@@ -233,6 +233,11 @@
     "header": "{{'unicode.iquest'|translate}}Qui{{'unicode.e'|translate}}nes somos{{'unicode.rquest'|translate}}",
     "subheader": "En esta p{{'unicode.a'|translate}}gina le presentamos informaci{{'unicode.o'|translate}}n sobre nuestra empresa"
   },
+  "segmento":{
+    "nuevo": "Agregar segmento",
+    "nuevo_text": "",
+    "segmento_vacio": "Debe seleccionar al menos un segmento de escapada"
+  },
   "listing": {
     "nights": "Cantidad de noches",
     "segmento_id": "Segmento de escapada",

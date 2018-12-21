@@ -23,6 +23,9 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
         type_id: null
 
     };
+    ListingSegment.all().success( function(res){
+        $scope.segmentos = res.data.results;
+    });
     $scope.week_days=[
         'domingo',
         'lunes',
@@ -95,7 +98,7 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
     // });
 
     $scope.wizard = {
-        currentStep: 1,
+        currentStep: 2,
         disabled: {
             step1: false,
             step2: true,
@@ -110,7 +113,7 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
                 //     return;
                 // }
             }
-            if (this.currentStep == 2) {
+            if (this.currentStep == 3) {
                 var e = false;
                 angular.forEach($scope.data.services, function (s) {
                     if (s) e = true;
@@ -121,7 +124,18 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
                 }
 
             }
-            if (this.currentStep == 3) {
+            if (this.currentStep == 2) {
+                var e = false;
+                angular.forEach($scope.data.segmentos, function (s) {
+                    if (s) e = true;
+                });
+                if (!e) {
+                    toaster.pop('error', $translate.instant("message.action_error"), $translate.instant("segmento.segmento_vacio"));
+                    return;
+                }
+
+            }
+            if (this.currentStep == 4) {
                 // if ($scope.data.prices.length == 0) {
                 //     toaster.pop('error', $translate.instant("message.action_error"), $translate.instant("listing.price_empty"));
                 //     return;
@@ -288,5 +302,46 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
             }
         });
     };
+    var newSegmentoId = null;
+    $scope.insertSegmento = function () {
+
+        var modalInstance = $uibModal.open({
+            ariaLabelledBy: 'modal-title',
+            ariaDescribedBy: 'modal-body',
+            templateUrl: 'site/src/views/app/listing_segments/insert.html',
+            size: 'sm',
+            controller: function ($scope, $uibModalInstance) {
+                $scope.data = {
+                    id: null,
+                    name_es: '',
+                    name_en: ''
+                };
+                $scope.close = function () {
+                    $uibModalInstance.dismiss();
+                };
+                $scope.save = function () {
+                    var d = angular.copy($scope.data);
+                    ListingSegment.insert(d).success(function (res) {
+                        newSegmentoId = res.complete;
+                        $uibModalInstance.dismiss();
+                    }).error(function () {
+                        $uibModalInstance.dismiss();
+                    });
+                };
+            }
+        });
+        modalInstance.closed.then(function () {
+            //$scope.tableParams.reload();
+            if (newSegmentoId !== null) {
+                ListingSegment.all().success( function(res){
+                    $scope.segmentos = res.data.results;
+                    $scope.data.segmentos[newSegmentoId] = true;
+                    newSegmentoId = null;
+console.log($scope.data);
+                });
+            }
+        });
+    };
+
 
 }]);
