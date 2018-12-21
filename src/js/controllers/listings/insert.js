@@ -15,6 +15,7 @@ app.controller('ListingsInsertCtr', ['$scope', 'toaster', '$state', 'Auth', '$tr
         services: [],
         end_day: '',
         begin_day:'',
+        all_days: true,
         base_price: null,
         discount: null,
         nights: null,

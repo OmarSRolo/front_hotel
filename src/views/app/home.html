@@ -38,9 +38,9 @@
                            typeahead-editable="true" typeahead-show-hint="true" typeahead-min-length="0">
                     <span class="fa fa-location-arrow form-control-feedback"></span>
                 </div>
-                <div class="has-feedback header-buttons">
+                <div class="has-feedback header-buttons scroll-menu">
                     <input type="text" placeholder="{{'listing.listing_type_id'|translate}}" ng-model="listingTypeId"
-                           uib-typeahead="type as type.name for type in listingTypes| filter:$viewValue" class="form-control"
+                           uib-typeahead="type.id as type.name_es for type in listingTypes| filter:$viewValue" class="form-control"
                            typeahead-editable="true" typeahead-show-hint="true" typeahead-min-length="0">
                     <span class="fa fa-home form-control-feedback"></span>
                 </div>

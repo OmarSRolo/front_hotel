@@ -1,13 +1,13 @@
 'use strict';
 
-app.controller('HomeCtr', ['$scope', '$rootScope', '$state', '$translate', '$timeout', 'Listing', 'ListingType', '$q', function ($scope, $rootScope, $state, $translate, $timeout, Listing, ListingType, $q) {
+app.controller('HomeCtr', ['$scope', '$rootScope', '$state', '$translate', '$timeout', 'Listing', 'ListingSegment', '$q', function ($scope, $rootScope, $state, $translate, $timeout, Listing, ListingSegment, $q) {
 
     $scope.search = {};
     $scope.search = function () {
         $state.go('app.listings_search', {
             country_code: $scope.search.country_code,
             city: $scope.search.city,
-            listing_type_id: $scope.listingTypeId.id
+            listing_segment_id: $scope.listingTypeId.id
         });
     };
     $scope.slides = [
@@ -36,9 +36,8 @@ app.controller('HomeCtr', ['$scope', '$rootScope', '$state', '$translate', '$tim
     Listing.query(1, 8, {order_by: {field: 'relevant', direction: 'desc'}}).success(function (r) {
         $scope.mainListings = r.data.results;
     });
-    ListingType.list().success(function (res) {
-        $scope.listingTypes = res.data;
-        console.log($scope.listingTypes);
+    ListingSegment.list().success(function (res) {
+        $scope.listingTypes = res.data.results;
     });
 
 

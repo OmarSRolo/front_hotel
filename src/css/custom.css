@@ -11,6 +11,11 @@
 .inline-block{
     display:inline-block;
 }
+.scroll-menu .dropdown-menu{
+
+    height: 250px;
+    overflow-y: scroll;
+}
 .home-cities {
     margin-top: 50px;
 }
